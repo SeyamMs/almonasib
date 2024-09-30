@@ -22,7 +22,6 @@
     <link rel="manifest" href="images/site.webmanifest" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>مؤسسة المناسب</title>
 
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="fonts.css" />
@@ -35,11 +34,36 @@
         img.replaceWith(s.firstChild);
       };
     </script>
+
+    <!-- seo tags -->
+    <title>مؤسسة المناسب</title>
+    <link href="#" rel="canonical" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <meta name="robots" content="all" />
+    <meta property="og:title" content="مؤسسة المناسب" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_SA" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="مؤسسة المناسب" />
+    <meta property="og:image" content="images/sharing-poster.jpg" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content="1200" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="مؤسسة المناسب" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:creator" content="@SeyamMs" />
+    <meta name="twitter:url" content="#" />
+    <meta name="twitter:image" content="images/sharing-poster.jpg" />
   </head>
 
   <body
     x-data="{ loaded: false, menu: true, search: false, openSearch() { this.menu = false; setTimeout(() => this.search = true, 1000) }, closeSearch() { this.search = false; setTimeout(() => this.menu = true, 200) } }"
-    class="lg:pt-32 pt-14 selection:bg-rouge-100 selection:text-rouge-600 h-screen font-sans bg-white"
+    class="lg:pt-32 selection:bg-rouge-100 selection:text-rouge-600 h-screen pt-16 font-sans bg-white"
     x-init="setTimeout(function() { loaded = true }, 300)"
     :class="{ 'overflow-hidden': !loaded }"
   >
@@ -75,8 +99,8 @@
         x-intersect="shown = true"
       >
         <nav
-          class="lg:h-32 h-14 relative flex items-center transition-all duration-150 ease-in-out bg-white"
-          :class="{'lg:h-32':!small, 'lg:h-14 shadow': small, 'border-b': search}"
+          class="lg:h-32 relative flex items-center h-16 transition-all duration-150 ease-in-out bg-white"
+          :class="{'lg:h-32':!small, 'lg:h-16 shadow': small, 'border-b': search}"
         >
           <div
             x-show="search"
@@ -89,7 +113,7 @@
             x-on:keyup.escape.window="closeSearch"
             x-trap="search"
             x-cloak
-            class="md:px-4 container px-2 mx-auto"
+            class="container px-4 mx-auto"
           >
             <div class="flex h-full">
               <form
@@ -122,7 +146,11 @@
                   <template x-ref="template">
                     <span dir="ltr">Escape</span>
                   </template>
-                  <img src="icons/back.svg" alt="back" />
+                  <img
+                    class="lg:size-7 size-6"
+                    src="icons/back.svg"
+                    alt="back"
+                  />
                 </button>
               </form>
             </div>
@@ -131,7 +159,7 @@
           <div
             x-show="menu"
             x-on:keyup.window="function({ ctrlKey, code }) { if(!search) if (ctrlKey) if (code == 'Slash') openSearch() }"
-            class="md:px-4 container px-2 mx-auto"
+            class="container px-4 mx-auto"
           >
             <div class="flex items-center justify-between gap-2">
               <div
@@ -251,7 +279,7 @@
                   >
                     <img
                       onload="ImgToSvg(this)"
-                      class="md:size-6 size-5 fill-current"
+                      class="md:size-7 size-6 fill-current"
                       src="icons/whatsapp.svg"
                       alt="whatsapp"
                     />
@@ -269,7 +297,7 @@
                   >
                     <img
                       onload="ImgToSvg(this)"
-                      class="md:size-6 size-5 fill-current"
+                      class="md:size-7 size-6 fill-current"
                       src="icons/twitter.svg"
                       alt="twitter"
                     />
@@ -287,7 +315,7 @@
                   >
                     <img
                       onload="ImgToSvg(this)"
-                      class="md:size-6 size-5 fill-current"
+                      class="md:size-7 size-6 fill-current"
                       src="icons/youtube.svg"
                       alt="youtube"
                     />
@@ -313,7 +341,7 @@
                   </template>
                   <img
                     onload="ImgToSvg(this)"
-                    class="md:size-6 size-5 fill-current"
+                    class="md:size-7 size-6 fill-current"
                     src="icons/search.svg"
                     alt="search"
                   />
@@ -333,7 +361,7 @@
                   >
                     <img
                       onload="ImgToSvg(this)"
-                      class="md:size-5 size-4 fill-current"
+                      class="md:size-7 size-6 fill-current"
                       src="icons/menu.svg"
                       alt="menu"
                     />
@@ -342,7 +370,7 @@
               </div>
             </div>
           </div>
-          <div class="lg:hidden start-0 top-14 absolute z-10 flex w-full">
+          <div class="lg:hidden start-0 top-16 absolute z-10 flex w-full">
             <div
               :class="{ 'block': open, 'hidden': !open }"
               class="block w-full bg-white"
@@ -665,23 +693,23 @@
                   <div
                     class="md:flex-row gap-7 flex flex-col justify-between w-full"
                   >
-                    <div class="md:gap-6 flex flex-col items-center gap-1">
+                    <div class="md:gap-6 flex flex-col items-center gap-4">
                       <div
                         x-show="shown"
                         x-transition:enter-end="opacity-100 translate-y-0"
                         x-transition:enter-start="opacity-0 -translate-y-10"
                         x-transition:enter="transform ease-out duration-300 delay-[1300ms]"
-                        class="rounded-3xl xl:size-40 lg:size-36 md:size-32 size-24 flex items-center justify-center bg-white border shadow-md"
+                        class="rounded-3xl xl:size-40 lg:size-36 size-32 flex items-center justify-center bg-white border shadow-md"
                       >
                         <img
-                          class="xl:size-24 lg:size-20 md:size-16 size-12"
+                          class="xl:size-24 lg:size-20 size-16"
                           src="icons/clients.svg"
                           alt="clients"
                         />
                       </div>
                       <div class="flex flex-col gap-2">
                         <h3
-                          class="text-anzac-500 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-bold text-center"
+                          class="text-anzac-500 xl:text-5xl lg:text-4xl text-3xl font-bold text-center"
                           x-data="animatedCounter(1200)"
                           x-intersect="updateCounter"
                           x-text="current"
@@ -697,23 +725,23 @@
                           x-transition:enter-end="opacity-100 translate-y-0"
                           x-transition:enter-start="opacity-0 -translate-y-10"
                           x-transition:enter="transform ease-out duration-300 delay-[1500ms]"
-                          class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold text-center text-black"
+                          class="xl:text-3xl lg:text-2xl text-xl font-bold text-center text-black"
                         >
                           عميل
                         </h4>
                       </div>
                     </div>
 
-                    <div class="md:gap-6 flex flex-col items-center gap-1">
+                    <div class="md:gap-6 flex flex-col items-center gap-4">
                       <div
                         x-show="shown"
                         x-transition:enter-end="opacity-100 translate-y-0"
                         x-transition:enter-start="opacity-0 -translate-y-10"
                         x-transition:enter="transform ease-out duration-300 delay-[1500ms]"
-                        class="rounded-3xl xl:size-40 lg:size-36 md:size-32 size-24 flex items-center justify-center bg-white border shadow-md"
+                        class="rounded-3xl xl:size-40 lg:size-36 size-32 flex items-center justify-center bg-white border shadow-md"
                       >
                         <img
-                          class="xl:size-24 lg:size-20 md:size-16 size-12"
+                          class="xl:size-24 lg:size-20 size-16"
                           src="icons/projects.svg"
                           alt="projects"
                         />
@@ -724,7 +752,7 @@
                           x-transition:enter-end="opacity-100 translate-y-0"
                           x-transition:enter-start="opacity-0 -translate-y-10"
                           x-transition:enter="transform ease-out duration-300 delay-[1600ms]"
-                          class="text-anzac-500 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-bold text-center"
+                          class="text-anzac-500 xl:text-5xl lg:text-4xl text-3xl font-bold text-center"
                           x-data="animatedCounter(700)"
                           x-intersect="updateCounter"
                           x-text="current"
@@ -736,23 +764,23 @@
                           x-transition:enter-end="opacity-100 translate-y-0"
                           x-transition:enter-start="opacity-0 -translate-y-10"
                           x-transition:enter="transform ease-out duration-300 delay-[1700ms]"
-                          class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold text-center text-black"
+                          class="xl:text-3xl lg:text-2xl text-xl font-bold text-center text-black"
                         >
                           مشروع
                         </h4>
                       </div>
                     </div>
 
-                    <div class="md:gap-6 flex flex-col items-center gap-1">
+                    <div class="md:gap-6 flex flex-col items-center gap-4">
                       <div
                         x-show="shown"
                         x-transition:enter-end="opacity-100 translate-y-0"
                         x-transition:enter-start="opacity-0 -translate-y-10"
                         x-transition:enter="transform ease-out duration-300 delay-[1600ms]"
-                        class="rounded-3xl xl:size-40 lg:size-36 md:size-32 size-24 flex items-center justify-center bg-white border shadow-md"
+                        class="rounded-3xl xl:size-40 lg:size-36 size-32 flex items-center justify-center bg-white border shadow-md"
                       >
                         <img
-                          class="xl:size-24 lg:size-20 md:size-16 size-12"
+                          class="xl:size-24 lg:size-20 size-16"
                           src="icons/experience.svg"
                           alt="experience"
                         />
@@ -763,7 +791,7 @@
                           x-transition:enter-end="opacity-100 translate-y-0"
                           x-transition:enter-start="opacity-0 -translate-y-10"
                           x-transition:enter="transform ease-out duration-300 delay-[1700ms]"
-                          class="text-anzac-500 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-bold text-center"
+                          class="text-anzac-500 xl:text-5xl lg:text-4xl text-3xl font-bold text-center"
                           x-data="animatedCounter(10)"
                           x-intersect="updateCounter"
                           x-text="current"
@@ -775,7 +803,7 @@
                           x-transition:enter-end="opacity-100 translate-y-0"
                           x-transition:enter-start="opacity-0 -translate-y-10"
                           x-transition:enter="transform ease-out duration-300 delay-[1800ms]"
-                          class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold text-center text-black"
+                          class="xl:text-3xl lg:text-2xl text-xl font-bold text-center text-black"
                         >
                           سنوات خبرة
                         </h4>
@@ -905,7 +933,9 @@
                 اعمالنا
               </h2>
               <div class="md:gap-14 flex flex-col gap-5">
-                <div class="md:grid-cols-3 grid grid-cols-2 gap-4">
+                <div
+                  class="lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-4"
+                >
                   <div class="grid gap-4">
                     <div
                       x-show="shown"
@@ -1040,7 +1070,7 @@
                     </div>
                   </div>
                   <div
-                    class="md:col-span-1 md:grid-cols-1 grid grid-cols-2 col-span-2 gap-4"
+                    class="lg:col-span-1 lg:grid-cols-1 md:col-span-2 md:grid-cols-2 grid col-span-1 gap-4"
                   >
                     <div
                       x-show="shown"

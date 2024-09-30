@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مؤسسة المناسب</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fonts.css" />
+
+    <script>
+      const ImgToSvg = async (img) => {
+        const s = document.createElement("div");
+        s.innerHTML = await (await fetch(img.src)).text();
+        s.firstChild.classList = img.classList;
+        img.replaceWith(s.firstChild);
+      };
+    </script>
+  </head>
+
+  <body
+    x-data="{ loaded: false, menu: true, search: false, openSearch() { this.menu = false; setTimeout(() => this.search = true, 1000) }, closeSearch() { this.search = false; setTimeout(() => this.menu = true, 200) } }"
+    class="lg:pt-32 pt-14 selection:bg-rouge-100 selection:text-rouge-600 h-screen font-sans bg-white"
+    x-init="setTimeout(function() { loaded = true }, 300)"
+    :class="{ 'overflow-hidden': !loaded }"
+  >
+    <!-- loader -->
+    <div
+      class="bg-anzac-50 fixed inset-0 z-50 flex items-center justify-center"
+      :class="{ 'hidden': loaded }"
+    >
+      <svg
+        class="size-32 fill-slate-700 motion-safe:animate-spin dark:fill-slate-300"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+          opacity=".25"
+        />
+        <path
+          d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z"
+        />
+      </svg>
+    </div>
+    <!-- end loader -->
+
+    <!-- wrapper -->
+    <div x-cloak x-show="loaded">
+      <!-- header -->
+      <header
+        class="fixed top-0 z-50 w-full"
+        x-data="{ shown: false, open: false, small: window.scrollY > 99 }"
+        x-on:scroll.window="small = window.scrollY > 99"
+        x-intersect="shown = true"
+      >
+        <nav
+          class="lg:h-32 h-14 relative flex items-center transition-all duration-150 ease-in-out bg-white"
+          :class="{'lg:h-32':!small, 'lg:h-14 shadow': small, 'border-b': search}"
+        >
+          <div
+            x-show="search"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:enter-start="opacity-0 -translate-y-10"
+            x-transition:enter="transform ease-out duration-150"
+            x-transition:leave-end="opacity-0 -translate-y-10"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave="transform ease-in duration-150"
+            x-on:keyup.escape.window="closeSearch"
+            x-trap="search"
+            x-cloak
+            class="md:px-4 container px-2 mx-auto"
+          >
+            <div class="flex h-full">
+              <form
+                class="flex items-center justify-between w-full h-full gap-2"
+                action=""
+              >
+                <input
+                  tabindex="0"
+                  id="search"
+                  name="search"
+                  x-ref="input"
+                  class="focus:outline-none focus:ring-0 w-full h-full border-0"
+                  type="text"
+                  placeholder="أدخل كلمة البحث"
+                />
+
+                <button
+                  type="submit"
+                  class="bg-rouge-500 hover:bg-rouge-600 px-4 py-2 text-sm font-bold text-white transition-all duration-150 ease-out"
+                >
+                  بحث
+                </button>
+
+                <button
+                  class="-order-1"
+                  x-tooltip="{ content: () => $refs.template.innerHTML, allowHTML: true, appendTo: $root }"
+                  type="button"
+                  x-on:click="closeSearch"
+                >
+                  <template x-ref="template">
+                    <span dir="ltr">Escape</span>
+                  </template>
+                  <img src="icons/back.svg" alt="back" />
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div
+            x-show="menu"
+            x-on:keyup.window="function({ ctrlKey, code }) { if(!search) if (ctrlKey) if (code == 'Slash') openSearch() }"
+            class="md:px-4 container px-2 mx-auto"
+          >
+            <div class="flex items-center justify-between gap-2">
+              <div
+                class="lg:w-28 scale w-16 transition-all duration-150 ease-in-out"
+                :class="{'lg:w-28': !small, 'lg:w-16': small}"
+              >
+                <img
+                  x-show="shown && menu"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  x-transition:enter-start="opacity-0 scale-50"
+                  x-transition:enter="transform ease-out duration-150 delay-[100ms]"
+                  x-transition:leave-end="opacity-0 scale-50"
+                  x-transition:leave-start="opacity-100 scale-100"
+                  x-transition:leave="transform ease-in duration-150"
+                  class="object-scale-down w-full h-full"
+                  src="images/logo.svg"
+                  alt="logo"
+                />
+              </div>
+
+              <div class="lg:flex hidden items-center gap-[34px]">
+                <a
+                  class="text-[#313131] hover:text-rouge-500 flex relative font-medium text-xl w-max"
+                  href="#"
+                >
+                  <span
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[250ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transform ease-in duration-150 delay-[150ms]"
+                    class="start-0 absolute top-0"
+                  >
+                    الرئيسية
+                  </span>
+                  <span class="text-transparent"> الرئيسية </span>
+                </a>
+
+                <a
+                  class="text-[#313131] hover:text-rouge-500 flex relative font-medium text-xl"
+                  href="#"
+                >
+                  <span
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[450ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transform ease-in duration-150 delay-[400ms]"
+                    class="start-0 absolute top-0"
+                  >
+                    المؤسسات المانحة
+                  </span>
+                  <span class="text-transparent"> المؤسسات المانحة </span>
+                </a>
+
+                <a
+                  class="text-[#313131] hover:text-rouge-500 flex relative font-medium text-xl"
+                  href="#"
+                >
+                  <span
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[350ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transform ease-in duration-150 delay-[250ms]"
+                    class="start-0 absolute top-0"
+                  >
+                    معلومات عنا
+                  </span>
+                  <span class="text-transparent"> معلومات عنا </span>
+                </a>
+
+                <a
+                  class="text-[#313131] hover:text-rouge-500 flex relative font-medium text-xl"
+                  href="#"
+                >
+                  <span
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[550ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transform ease-in duration-150 delay-[450ms]"
+                    class="start-0 absolute top-0"
+                  >
+                    اتصل بنا
+                  </span>
+                  <span class="text-transparent"> اتصل بنا </span>
+                </a>
+              </div>
+
+              <div
+                class="lg:gap-6 sm:gap-4 flex items-center gap-4 transition-all duration-150 ease-in-out"
+                :class="{'lg:gap-6':!small, 'lg:gap-2': small}"
+              >
+                <div
+                  class="lg:gap-6 sm:gap-4 sm:flex items-center hidden gap-4 transition-all duration-150 ease-in-out"
+                  :class="{'lg:gap-6':!small, 'lg:gap-2': small}"
+                >
+                  <a
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[700ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150 delay-[500ms]"
+                    class="text-[#313131] hover:text-[#075E54] transition-all duration-150 ease-in-out"
+                    href="#"
+                  >
+                    <img
+                      onload="ImgToSvg(this)"
+                      class="md:size-6 size-5 fill-current"
+                      src="icons/whatsapp.svg"
+                      alt="whatsapp"
+                    />
+                  </a>
+                  <a
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[750ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150 delay-[550ms]"
+                    class="text-[#313131] hover:text-[#1DA1F2] transition-all duration-150 ease-in-out"
+                    href="#"
+                  >
+                    <img
+                      onload="ImgToSvg(this)"
+                      class="md:size-6 size-5 fill-current"
+                      src="icons/twitter.svg"
+                      alt="twitter"
+                    />
+                  </a>
+                  <a
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[800ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150 delay-[600ms]"
+                    class="text-[#313131] hover:text-[#CD201F] transition-all duration-150 ease-in-out"
+                    href="#"
+                  >
+                    <img
+                      onload="ImgToSvg(this)"
+                      class="md:size-6 size-5 fill-current"
+                      src="icons/youtube.svg"
+                      alt="youtube"
+                    />
+                  </a>
+                </div>
+
+                <button
+                  x-show="shown && menu"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  x-transition:enter-start="opacity-0 scale-50"
+                  x-transition:enter="transform ease-out duration-150 delay-[850ms]"
+                  x-transition:leave-end="opacity-0 scale-50"
+                  x-transition:leave-start="opacity-100 scale-100"
+                  x-transition:leave="transform ease-in duration-150 delay-[650ms]"
+                  x-data
+                  x-tooltip="{ content: () => $refs.template.innerHTML, allowHTML: true, appendTo: $root }"
+                  x-on:click="openSearch"
+                  class="text-[#313131] hover:text-rouge-500 transition-all duration-150 ease-in-out"
+                  type="button"
+                >
+                  <template x-ref="template">
+                    <span dir="ltr">Ctrl + /</span>
+                  </template>
+                  <img
+                    onload="ImgToSvg(this)"
+                    class="md:size-6 size-5 fill-current"
+                    src="icons/search.svg"
+                    alt="search"
+                  />
+                </button>
+                <div class="lg:hidden flex">
+                  <button
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[900ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150 delay-[700ms]"
+                    x-on:click="open = ! open"
+                    class="text-[#313131] transition-all duration-150 ease-in-out"
+                    type="button"
+                  >
+                    <img
+                      onload="ImgToSvg(this)"
+                      class="md:size-5 size-4 fill-current"
+                      src="icons/menu.svg"
+                      alt="menu"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:hidden start-0 top-14 absolute z-10 flex w-full">
+            <div
+              :class="{ 'block': open, 'hidden': !open }"
+              class="block w-full bg-white"
+            >
+              <div class="border-gray-50 border-t">
+                <div class="gap-1">
+                  <a
+                    class="hover:text-gray-800 hover:bg-gray-50 hover:border-primary-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-r-4 border-transparent"
+                    href="#"
+                  >
+                    الرئيسية
+                  </a>
+                  <a
+                    class="hover:text-gray-800 hover:bg-gray-50 hover:border-primary-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-r-4 border-transparent"
+                    href="#"
+                  >
+                    المؤسسات المانحة
+                  </a>
+                  <a
+                    class="hover:text-gray-800 hover:bg-gray-50 hover:border-primary-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-r-4 border-transparent"
+                    href="#"
+                  >
+                    معلومات عنا
+                  </a>
+                  <a
+                    class="hover:text-gray-800 hover:bg-gray-50 hover:border-primary-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-r-4 border-transparent"
+                    href="#"
+                  >
+                    اتصل بنا
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- end header -->
+
+      <!-- content -->
+      <div class="relative">
+        <!-- carousel -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[642px] lg:min-h-[506px] md:min-h-[383px] sm:min-h-[582px] min-h-[512px]"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div
+              x-data="{ embla: null }"
+              x-init="() => {
+              embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+            }"
+              class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
+            >
+              <button
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-x-0"
+                x-transition:enter-start="opacity-0 translate-x-10"
+                x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                x-ref="prev"
+                x-on:click="embla.scrollPrev()"
+                class="hover:bg-gray-50 h-44 md:flex lg:w-12 items-center justify-center flex-shrink-0 hidden w-8 transition-all duration-150 ease-in-out bg-white border rounded-md shadow-md"
+              >
+                <img
+                  class="lg:size-7 size-5"
+                  src="icons/chevron-right.svg"
+                  alt="chevron-right"
+                />
+              </button>
+
+              <button
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-x-0"
+                x-transition:enter-start="opacity-0 -translate-x-10"
+                x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                x-ref="next"
+                x-on:click="embla.scrollNext()"
+                class="hover:bg-gray-50 h-44 md:flex lg:w-12 items-center justify-center flex-shrink-0 order-3 hidden w-8 transition-all duration-150 ease-in-out bg-white border rounded-md shadow-md"
+              >
+                <img
+                  class="lg:size-7 size-5"
+                  src="icons/chevron-left.svg"
+                  alt="chevron-left"
+                />
+              </button>
+
+              <div x-ref="viewport" class="w-full overflow-hidden">
+                <div class="flex py-2">
+                  <!-- slide-1 -->
+                  <div class="flex justify-center flex-shrink-0 w-full">
+                    <div class="grid grid-cols-6 gap-4">
+                      <div
+                        class="md:col-span-3 md:justify-start flex items-center justify-center col-span-6"
+                      >
+                        <div class="md:gap-6 flex flex-col gap-2">
+                          <h1
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:enter-start="opacity-0 -translate-y-10"
+                            x-transition:enter="transform ease-out duration-300 delay-[450ms]"
+                            class="xl:text-6xl lg:text-5xl md:text-start text-3xl font-bold text-center text-black"
+                          >
+                            المناسب
+                            <br />
+                            للخدمات التسويقية
+                          </h1>
+                          <p
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:enter-start="opacity-0 -translate-y-10"
+                            x-transition:enter="transform ease-out duration-300 delay-[650ms]"
+                            class="xl:text-4xl lg:text-3xl md:text-start md:text-2xl text-xl font-medium text-center text-black"
+                          >
+                            ساعد مشروعك الخاص
+                            <br />
+                            بالنمو ب شكل متميز وسريع
+                          </p>
+                        </div>
+                      </div>
+                      <div class="md:col-span-3 col-span-6">
+                        <div class="md:w-full md:max-w-none max-w-sm mx-auto">
+                          <img
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:enter-start="opacity-0 scale-50"
+                            x-transition:enter="transform ease-out duration-300 delay-[850ms]"
+                            class="object-scale-down w-full h-full"
+                            src="images/slide-1.png"
+                            alt="slide-1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end slide-1 -->
+
+                  <!-- slide-2 -->
+                  <div class="flex justify-center flex-shrink-0 w-full">
+                    <div class="grid grid-cols-6 gap-4">
+                      <div
+                        class="md:col-span-3 md:justify-start flex items-center justify-center col-span-6"
+                      >
+                        <div class="md:gap-6 flex flex-col gap-2">
+                          <h2
+                            class="xl:text-6xl lg:text-5xl md:text-start text-3xl font-bold text-center text-black"
+                          >
+                            المناسب
+                            <br />
+                            للخدمات التسويقية
+                          </h2>
+                          <p
+                            class="xl:text-4xl lg:text-3xl md:text-start md:text-2xl text-xl font-medium text-center text-black"
+                          >
+                            ساعد مشروعك الخاص
+                            <br />
+                            بالنمو ب شكل متميز وسريع
+                          </p>
+                        </div>
+                      </div>
+                      <div class="md:col-span-3 col-span-6">
+                        <div class="md:w-full md:max-w-none max-w-sm mx-auto">
+                          <img
+                            class="object-scale-down w-full h-full"
+                            src="images/slide-1.png"
+                            alt="slide-1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end slide-2 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end carousel -->
+
+        <!-- about us -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[888px] lg:min-h-[764px] md:min-h-[672px] sm:min-h-[1133px] min-h-[1124px]"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div class="xl:gap-16 lg:gap-12 md:gap-10 flex flex-col gap-6">
+              <h2
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter="transform ease-out duration-300 delay-[100ms]"
+                class="text-rouge-500 xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold text-center"
+              >
+                من نحن
+              </h2>
+              <div class="md:gap-20 flex flex-col gap-8">
+                <div
+                  class="xl:gap-14 lg:gap-12 md:gap-10 grid grid-cols-6 gap-6"
+                >
+                  <div class="md:col-span-2 col-span-6">
+                    <div class="md:max-w-none max-w-xs mx-auto">
+                      <img
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                        class="object-scale-down w-full h-full"
+                        src="images/logo.svg"
+                        alt="logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="md:col-span-4 col-span-6">
+                    <div class="md:gap-5 flex flex-col gap-4">
+                      <h3
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:enter-start="opacity-0 -translate-y-10"
+                        x-transition:enter="transform ease-out duration-300 delay-[500ms]"
+                        class="xl:text-5xl lg:text-4xl md:text-3xl md:text-start text-2xl font-bold text-center text-black"
+                      >
+                        المناسب للخدمات التسويقية
+                      </h3>
+                      <div
+                        class="xl:gap-9 lg:gap-6 md:gap-6 flex flex-col gap-5"
+                      >
+                        <p
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                          class="line-clamp-3 font-extralight xl:text-3xl lg:text-2xl md:text-xl md:text-justify text-lg text-center text-black"
+                        >
+                          مؤسسة تسعى لتنمية وتمكين القطاع غير الربحي، من خلال
+                          فريق عمل متخصص في تصميم وتخطيط المبادرات والمشاريع
+                          التنموية والمساهمة في إنضاجها بشكل يلبي متطلبات
+                          المانحين ويتوافق مع شروط المنح.
+                        </p>
+                        <div
+                          class="xl:gap-24 lg:gap-16 md:gap-12 gap-9 md:justify-start flex items-center justify-center"
+                        >
+                          <a
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-x-0"
+                            x-transition:enter-start="opacity-0 translate-x-10"
+                            x-transition:enter="transform ease-out duration-150 delay-[900ms]"
+                            class="group"
+                            href="#"
+                          >
+                            <div
+                              class="xl:gap-9 md:gap-6 md:group-hover:gap-3 group-hover:gap-1 xl:group-hover:gap-6 group-hover:pe-3 flex items-center gap-4 transition-all duration-150 ease-in-out"
+                            >
+                              <span
+                                class="text-rouge-500 group-hover:text-[#2F2F2F] transition-all duration-150 ease-in-out xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold"
+                              >
+                                الرؤية
+                              </span>
+                              <img
+                                class="xl:size-6 lg:size-5 size-4"
+                                src="icons/chevron-left-2.svg"
+                                alt="chevron-left-2"
+                              />
+                            </div>
+                          </a>
+                          <a
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-x-0"
+                            x-transition:enter-start="opacity-0 translate-x-10"
+                            x-transition:enter="transform ease-out duration-150 delay-[1000ms]"
+                            class="group"
+                            href="#"
+                          >
+                            <div
+                              class="xl:gap-9 md:gap-6 md:group-hover:gap-3 group-hover:gap-1 xl:group-hover:gap-6 group-hover:pe-3 flex items-center gap-4 transition-all duration-150 ease-in-out"
+                            >
+                              <span
+                                class="text-rouge-500 group-hover:text-[#2F2F2F] transition-all duration-150 ease-in-out xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold"
+                              >
+                                الرسالة
+                              </span>
+                              <img
+                                class="xl:size-6 lg:size-5 size-4"
+                                src="icons/chevron-left-2.svg"
+                                alt="chevron-left-2"
+                              />
+                            </div>
+                          </a>
+                          <a
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-x-0"
+                            x-transition:enter-start="opacity-0 translate-x-10"
+                            x-transition:enter="transform ease-out duration-150 delay-[1100ms]"
+                            class="group"
+                            href="#"
+                          >
+                            <div
+                              class="xl:gap-9 md:gap-6 md:group-hover:gap-3 group-hover:gap-1 xl:group-hover:gap-6 group-hover:pe-3 flex items-center gap-4 transition-all duration-150 ease-in-out"
+                            >
+                              <span
+                                class="text-rouge-500 group-hover:text-[#2F2F2F] transition-all duration-150 ease-in-out xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold"
+                              >
+                                القيم
+                              </span>
+                              <img
+                                class="xl:size-6 lg:size-5 size-4"
+                                src="icons/chevron-left-2.svg"
+                                alt="chevron-left-2"
+                              />
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="xl:max-w-4xl lg:max-w-3xl md:max-w-xl w-full mx-auto"
+                >
+                  <div
+                    class="md:flex-row gap-7 flex flex-col justify-between w-full"
+                  >
+                    <div class="md:gap-6 flex flex-col items-center gap-1">
+                      <div
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:enter-start="opacity-0 -translate-y-10"
+                        x-transition:enter="transform ease-out duration-300 delay-[1300ms]"
+                        class="rounded-3xl xl:size-40 lg:size-36 md:size-32 size-24 flex items-center justify-center bg-white border shadow-md"
+                      >
+                        <img
+                          class="xl:size-24 lg:size-20 md:size-16 size-12"
+                          src="icons/clients.svg"
+                          alt="clients"
+                        />
+                      </div>
+                      <div class="flex flex-col gap-2">
+                        <h3
+                          class="text-anzac-500 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-bold text-center"
+                          x-data="animatedCounter(1200)"
+                          x-intersect="updateCounter"
+                          x-text="current"
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[1400ms]"
+                        >
+                          1200
+                        </h3>
+                        <h4
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[1500ms]"
+                          class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold text-center text-black"
+                        >
+                          عميل
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="md:gap-6 flex flex-col items-center gap-1">
+                      <div
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:enter-start="opacity-0 -translate-y-10"
+                        x-transition:enter="transform ease-out duration-300 delay-[1500ms]"
+                        class="rounded-3xl xl:size-40 lg:size-36 md:size-32 size-24 flex items-center justify-center bg-white border shadow-md"
+                      >
+                        <img
+                          class="xl:size-24 lg:size-20 md:size-16 size-12"
+                          src="icons/projects.svg"
+                          alt="projects"
+                        />
+                      </div>
+                      <div class="flex flex-col gap-2">
+                        <h3
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[1600ms]"
+                          class="text-anzac-500 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-bold text-center"
+                          x-data="animatedCounter(700)"
+                          x-intersect="updateCounter"
+                          x-text="current"
+                        >
+                          700
+                        </h3>
+                        <h4
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[1700ms]"
+                          class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold text-center text-black"
+                        >
+                          مشروع
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="md:gap-6 flex flex-col items-center gap-1">
+                      <div
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:enter-start="opacity-0 -translate-y-10"
+                        x-transition:enter="transform ease-out duration-300 delay-[1600ms]"
+                        class="rounded-3xl xl:size-40 lg:size-36 md:size-32 size-24 flex items-center justify-center bg-white border shadow-md"
+                      >
+                        <img
+                          class="xl:size-24 lg:size-20 md:size-16 size-12"
+                          src="icons/experience.svg"
+                          alt="experience"
+                        />
+                      </div>
+                      <div class="flex flex-col gap-2">
+                        <h3
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[1700ms]"
+                          class="text-anzac-500 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-bold text-center"
+                          x-data="animatedCounter(10)"
+                          x-intersect="updateCounter"
+                          x-text="current"
+                        >
+                          10
+                        </h3>
+                        <h4
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[1800ms]"
+                          class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold text-center text-black"
+                        >
+                          سنوات خبرة
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end about us -->
+
+        <!-- our services -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div class="xl:gap-16 lg:gap-12 md:gap-10 flex flex-col gap-6">
+              <h2
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter="transform ease-out duration-300 delay-[100ms]"
+                class="text-rouge-500 xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold text-center"
+              >
+                خدماتنا
+              </h2>
+              <div class="md:gap-20 flex flex-col gap-8">
+                <div class="xl:gap-11 lg:gap-9 md:gap-7 grid grid-cols-9 gap-5">
+                  <div class="md:col-span-4 col-span-9">
+                    <div class="md:max-w-none max-w-xs mx-auto">
+                      <img
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                        class="object-scale-down w-full h-full"
+                        src="images/service-1.jpg"
+                        alt="service-1"
+                      />
+                    </div>
+                  </div>
+                  <div class="md:col-span-5 col-span-9">
+                    <div class="xl:gap-8 md:gap-5 flex flex-col gap-4">
+                      <div
+                        class="md:justify-start flex items-center justify-center gap-6"
+                      >
+                        <div
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-x-0"
+                          x-transition:enter-start="opacity-0 translate-x-10"
+                          x-transition:enter="transform ease-out duration-150 delay-[500ms]"
+                          class="xl:size-24 lg:size-20 md:size-16 size-12"
+                        >
+                          <img
+                            class="object-scale-down w-full h-full"
+                            src="images/planning.png"
+                            alt="planning"
+                          />
+                        </div>
+                        <h3
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-x-0"
+                          x-transition:enter-start="opacity-0 translate-x-10"
+                          x-transition:enter="transform ease-out duration-150 delay-[600ms]"
+                          class="xl:text-5xl lg:text-4xl md:text-3xl md:text-start text-2xl font-bold text-center text-black"
+                        >
+                          تخطـيـط وتصميم
+                          <br />
+                          المبادرات التنموية
+                        </h3>
+                      </div>
+                      <div class="lg:pe-12 md:gap-2 flex flex-col gap-5">
+                        <p
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                          class="!leading-normal font-extralight xl:text-3xl lg:text-2xl md:text-xl md:text-justify text-lg text-center text-black"
+                        >
+                          نسعى مع شركائنا التنمويين في المساهمة بإنضاج المبادرات
+                          والمشاريع التنموية وتخطيطها وتصميمها وفق منهجيات
+                          عالمية مع تكييفها على واقع المنظمة والبيئة التي تعمل
+                          فيها.
+                        </p>
+
+                        <div class="md:justify-end flex justify-center">
+                          <a
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:enter-start="opacity-0 -translate-y-10"
+                            x-transition:enter="transform ease-out duration-300 delay-[800ms]"
+                            class="text-apple-500 border-apple-500 md:rounded-2xl md:px-7 hover:bg-apple-500 hover:text-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold transition-all duration-150 ease-in-out border-2 shadow-md"
+                            href="#"
+                          >
+                            قراءة المزيد
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end our services -->
+
+        <!-- our work -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[1262px] lg:min-h-[1063px] md:min-h-[823px] sm:min-h-[1283px] min-h-[747px]"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div class="xl:gap-24 lg:gap-20 md:gap-16 flex flex-col gap-12">
+              <h2
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter="transform ease-out duration-300 delay-[100ms]"
+                class="text-rouge-500 xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold text-center"
+              >
+                اعمالنا
+              </h2>
+              <div class="md:gap-14 flex flex-col gap-5">
+                <div class="md:grid-cols-3 grid grid-cols-2 gap-4">
+                  <div class="grid gap-4">
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[300ms]"
+                      class="h-max rounded-2xl sm:max-w-sm w-full max-w-xs mx-auto overflow-hidden shadow-md"
+                    >
+                      <div class="group relative w-full h-full">
+                        <img
+                          class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                          src="images/work-1.jpg"
+                          alt="work-1"
+                        />
+                        <div
+                          class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                        >
+                          <div
+                            class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                          >
+                            <h3 class="text-2xl font-bold text-white">
+                              هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
+                            </h3>
+                            <a
+                              href="#"
+                              class="hover:underline self-end text-lg font-bold text-white"
+                            >
+                              اقرأ أكثر
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[900ms]"
+                      class="h-max rounded-2xl sm:max-w-sm w-full max-w-xs mx-auto overflow-hidden shadow-md"
+                    >
+                      <div class="group relative w-full h-full">
+                        <img
+                          class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                          src="images/work-4.jpg"
+                          alt="work-4"
+                        />
+                        <div
+                          class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                        >
+                          <div
+                            class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                          >
+                            <h3 class="text-2xl font-bold text-white">
+                              هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
+                            </h3>
+                            <a
+                              href="#"
+                              class="hover:underline self-end text-lg font-bold text-white"
+                            >
+                              اقرأ أكثر
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid gap-4">
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[500ms]"
+                      class="h-max rounded-2xl sm:max-w-sm w-full max-w-xs mx-auto overflow-hidden shadow-md"
+                    >
+                      <div class="group relative w-full h-full">
+                        <img
+                          class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                          src="images/work-2.jpg"
+                          alt="work-2"
+                        />
+                        <div
+                          class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                        >
+                          <div
+                            class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                          >
+                            <h3 class="text-2xl font-bold text-white">
+                              هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
+                            </h3>
+                            <a
+                              href="#"
+                              class="hover:underline self-end text-lg font-bold text-white"
+                            >
+                              اقرأ أكثر
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[1100ms]"
+                      class="h-max rounded-2xl sm:max-w-sm w-full max-w-xs mx-auto overflow-hidden shadow-md"
+                    >
+                      <div class="group relative w-full h-full">
+                        <img
+                          class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                          src="images/work-5.jpg"
+                          alt="work-5"
+                        />
+                        <div
+                          class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                        >
+                          <div
+                            class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                          >
+                            <h3 class="text-2xl font-bold text-white">
+                              هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
+                            </h3>
+                            <a
+                              href="#"
+                              class="hover:underline self-end text-lg font-bold text-white"
+                            >
+                              اقرأ أكثر
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="md:col-span-1 md:grid-cols-1 grid grid-cols-2 col-span-2 gap-4"
+                  >
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                      class="h-max rounded-2xl sm:max-w-sm w-full max-w-xs mx-auto overflow-hidden shadow-md"
+                    >
+                      <div class="group relative w-full h-full">
+                        <img
+                          class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                          src="images/work-3.jpg"
+                          alt="work-3"
+                        />
+                        <div
+                          class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                        >
+                          <div
+                            class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                          >
+                            <h3 class="text-2xl font-bold text-white">
+                              هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
+                            </h3>
+                            <a
+                              href="#"
+                              class="hover:underline self-end text-lg font-bold text-white"
+                            >
+                              اقرأ أكثر
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[1300ms]"
+                      class="h-max rounded-2xl sm:max-w-sm w-full max-w-xs mx-auto overflow-hidden shadow-md"
+                    >
+                      <div class="group relative w-full h-full">
+                        <img
+                          class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                          src="images/work-6.jpg"
+                          alt="work-6"
+                        />
+                        <div
+                          class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                        >
+                          <div
+                            class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                          >
+                            <h3 class="text-2xl font-bold text-white">
+                              هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
+                            </h3>
+                            <a
+                              href="#"
+                              class="hover:underline self-end text-lg font-bold text-white"
+                            >
+                              اقرأ أكثر
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex justify-center w-full">
+                  <a
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-300 delay-[1600ms]"
+                    class="hover:text-apple-500 border-apple-500 md:rounded-2xl md:px-7 bg-apple-500 hover:bg-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold text-white transition-all duration-150 ease-in-out border-2 shadow-md"
+                    href="#"
+                  >
+                    عرض المزيد
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end our work -->
+
+        <!-- packages -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[746px] lg:min-h-[626px] md:min-h-[518px] sm:min-h-[474px] min-h-[474px]"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div
+              x-data="{ embla: null }"
+              x-init="() => {
+                embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+              }"
+              class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
+            >
+              <div x-ref="viewport" class="w-full overflow-hidden">
+                <div class="flex flex-row justify-between py-2">
+                  <div
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    x-transition:enter-start="opacity-0 translate-x-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                    class="lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                  >
+                    <div
+                      class="lg:p-9 rounded-xl p-6 bg-white border border-gray-200 shadow-md"
+                    >
+                      <div
+                        class="xl:gap-11 lg:gap-8 flex flex-col w-full gap-6"
+                      >
+                        <h4
+                          class="lg:text-[44px] md:text-3xl text-2xl text-center font-bold text-black"
+                        >
+                          عادية
+                        </h4>
+                        <h3
+                          class="xl:text-8xl lg:text-7xl text-6xl font-bold text-center text-black"
+                        >
+                          <sup class="font-medium">$</sup>100
+                        </h3>
+                        <div
+                          class="xl:gap-10 lg:gap-8 md:gap-6 flex flex-col gap-4"
+                        >
+                          <div class="md:gap-4 flex items-center gap-2">
+                            <div
+                              class="md:size-6 size-4 bg-rouge-500 rounded-full"
+                            ></div>
+                            <h3
+                              class="xl:text-2xl lg:text-xl text-lg font-medium"
+                            >
+                              مميزات الباقة
+                            </h3>
+                          </div>
+                          <div class="md:gap-4 flex items-center gap-2">
+                            <div
+                              class="md:size-6 size-4 bg-rouge-500 rounded-full"
+                            ></div>
+                            <h3
+                              class="xl:text-2xl lg:text-xl text-lg font-medium"
+                            >
+                              مميزات الباقة
+                            </h3>
+                          </div>
+                          <div class="md:gap-4 flex items-center gap-2">
+                            <div
+                              class="md:size-6 size-4 bg-rouge-500 rounded-full"
+                            ></div>
+                            <h3
+                              class="xl:text-2xl lg:text-xl text-lg font-medium"
+                            >
+                              مميزات الباقة
+                            </h3>
+                          </div>
+                        </div>
+                        <div class="flex justify-center">
+                          <a
+                            class="hover:text-apple-500 border-apple-500 md:rounded-2xl md:px-7 bg-apple-500 hover:bg-white md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold text-white transition-all duration-150 ease-in-out border-2 shadow-md"
+                            href="#"
+                          >
+                            عرض المزيد
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    x-transition:enter-start="opacity-0 translate-x-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[450ms]"
+                    class="lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                  >
+                    <div
+                      class="lg:p-9 rounded-xl p-6 bg-white border border-gray-200 shadow-md"
+                    >
+                      <div
+                        class="xl:gap-11 lg:gap-8 flex flex-col w-full gap-6"
+                      >
+                        <h4
+                          class="lg:text-[44px] md:text-3xl text-2xl text-center font-bold text-black"
+                        >
+                          مميزة
+                        </h4>
+                        <h3
+                          class="xl:text-8xl lg:text-7xl text-6xl font-bold text-center text-black"
+                        >
+                          <sup class="font-medium">$</sup>120
+                        </h3>
+                        <div
+                          class="xl:gap-10 lg:gap-8 md:gap-6 flex flex-col gap-4"
+                        >
+                          <div class="md:gap-4 flex items-center gap-2">
+                            <div
+                              class="md:size-6 size-4 bg-rouge-500 rounded-full"
+                            ></div>
+                            <h3
+                              class="xl:text-2xl lg:text-xl text-lg font-medium"
+                            >
+                              مميزات الباقة
+                            </h3>
+                          </div>
+                          <div class="md:gap-4 flex items-center gap-2">
+                            <div
+                              class="md:size-6 size-4 bg-rouge-500 rounded-full"
+                            ></div>
+                            <h3
+                              class="xl:text-2xl lg:text-xl text-lg font-medium"
+                            >
+                              مميزات الباقة
+                            </h3>
+                          </div>
+                          <div class="md:gap-4 flex items-center gap-2">
+                            <div
+                              class="md:size-6 size-4 bg-rouge-500 rounded-full"
+                            ></div>
+                            <h3
+                              class="xl:text-2xl lg:text-xl text-lg font-medium"
+                            >
+                              مميزات الباقة
+                            </h3>
+                          </div>
+                        </div>
+                        <div class="flex justify-center">
+                          <a
+                            class="hover:text-apple-500 border-apple-500 md:rounded-2xl md:px-7 bg-apple-500 hover:bg-white md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold text-white transition-all duration-150 ease-in-out border-2 shadow-md"
+                            href="#"
+                          >
+                            عرض المزيد
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    x-transition:enter-start="opacity-0 translate-x-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[600ms]"
+                    class="lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                  >
+                    <div
+                      class="lg:p-9 rounded-xl p-6 bg-white border border-gray-200 shadow-md"
+                    >
+                      <div
+                        class="xl:gap-11 lg:gap-8 flex flex-col w-full gap-6"
+                      >
+                        <h4
+                          class="lg:text-[44px] md:text-3xl text-2xl text-center font-bold text-black"
+                        >
+                          خارقة
+                        </h4>
+                        <h3
+                          class="xl:text-8xl lg:text-7xl text-6xl font-bold text-center text-black"
+                        >
+                          <sup class="font-medium">$</sup>150
+                        </h3>
+                        <div
+                          class="xl:gap-10 lg:gap-8 md:gap-6 flex flex-col gap-4"
+                        >
+                          <div class="md:gap-4 flex items-center gap-2">
+                            <div
+                              class="md:size-6 size-4 bg-rouge-500 rounded-full"
+                            ></div>
+                            <h3
+                              class="xl:text-2xl lg:text-xl text-lg font-medium"
+                            >
+                              مميزات الباقة
+                            </h3>
+                          </div>
+                          <div class="md:gap-4 flex items-center gap-2">
+                            <div
+                              class="md:size-6 size-4 bg-rouge-500 rounded-full"
+                            ></div>
+                            <h3
+                              class="xl:text-2xl lg:text-xl text-lg font-medium"
+                            >
+                              مميزات الباقة
+                            </h3>
+                          </div>
+                          <div class="md:gap-4 flex items-center gap-2">
+                            <div
+                              class="md:size-6 size-4 bg-rouge-500 rounded-full"
+                            ></div>
+                            <h3
+                              class="xl:text-2xl lg:text-xl text-lg font-medium"
+                            >
+                              مميزات الباقة
+                            </h3>
+                          </div>
+                        </div>
+                        <div class="flex justify-center">
+                          <a
+                            class="hover:text-apple-500 border-apple-500 md:rounded-2xl md:px-7 bg-apple-500 hover:bg-white md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold text-white transition-all duration-150 ease-in-out border-2 shadow-md"
+                            href="#"
+                          >
+                            عرض المزيد
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end packages -->
+
+        <!-- blog -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[679px] lg:min-h-[539px] md:min-h-[520px] sm:min-h-[484px] min-h-[468px]"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div class="xl:gap-24 lg:gap-20 md:gap-16 flex flex-col gap-12">
+              <h2
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter="transform ease-out duration-300 delay-[100ms]"
+                class="text-rouge-500 xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold text-center"
+              >
+                المدونة
+              </h2>
+              <div
+                x-data="{ embla: null }"
+                x-init="() => {
+                  embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+                }"
+                class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
+              >
+                <button
+                  x-show="shown"
+                  x-transition:enter-end="opacity-100 translate-x-0"
+                  x-transition:enter-start="opacity-0 translate-x-10"
+                  x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                  x-ref="prev"
+                  x-on:click="embla.scrollPrev()"
+                  class="hover:bg-gray-50 h-44 md:flex lg:w-12 items-center justify-center flex-shrink-0 hidden w-8 transition-all duration-150 ease-in-out bg-white border rounded-md shadow-md"
+                >
+                  <img
+                    class="lg:size-7 size-5"
+                    src="icons/chevron-right.svg"
+                    alt="chevron-right"
+                  />
+                </button>
+
+                <button
+                  x-show="shown"
+                  x-transition:enter-end="opacity-100 translate-x-0"
+                  x-transition:enter-start="opacity-0 -translate-x-10"
+                  x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                  x-ref="next"
+                  x-on:click="embla.scrollNext()"
+                  class="hover:bg-gray-50 h-44 md:flex lg:w-12 items-center justify-center flex-shrink-0 order-3 hidden w-8 transition-all duration-150 ease-in-out bg-white border rounded-md shadow-md"
+                >
+                  <img
+                    class="lg:size-7 size-5"
+                    src="icons/chevron-left.svg"
+                    alt="chevron-left"
+                  />
+                </button>
+
+                <div x-ref="viewport" class="w-full overflow-hidden">
+                  <div class="flex justify-between py-2">
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[500ms]"
+                      class="lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                    >
+                      <div class="rounded-2xl overflow-hidden shadow-md">
+                        <div class="group relative w-full h-full">
+                          <img
+                            class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                            src="images/post-1.jpg"
+                            alt="post-1"
+                          />
+                          <div
+                            class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                          >
+                            <div
+                              class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                            >
+                              <h3 class="text-2xl font-bold text-white">
+                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                                المساحة
+                              </h3>
+                              <a
+                                href="#"
+                                class="hover:underline self-end text-lg font-bold text-white"
+                              >
+                                اقرأ أكثر
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[600ms]"
+                      class="lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                    >
+                      <div class="rounded-2xl overflow-hidden shadow-md">
+                        <div class="group relative w-full h-full">
+                          <img
+                            class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                            src="images/post-2.jpg"
+                            alt="post-2"
+                          />
+                          <div
+                            class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                          >
+                            <div
+                              class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                            >
+                              <h3 class="text-2xl font-bold text-white">
+                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                                المساحة
+                              </h3>
+                              <a
+                                href="#"
+                                class="hover:underline self-end text-lg font-bold text-white"
+                              >
+                                اقرأ أكثر
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                      class="lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                    >
+                      <div class="rounded-2xl overflow-hidden shadow-md">
+                        <div class="group relative w-full h-full">
+                          <img
+                            class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                            src="images/post-3.jpg"
+                            alt="post-3"
+                          />
+                          <div
+                            class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                          >
+                            <div
+                              class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                            >
+                              <h3 class="text-2xl font-bold text-white">
+                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                                المساحة
+                              </h3>
+                              <a
+                                href="#"
+                                class="hover:underline self-end text-lg font-bold text-white"
+                              >
+                                اقرأ أكثر
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end blog -->
+
+        <!-- our team -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[588px] lg:min-h-[539px] md:min-h-[520px] sm:min-h-[484px] min-h-[468px]"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div class="xl:gap-24 lg:gap-20 md:gap-16 flex flex-col gap-12">
+              <h2
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter="transform ease-out duration-300 delay-[100ms]"
+                class="text-rouge-500 xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold text-center"
+              >
+                فريقنا
+              </h2>
+              <div
+                x-data="{ embla: null }"
+                x-init="() => {
+                  embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+                }"
+                class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
+              >
+                <button
+                  x-show="shown"
+                  x-transition:enter-end="opacity-100 translate-x-0"
+                  x-transition:enter-start="opacity-0 translate-x-10"
+                  x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                  x-ref="prev"
+                  x-on:click="embla.scrollPrev()"
+                  class="hover:bg-gray-50 h-44 md:flex lg:w-12 items-center justify-center flex-shrink-0 hidden w-8 transition-all duration-150 ease-in-out bg-white border rounded-md shadow-md"
+                >
+                  <img
+                    class="lg:size-7 size-5"
+                    src="icons/chevron-right.svg"
+                    alt="chevron-right"
+                  />
+                </button>
+
+                <button
+                  x-show="shown"
+                  x-transition:enter-end="opacity-100 translate-x-0"
+                  x-transition:enter-start="opacity-0 -translate-x-10"
+                  x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                  x-ref="next"
+                  x-on:click="embla.scrollNext()"
+                  class="hover:bg-gray-50 h-44 md:flex lg:w-12 items-center justify-center flex-shrink-0 order-3 hidden w-8 transition-all duration-150 ease-in-out bg-white border rounded-md shadow-md"
+                >
+                  <img
+                    class="lg:size-7 size-5"
+                    src="icons/chevron-left.svg"
+                    alt="chevron-left"
+                  />
+                </button>
+
+                <div x-ref="viewport" class="w-full overflow-hidden">
+                  <div class="flex justify-between py-2">
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[500ms]"
+                      class="xl:basis-1/4 lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                    >
+                      <div class="rounded-2xl overflow-hidden shadow-md">
+                        <div class="group relative w-full h-full">
+                          <img
+                            class="group-hover:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                            src="images/member-1.jpg"
+                            alt="member-1"
+                          />
+                          <div
+                            class="bg-rouge-500 bg-opacity-90 group-hover:opacity-100 group-hover:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                          >
+                            <div
+                              class="flex flex-col items-center justify-end h-full gap-1 p-6"
+                            >
+                              <h3 class="text-2xl font-bold text-white">
+                                محمد صيام
+                              </h3>
+                              <h4 class="text-lg font-bold text-white">CEO</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[600ms]"
+                      class="xl:basis-1/4 lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                    >
+                      <div class="rounded-2xl overflow-hidden shadow-md">
+                        <div class="group relative w-full h-full">
+                          <img
+                            class="group-hover:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                            src="images/member-1.jpg"
+                            alt="member-1"
+                          />
+                          <div
+                            class="bg-rouge-500 bg-opacity-90 group-hover:opacity-100 group-hover:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                          >
+                            <div
+                              class="flex flex-col items-center justify-end h-full gap-1 p-6"
+                            >
+                              <h3 class="text-2xl font-bold text-white">
+                                محمد صيام
+                              </h3>
+                              <h4 class="text-lg font-bold text-white">CEO</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                      class="xl:basis-1/4 lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                    >
+                      <div class="rounded-2xl overflow-hidden shadow-md">
+                        <div class="group relative w-full h-full">
+                          <img
+                            class="group-hover:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                            src="images/member-1.jpg"
+                            alt="member-1"
+                          />
+                          <div
+                            class="bg-rouge-500 bg-opacity-90 group-hover:opacity-100 group-hover:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                          >
+                            <div
+                              class="flex flex-col items-center justify-end h-full gap-1 p-6"
+                            >
+                              <h3 class="text-2xl font-bold text-white">
+                                محمد صيام
+                              </h3>
+                              <h4 class="text-lg font-bold text-white">CEO</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[800ms]"
+                      class="xl:basis-1/4 lg:basis-1/3 md:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                    >
+                      <div class="rounded-2xl overflow-hidden shadow-md">
+                        <div class="group relative w-full h-full">
+                          <img
+                            class="group-hover:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                            src="images/member-1.jpg"
+                            alt="member-1"
+                          />
+                          <div
+                            class="bg-rouge-500 bg-opacity-90 group-hover:opacity-100 group-hover:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                          >
+                            <div
+                              class="flex flex-col items-center justify-end h-full gap-1 p-6"
+                            >
+                              <h3 class="text-2xl font-bold text-white">
+                                محمد صيام
+                              </h3>
+                              <h4 class="text-lg font-bold text-white">CEO</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end our team -->
+
+        <!-- reviews -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[662px] lg:min-h-[562px] md:min-h-[454px] sm:min-h-[350px] min-h-[366px]"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div class="xl:gap-24 lg:gap-20 md:gap-16 flex flex-col gap-12">
+              <h2
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter="transform ease-out duration-300 delay-[100ms]"
+                class="text-rouge-500 xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold text-center"
+              >
+                اراء العملاء
+              </h2>
+              <div
+                x-data="{ embla: null }"
+                x-init="() => {
+                  embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+                }"
+                class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
+              >
+                <button
+                  x-show="shown"
+                  x-transition:enter-end="opacity-100 translate-x-0"
+                  x-transition:enter-start="opacity-0 translate-x-10"
+                  x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                  x-ref="prev"
+                  x-on:click="embla.scrollPrev()"
+                  class="hover:bg-gray-50 h-44 md:flex lg:w-12 items-center justify-center flex-shrink-0 hidden w-8 transition-all duration-150 ease-in-out bg-white border rounded-md shadow-md"
+                >
+                  <img
+                    class="lg:size-7 size-5"
+                    src="icons/chevron-right.svg"
+                    alt="chevron-right"
+                  />
+                </button>
+
+                <button
+                  x-show="shown"
+                  x-transition:enter-end="opacity-100 translate-x-0"
+                  x-transition:enter-start="opacity-0 -translate-x-10"
+                  x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                  x-ref="next"
+                  x-on:click="embla.scrollNext()"
+                  class="hover:bg-gray-50 h-44 md:flex lg:w-12 items-center justify-center flex-shrink-0 order-3 hidden w-8 transition-all duration-150 ease-in-out bg-white border rounded-md shadow-md"
+                >
+                  <img
+                    class="lg:size-7 size-5"
+                    src="icons/chevron-left.svg"
+                    alt="chevron-left"
+                  />
+                </button>
+
+                <div x-ref="viewport" class="w-full overflow-hidden">
+                  <div class="flex justify-between py-2">
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[500ms]"
+                      class="lg:basis-1/2 basis-full flex-shrink-0 px-2"
+                    >
+                      <div class="max-w-lg mx-auto">
+                        <div
+                          class="rounded-2xl w-full md:px-6 md:py-5 py-3 px-4 overflow-hidden bg-white shadow-md border border-[#D6D6D6]"
+                        >
+                          <div class="xl:gap-8 lg:gap-6 flex flex-col gap-4">
+                            <div
+                              class="xl:gap-5 lg:gap-4 flex items-center gap-2"
+                            >
+                              <div
+                                class="xl:size-28 lg:size-24 md:size-20 size-16 overflow-hidden rounded-full"
+                              >
+                                <img
+                                  class="object-scale-down w-full h-full"
+                                  loading="lazy"
+                                  src="images/member-1.jpg"
+                                  alt="member-1"
+                                />
+                              </div>
+                              <div class="md:gap-2 flex flex-col">
+                                <h3
+                                  class="xl:text-3xl lg:text-2xl md:text-xl text-base font-medium text-black"
+                                >
+                                  سامي السلمي
+                                </h3>
+                                <h4
+                                  class="text-[#8B8B8B] font-light xl:text-2xl lg:text-xl md:text-lg text-xs"
+                                >
+                                  مدير أدارة
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                              <p
+                                class="xl:text-2xl lg:text-xl md:text-lg text-xs font-medium text-justify text-black"
+                              >
+                                “أعتقد أن منصة مناسب هي شركة رائدة في مجال إنتاج
+                                المحتوى الإعلامي وتتميز بالإبداع في جميع
+                                أعمالها”
+                              </p>
+                              <div class="flex justify-end">
+                                <a
+                                  class="text-apple-500 xl:text-2xl lg:text-xl md:text-lg text-xs font-bold underline"
+                                  href="#"
+                                >
+                                  عرض الاصلية
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-300 delay-[600ms]"
+                      class="lg:basis-1/2 basis-full flex-shrink-0 px-2"
+                    >
+                      <div class="max-w-lg mx-auto">
+                        <div
+                          class="rounded-2xl w-full md:px-6 md:py-5 py-3 px-4 overflow-hidden bg-white shadow-md border border-[#D6D6D6]"
+                        >
+                          <div class="xl:gap-8 lg:gap-6 flex flex-col gap-4">
+                            <div
+                              class="xl:gap-5 lg:gap-4 flex items-center gap-2"
+                            >
+                              <div
+                                class="xl:size-28 lg:size-24 md:size-20 size-16 overflow-hidden rounded-full"
+                              >
+                                <img
+                                  class="object-scale-down w-full h-full"
+                                  loading="lazy"
+                                  src="images/member-1.jpg"
+                                  alt="member-1"
+                                />
+                              </div>
+                              <div class="md:gap-2 flex flex-col">
+                                <h3
+                                  class="xl:text-3xl lg:text-2xl md:text-xl text-base font-medium text-black"
+                                >
+                                  سامي السلمي
+                                </h3>
+                                <h4
+                                  class="text-[#8B8B8B] font-light xl:text-2xl lg:text-xl md:text-lg text-xs"
+                                >
+                                  مدير أدارة
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                              <p
+                                class="xl:text-2xl lg:text-xl md:text-lg text-xs font-medium text-justify text-black"
+                              >
+                                “أعتقد أن منصة مناسب هي شركة رائدة في مجال إنتاج
+                                المحتوى الإعلامي وتتميز بالإبداع في جميع
+                                أعمالها”
+                              </p>
+                              <div class="flex justify-end">
+                                <a
+                                  class="text-apple-500 xl:text-2xl lg:text-xl md:text-lg text-xs font-bold underline"
+                                  href="#"
+                                >
+                                  عرض الاصلية
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end reviews -->
+
+        <!-- contact form -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div class="xl:gap-16 lg:gap-12 md:gap-10 flex flex-col gap-8">
+              <div class="flex flex-col gap-5">
+                <h2
+                  x-show="shown"
+                  x-transition:enter-end="opacity-100 translate-y-0"
+                  x-transition:enter-start="opacity-0 -translate-y-10"
+                  x-transition:enter="transform ease-out duration-300 delay-[100ms]"
+                  class="text-rouge-500 md:text-3xl text-2xl font-bold text-center"
+                >
+                  تواصل معنا
+                </h2>
+                <p
+                  x-show="shown"
+                  x-transition:enter-end="opacity-100 translate-y-0"
+                  x-transition:enter-start="opacity-0 -translate-y-10"
+                  x-transition:enter="transform ease-out duration-300 delay-[300ms]"
+                  class="md:text-xl text-lg font-medium text-center text-black"
+                >
+                  تواصل معنا واخبرنا كل ما تريده عن الخدمة وسوف تتلقي الرد في
+                  اسرع وقت
+                </p>
+              </div>
+
+              <form
+                class="xl:gap-16 lg:gap-12 md:gap-10 flex flex-col gap-8"
+                action="post"
+              >
+                <div class="md:gap-8 grid grid-cols-6 gap-4">
+                  <div
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 rotate-0"
+                    x-transition:enter-start="opacity-0 -rotate-12"
+                    x-transition:enter="transform ease-out duration-300 delay-[500ms]"
+                    class="md:col-span-3 col-span-6 origin-top-right"
+                  >
+                    <div class="md:gap-2 flex flex-col gap-1">
+                      <label
+                        for="name"
+                        class="md:text-xl text-lg font-medium text-black"
+                      >
+                        الاسم
+                      </label>
+                      <input
+                        autocomplete="name"
+                        id="name"
+                        type="text"
+                        class="md:px-8 px-6 md:py-3 py-2 md:text-xl text-lg w-full border focus:outline-none focus:ring-2 border-gray-200 focus:ring-rouge-500 focus:ring-offset-1 focus:border-rouge-500 text-black bg-[#EDEDED] rounded-lg"
+                        placeholder="الاسم"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 rotate-0"
+                    x-transition:enter-start="opacity-0 -rotate-12"
+                    x-transition:enter="transform ease-out duration-300 delay-[600ms]"
+                    class="md:col-span-3 col-span-6 origin-top-right"
+                  >
+                    <div class="md:gap-2 flex flex-col gap-1">
+                      <label
+                        for="website"
+                        class="md:text-xl text-lg font-medium text-black"
+                      >
+                        الموقع الالكتروني
+                      </label>
+                      <input
+                        id="website"
+                        type="url"
+                        class="md:px-8 px-6 md:py-3 py-2 md:text-xl text-lg w-full border focus:outline-none focus:ring-2 border-gray-200 focus:ring-rouge-500 focus:ring-offset-1 focus:border-rouge-500 text-black bg-[#EDEDED] rounded-lg"
+                        placeholder="الموقع الالكتروني"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 rotate-0"
+                    x-transition:enter-start="opacity-0 -rotate-12"
+                    x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                    class="md:col-span-3 col-span-6 origin-top-right"
+                  >
+                    <div class="md:gap-2 flex flex-col gap-1">
+                      <label
+                        for="email"
+                        class="md:text-xl text-lg font-medium text-black"
+                      >
+                        البريد الالكتروني
+                      </label>
+                      <input
+                        autocomplete="email"
+                        id="email"
+                        type="email"
+                        class="md:px-8 px-6 md:py-3 py-2 md:text-xl text-lg w-full border focus:outline-none focus:ring-2 border-gray-200 focus:ring-rouge-500 focus:ring-offset-1 focus:border-rouge-500 text-black bg-[#EDEDED] rounded-lg"
+                        placeholder="البريد الالكتروني"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 rotate-0"
+                    x-transition:enter-start="opacity-0 -rotate-12"
+                    x-transition:enter="transform ease-out duration-300 delay-[800ms]"
+                    class="md:col-span-3 col-span-6 origin-top-right"
+                  >
+                    <div class="md:gap-2 flex flex-col gap-1">
+                      <label
+                        for="phone"
+                        class="md:text-xl text-lg font-medium text-black"
+                      >
+                        رقم الهاتف
+                      </label>
+                      <input
+                        autocomplete="tel"
+                        id="phone"
+                        type="tel"
+                        class="md:px-8 px-6 md:py-3 py-2 md:text-xl text-lg w-full border focus:outline-none focus:ring-2 border-gray-200 focus:ring-rouge-500 focus:ring-offset-1 focus:border-rouge-500 text-black bg-[#EDEDED] rounded-lg"
+                        placeholder="رقم الهاتف"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 rotate-0"
+                    x-transition:enter-start="opacity-0 -rotate-12"
+                    x-transition:enter="transform ease-out duration-300 delay-[900ms]"
+                    class="md:col-span-3 col-span-6 origin-top-right"
+                  >
+                    <div class="md:gap-2 flex flex-col gap-1">
+                      <label
+                        for="service"
+                        class="md:text-xl text-lg font-medium text-black"
+                      >
+                        الخدمة
+                      </label>
+                      <select
+                        name="service"
+                        id="service"
+                        class="md:py-3 py-2 md:text-xl text-lg w-full border focus:outline-none focus:ring-2 border-gray-200 focus:ring-rouge-500 focus:ring-offset-1 focus:border-rouge-500 text-black bg-[#EDEDED] rounded-lg"
+                      >
+                        <option value="web-design">تصميم مواقع</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 rotate-0"
+                    x-transition:enter-start="opacity-0 -rotate-12"
+                    x-transition:enter="transform ease-out duration-300 delay-[1000ms]"
+                    class="md:col-span-3 col-span-6 origin-top-right"
+                  >
+                    <div class="md:gap-2 flex flex-col gap-1">
+                      <label
+                        for="message"
+                        class="md:text-xl text-lg font-medium text-black"
+                      >
+                        الرسالة
+                      </label>
+                      <textarea
+                        rows="1"
+                        name="message"
+                        id="message"
+                        placeholder="الرسالة"
+                        class="md:px-8 px-6 md:py-3 py-2 md:text-xl text-lg w-full border focus:outline-none focus:ring-2 border-gray-200 focus:ring-rouge-500 focus:ring-offset-1 focus:border-rouge-500 text-black bg-[#EDEDED] rounded-lg"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex justify-center">
+                  <button
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-300 delay-[1100ms]"
+                    class="hover:text-rouge-500 border-rouge-500 bg-rouge-500 hover:bg-white md:py-3 md:text-xl inline-flex px-20 py-2 text-lg font-bold text-white transition-all duration-150 ease-in-out border-2 rounded-lg"
+                    href="#"
+                  >
+                    ارسل
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end contact form -->
+
+        <!-- background pattern -->
+        <div
+          class="bg-[url('images/pattern.png')] xl:bg-[0_-50px] lg:bg-[0_-40px] md:bg-[0_-30px] bg-[0_-20px] bg-[length:100%] absolute inset-0 -z-10 bg-repeat"
+        ></div>
+        <!-- end background pattern -->
+      </div>
+      <!-- end content -->
+
+      <!-- footer -->
+      <div
+        class="bg-rouge-500 w-full xl:min-h-[390px] lg:min-h-[394px] md:min-h-[628px] sm:min-h-[823px] min-h-[851px]"
+        x-data="{ shown: false }"
+        x-intersect="shown = true"
+      >
+        <div class="md:px-4 container px-2 mx-auto">
+          <div class="md:py-16 flex justify-center py-12">
+            <div class="md:gap-x-4 gap-y-10 gap-x-10 grid grid-cols-6">
+              <div class="lg:col-span-2 md:col-span-4 col-span-6">
+                <div class="lg:gap-16 flex flex-col gap-6">
+                  <div class="flex flex-col gap-4">
+                    <h2
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:enter-start="opacity-0 -translate-y-10"
+                      x-transition:enter="transform ease-out duration-150"
+                      class="text-2xl font-bold text-white"
+                    >
+                      تواصل معنا
+                    </h2>
+                    <div class="flex flex-col gap-2">
+                      <div
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 translate-x-0"
+                        x-transition:enter-start="opacity-0 translate-x-10"
+                        x-transition:enter="transform ease-out duration-150 delay-[100ms]"
+                        class="group flex items-center gap-3"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-4 group-hover:text-rouge-700 text-white transition-all duration-150 ease-in-out fill-current"
+                          src="icons/email.svg"
+                          alt="email"
+                        />
+                        <a
+                          class="group-hover:text-rouge-700 text-base font-medium text-white transition-all duration-150 ease-in-out"
+                          href="mailto:mail@almonasib.org"
+                        >
+                          mail@almonasib.org
+                        </a>
+                      </div>
+                      <div
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 translate-x-0"
+                        x-transition:enter-start="opacity-0 translate-x-10"
+                        x-transition:enter="transform ease-out duration-150 delay-[150ms]"
+                        class="group flex items-center gap-3"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-4 group-hover:text-rouge-700 text-white transition-all duration-150 ease-in-out fill-current"
+                          src="icons/phone.svg"
+                          alt="phone"
+                        />
+                        <a
+                          class="group-hover:text-rouge-700 text-base font-medium text-white transition-all duration-150 ease-in-out"
+                          href="tel:0598103750"
+                        >
+                          0598103750
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <form class="flex flex-col gap-4">
+                    <h3
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:enter-start="opacity-0 -translate-y-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                      class="text-xl font-medium text-white"
+                    >
+                      اشترك ليصلك كل جديد
+                    </h3>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[400ms]"
+                      class="group focus-within:ring-white focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-rouge-500 relative flex p-2 border border-white rounded-lg"
+                    >
+                      <input
+                        id="newsletter-email"
+                        name="newsletter-email"
+                        class="focus:outline-none border-0 p-1 focus:ring-0 flex-grow placeholder:text-[#ffffff80] text-white bg-transparent"
+                        type="text"
+                        placeholder="البريد الالكتروني"
+                      />
+                      <button
+                        type="submit"
+                        class="text-rouge-500 end-2 hover:bg-rouge-100 hover:text-white xl:px-8 lg:px-6 absolute px-4 py-1 font-medium transition-all duration-150 ease-in-out bg-white rounded-md"
+                      >
+                        اشترك
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="lg:col-span-2 md:col-span-2 col-span-6">
+                <div class="flex flex-col gap-5">
+                  <h2
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[550ms]"
+                    class="text-2xl font-bold text-white"
+                  >
+                    اللينكات السريعة
+                  </h2>
+                  <div class="flex flex-col gap-2">
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[650ms]"
+                      class="group flex items-center gap-4"
+                    >
+                      <div
+                        class="size-4 group-hover:bg-rouge-700 transition-all duration-150 ease-in-out bg-white rounded-md"
+                      ></div>
+                      <a
+                        class="group-hover:text-rouge-700 text-xl font-medium text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        الرئيسية
+                      </a>
+                    </div>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[750ms]"
+                      class="group flex items-center gap-4"
+                    >
+                      <div
+                        class="size-4 group-hover:bg-rouge-700 transition-all duration-150 ease-in-out bg-white rounded-md"
+                      ></div>
+                      <a
+                        class="group-hover:text-rouge-700 text-xl font-medium text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        المؤسسات المانحة
+                      </a>
+                    </div>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[850ms]"
+                      class="group flex items-center gap-4"
+                    >
+                      <div
+                        class="size-4 group-hover:bg-rouge-700 transition-all duration-150 ease-in-out bg-white rounded-md"
+                      ></div>
+                      <a
+                        class="group-hover:text-rouge-700 text-xl font-medium text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        معلومات عنا
+                      </a>
+                    </div>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[950ms]"
+                      class="group flex items-center gap-4"
+                    >
+                      <div
+                        class="size-4 group-hover:bg-rouge-700 transition-all duration-150 ease-in-out bg-white rounded-md"
+                      ></div>
+                      <a
+                        class="group-hover:text-rouge-700 text-xl font-medium text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        اتصل بنا
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="lg:col-span-2 flex items-center justify-center col-span-6"
+              >
+                <div class="flex flex-col items-center gap-4">
+                  <div class="w-48">
+                    <img
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-150 delay-[1100ms]"
+                      class="object-scale-down w-full h-full"
+                      src="images/logo-white.svg"
+                      alt="logo-white"
+                    />
+                  </div>
+
+                  <div class="flex flex-col gap-10">
+                    <p
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:enter-start="opacity-0 -translate-y-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[1200ms]"
+                      class="text-xl font-bold text-center text-white"
+                    >
+                      مؤسسة تسعى لتنمية وتمكين القطاع غير الربحي
+                    </p>
+
+                    <div class="flex items-center justify-center gap-6">
+                      <a
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-150 delay-[1300ms]"
+                        class="hover:text-[#075E54] text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-9 fill-current"
+                          src="icons/whatsapp.svg"
+                          alt="whatsapp"
+                        />
+                      </a>
+                      <a
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-150 delay-[1350ms]"
+                        class="hover:text-[#1DA1F2] text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-9 fill-current"
+                          src="icons/twitter.svg"
+                          alt="twitter"
+                        />
+                      </a>
+                      <a
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-150 delay-[1400ms]"
+                        class="hover:text-[#CD201F] text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-9 fill-current"
+                          src="icons/youtube.svg"
+                          alt="youtube"
+                        />
+                      </a>
+                      <button
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-150 delay-[1450ms]"
+                        x-data
+                        x-tooltip="{ content: () => $refs.template.innerHTML, allowHTML: true, appendTo: $root }"
+                        x-on:click="openSearch"
+                        class="hover:text-rouge-700 text-white transition-all duration-150 ease-in-out"
+                        type="button"
+                      >
+                        <template x-ref="template">
+                          <span dir="ltr">Ctrl + /</span>
+                        </template>
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-9 fill-current"
+                          src="icons/search.svg"
+                          alt="search"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end footer -->
+    </div>
+    <!-- end wrapper -->
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

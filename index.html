@@ -822,7 +822,7 @@
         <div
           x-data="{ shown: false }"
           x-intersect="shown = true"
-          class="xl:py-20 lg:py-16 md:py-12 py-10"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[2260px] lg:min-h-[1814px] md:min-h-[1512px] sm:min-h-[2179px] min-h-[2345px]"
         >
           <div class="md:px-4 container px-2 mx-auto">
             <div class="xl:gap-16 lg:gap-12 md:gap-10 flex flex-col gap-6">
@@ -835,7 +835,7 @@
               >
                 خدماتنا
               </h2>
-              <div class="md:gap-20 flex flex-col gap-8">
+              <div class="xl:gap-28 lg:gap-24 md:gap-20 flex flex-col gap-8">
                 <div class="xl:gap-11 lg:gap-9 md:gap-7 grid grid-cols-9 gap-5">
                   <div class="md:col-span-4 col-span-9">
                     <div class="md:max-w-none max-w-xs mx-auto">
@@ -855,14 +855,12 @@
                       <div
                         class="md:justify-start flex items-center justify-center gap-6"
                       >
-                        <div
-                          x-show="shown"
-                          x-transition:enter-end="opacity-100 translate-x-0"
-                          x-transition:enter-start="opacity-0 translate-x-10"
-                          x-transition:enter="transform ease-out duration-150 delay-[500ms]"
-                          class="xl:size-24 lg:size-20 md:size-16 size-12"
-                        >
+                        <div class="xl:size-24 lg:size-20 md:size-16 size-12">
                           <img
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-x-0"
+                            x-transition:enter-start="opacity-0 translate-x-10"
+                            x-transition:enter="transform ease-out duration-150 delay-[500ms]"
                             class="object-scale-down w-full h-full"
                             src="images/planning.png"
                             alt="planning"
@@ -910,6 +908,226 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="xl:gap-11 lg:gap-9 md:gap-7 grid grid-cols-9 gap-5">
+                  <div class="md:col-span-5 col-span-9">
+                    <div class="xl:gap-8 md:gap-5 flex flex-col gap-4">
+                      <div
+                        class="md:justify-start flex items-center justify-center gap-6"
+                      >
+                        <div
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-x-0"
+                          x-transition:enter-start="opacity-0 translate-x-10"
+                          x-transition:enter="transform ease-out duration-150 delay-[1200ms]"
+                          class="xl:size-24 lg:size-20 md:size-16 size-12"
+                        >
+                          <img
+                            class="object-scale-down w-full h-full"
+                            src="images/marketing.png"
+                            alt="marketing"
+                          />
+                        </div>
+                        <h3
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-x-0"
+                          x-transition:enter-start="opacity-0 translate-x-10"
+                          x-transition:enter="transform ease-out duration-150 delay-[1300ms]"
+                          class="xl:text-5xl lg:text-4xl md:text-3xl md:text-start text-2xl font-bold text-center text-black"
+                        >
+                          تسويق المشاريع
+                          <br />
+                          على الجهات المانحة
+                        </h3>
+                      </div>
+                      <div class="lg:pe-12 md:gap-2 flex flex-col gap-5">
+                        <p
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[1400ms]"
+                          class="!leading-normal font-extralight xl:text-3xl lg:text-2xl md:text-xl md:text-justify text-lg text-center text-black"
+                        >
+                          يتمتع فريق عمل المؤسسة بالاحترافية العالية على تسويق
+                          المشاريع على المانحين بكل احترافية وتميز، مع القدرة
+                          على تكييف المشاريع بناء على بوابات المنح المختلفة .
+                        </p>
+
+                        <div class="md:justify-end flex justify-center">
+                          <a
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:enter-start="opacity-0 -translate-y-10"
+                            x-transition:enter="transform ease-out duration-300 delay-[1500ms]"
+                            class="text-apple-500 border-apple-500 md:rounded-2xl md:px-7 hover:bg-apple-500 hover:text-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold transition-all duration-150 ease-in-out border-2 shadow-md"
+                            href="#"
+                          >
+                            قراءة المزيد
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="md:col-span-4 md:order-2 -order-1 col-span-9">
+                    <div class="md:max-w-none max-w-xs mx-auto">
+                      <img
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-300 delay-[1400ms]"
+                        class="object-scale-down w-full h-full"
+                        src="images/service-1.jpg"
+                        alt="service-1"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="xl:gap-11 lg:gap-9 md:gap-7 grid grid-cols-9 gap-5">
+                  <div class="md:col-span-4 col-span-9">
+                    <div class="md:max-w-none max-w-xs mx-auto">
+                      <img
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-300 delay-[2100ms]"
+                        class="object-scale-down w-full h-full"
+                        src="images/service-1.jpg"
+                        alt="service-1"
+                      />
+                    </div>
+                  </div>
+                  <div class="md:col-span-5 col-span-9">
+                    <div class="xl:gap-8 md:gap-5 flex flex-col gap-4">
+                      <div
+                        class="md:justify-start flex items-center justify-center gap-6"
+                      >
+                        <div
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-x-0"
+                          x-transition:enter-start="opacity-0 translate-x-10"
+                          x-transition:enter="transform ease-out duration-150 delay-[1900ms]"
+                          class="xl:size-24 lg:size-20 md:size-16 size-12"
+                        >
+                          <img
+                            class="object-scale-down w-full h-full"
+                            src="images/designing.png"
+                            alt="designing"
+                          />
+                        </div>
+                        <h3
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-x-0"
+                          x-transition:enter-start="opacity-0 translate-x-10"
+                          x-transition:enter="transform ease-out duration-150 delay-[2000ms]"
+                          class="xl:text-5xl lg:text-4xl md:text-3xl md:text-start text-2xl font-bold text-center text-black"
+                        >
+                          تصميم هوية
+                          <br />
+                          بصرية وجرافيك
+                        </h3>
+                      </div>
+                      <div class="lg:pe-12 md:gap-2 flex flex-col gap-5">
+                        <p
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[2100ms]"
+                          class="!leading-normal font-extralight xl:text-3xl lg:text-2xl md:text-xl md:text-justify text-lg text-center text-black"
+                        >
+                          تقديم حلول تصميم هوية بصرية وجرافيك مبتكرة تلبي
+                          احتياجات عملك وتسهم في بناء هوية قوية وملفتة. سواء كنت
+                          تحتاج إلى تطوير هوية كاملة من الصفر أو تحديث هوية
+                          موجودة،
+                        </p>
+
+                        <div class="md:justify-end flex justify-center">
+                          <a
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:enter-start="opacity-0 -translate-y-10"
+                            x-transition:enter="transform ease-out duration-300 delay-[2200ms]"
+                            class="text-apple-500 border-apple-500 md:rounded-2xl md:px-7 hover:bg-apple-500 hover:text-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold transition-all duration-150 ease-in-out border-2 shadow-md"
+                            href="#"
+                          >
+                            قراءة المزيد
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="xl:gap-11 lg:gap-9 md:gap-7 grid grid-cols-9 gap-5">
+                  <div class="md:col-span-5 col-span-9">
+                    <div class="xl:gap-8 md:gap-5 flex flex-col gap-4">
+                      <div
+                        class="md:justify-start flex items-center justify-center gap-6"
+                      >
+                        <div class="xl:size-24 lg:size-20 md:size-16 size-12">
+                          <img
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-x-0"
+                            x-transition:enter-start="opacity-0 translate-x-10"
+                            x-transition:enter="transform ease-out duration-150 delay-[2600ms]"
+                            class="object-scale-down w-full h-full"
+                            src="images/digital-marketing.png"
+                            alt="digital-marketing"
+                          />
+                        </div>
+                        <h3
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-x-0"
+                          x-transition:enter-start="opacity-0 translate-x-10"
+                          x-transition:enter="transform ease-out duration-150 delay-[2700ms]"
+                          class="xl:text-5xl lg:text-4xl md:text-3xl md:text-start text-2xl font-bold text-center text-black"
+                        >
+                          تسويق ألكتروني
+                        </h3>
+                      </div>
+                      <div class="lg:pe-12 md:gap-2 flex flex-col gap-5">
+                        <p
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[2800ms]"
+                          class="!leading-normal font-extralight xl:text-3xl lg:text-2xl md:text-xl md:text-justify text-lg text-center text-black"
+                        >
+                          حلول تسويق إلكتروني متكاملة لمساعدة عملك على النمو
+                          والوصول إلى جمهور أوسع عبر الإنترنت. نعتمد على
+                          استراتيجيات تسويق مبتكرة تعتمد على تحليل السوق
+                          والجمهور المستهدف .
+                        </p>
+
+                        <div class="md:justify-end flex justify-center">
+                          <a
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:enter-start="opacity-0 -translate-y-10"
+                            x-transition:enter="transform ease-out duration-300 delay-[2900ms]"
+                            class="text-apple-500 border-apple-500 md:rounded-2xl md:px-7 hover:bg-apple-500 hover:text-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold transition-all duration-150 ease-in-out border-2 shadow-md"
+                            href="#"
+                          >
+                            قراءة المزيد
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="md:col-span-4 md:order-2 -order-1 col-span-9">
+                    <div class="md:max-w-none max-w-xs mx-auto">
+                      <img
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-300 delay-[2800ms]"
+                        class="object-scale-down w-full h-full"
+                        src="images/service-1.jpg"
+                        alt="service-1"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -920,7 +1138,7 @@
         <div
           x-data="{ shown: false }"
           x-intersect="shown = true"
-          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[1262px] lg:min-h-[1063px] md:min-h-[823px] sm:min-h-[1283px] min-h-[747px]"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[1262px] lg:min-h-[1063px] md:min-h-[1550px] sm:min-h-[2727px] min-h-[2224px]"
         >
           <div class="md:px-4 container px-2 mx-auto">
             <div class="xl:gap-24 lg:gap-20 md:gap-16 flex flex-col gap-12">
@@ -1959,7 +2177,7 @@
                                 <a
                                   class="text-apple-500 xl:text-2xl lg:text-xl md:text-lg text-xs font-bold underline"
                                   href="images/member-1.jpg"
-                                  data-fslightbox
+                                  data-fslightbox="1"
                                 >
                                   عرض الاصلية
                                 </a>
@@ -2020,7 +2238,7 @@
                                 <a
                                   class="text-apple-500 xl:text-2xl lg:text-xl md:text-lg text-xs font-bold underline"
                                   href="images/member-1.jpg"
-                                  data-fslightbox
+                                  data-fslightbox="2"
                                 >
                                   عرض الاصلية
                                 </a>

@@ -4,12 +4,14 @@ window.EmblaCarousel = EmblaCarousel;
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
 import focus from "@alpinejs/focus";
-import Tooltip from "@ryangjchandler/alpine-tooltip";
+
+import "fslightbox";
+// import Tooltip from "@ryangjchandler/alpine-tooltip";
 // import Lightbox from "@cloudmesh.dev/alpine-lightbox";
-import "tippy.js/dist/tippy.css";
+// import "tippy.js/dist/tippy.css";
 
 // Alpine.plugin(Lightbox);
-Alpine.plugin(Tooltip);
+// Alpine.plugin(Tooltip);
 Alpine.plugin(focus);
 Alpine.plugin(intersect);
 window.Alpine = Alpine;

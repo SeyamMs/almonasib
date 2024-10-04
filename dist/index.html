@@ -5,21 +5,21 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="https://seyamms.github.io/almonasib/assets/apple-touch-icon-Ck9OjS-d.png"
+      href="https://seyamms.github.io/almonasib/images/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="https://seyamms.github.io/almonasib/assets/favicon-32x32-CDQhi5XR.png"
+      href="https://seyamms.github.io/almonasib/images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="https://seyamms.github.io/almonasib/assets/favicon-16x16-fL0rNFgw.png"
+      href="https://seyamms.github.io/almonasib/images/favicon-16x16.png"
     />
-    <link rel="manifest" href="https://seyamms.github.io/almonasib/assets/site-BiCTMwxN.webmanifest" />
+    <link rel="manifest" href="https://seyamms.github.io/almonasib/images/site.webmanifest" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -46,7 +46,7 @@
     <meta property="og:locale" content="ar_SA" />
     <meta property="og:url" content="" />
     <meta property="og:site_name" content="مؤسسة المناسب" />
-    <meta property="og:image" content="images/sharing-poster.jpg" />
+    <meta property="og:image" content="https://seyamms.github.io/almonasib/images/sharing-poster.jpg" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:width" content="1200" />
 
@@ -56,9 +56,9 @@
     <meta name="twitter:description" content="" />
     <meta name="twitter:creator" content="@SeyamMs" />
     <meta name="twitter:url" content="#" />
-    <meta name="twitter:image" content="images/sharing-poster.jpg" />
-    <script type="module" crossorigin src="https://seyamms.github.io/almonasib/assets/index-Br08fxtq.js"></script>
-    <link rel="stylesheet" crossorigin href="https://seyamms.github.io/almonasib/assets/index-Du9gCBaA.css">
+    <meta name="twitter:image" content="https://seyamms.github.io/almonasib/images/sharing-poster.jpg" />
+    <script type="module" crossorigin src="https://seyamms.github.io/almonasib/assets/main-CDLAVIZF.js"></script>
+    <link rel="stylesheet" crossorigin href="https://seyamms.github.io/almonasib/assets/main-CHxMueGW.css">
   </head>
 
   <body
@@ -147,7 +147,7 @@
                   </template> -->
                   <img
                     class="lg:size-7 size-6"
-                    src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%20width='16'%20height='16'%3e%3cpath%20fill-rule='evenodd'%20d='M8.22%202.97a.75.75%200%20011.06%200l4.25%204.25a.75.75%200%20010%201.06l-4.25%204.25a.75.75%200%2001-1.06-1.06l2.97-2.97H3.75a.75.75%200%20010-1.5h7.44L8.22%204.03a.75.75%200%20010-1.06z'%3e%3c/path%3e%3c/svg%3e"
+                    src="https://seyamms.github.io/almonasib/icons/back.svg"
                     alt="back"
                   />
                 </button>
@@ -165,24 +165,26 @@
                 class="lg:w-28 scale w-16 transition-all duration-150 ease-in-out"
                 :class="{'lg:w-28': !small, 'lg:w-16': small}"
               >
-                <img
-                  x-show="shown && menu"
-                  x-transition:enter-end="opacity-100 scale-100"
-                  x-transition:enter-start="opacity-0 scale-50"
-                  x-transition:enter="transform ease-out duration-150 delay-[100ms]"
-                  x-transition:leave-end="opacity-0 scale-50"
-                  x-transition:leave-start="opacity-100 scale-100"
-                  x-transition:leave="transform ease-in duration-150"
-                  class="object-scale-down w-full h-full"
-                  src="data:image/svg+xml,%3csvg%20width='312'%20height='192'%20viewBox='0%200%20312%20192'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M155.867%2058.0957L191.292%2095.9998L155.867%20133.904L120.443%2095.9998L155.867%2058.0957Z'%20fill='%23E3BE54'/%3e%3cpath%20d='M89.6236%200L144.531%2058.0959L108.753%2096L143.114%20135.321L89.6236%20192L0%2096L89.6236%200Z'%20fill='%239F4289'/%3e%3cpath%20d='M222.111%200L167.203%2058.0959L202.982%2096L168.62%20135.321L222.111%20192L311.734%2096L222.111%200Z'%20fill='%2356AA48'/%3e%3c/svg%3e"
-                  alt="logo"
-                />
+                <a href="/">
+                  <img
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[100ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150"
+                    class="object-scale-down w-full h-full"
+                    src="https://seyamms.github.io/almonasib/images/logo.svg"
+                    alt="logo"
+                  />
+                </a>
               </div>
 
               <div class="lg:flex hidden items-center gap-[34px]">
                 <a
                   class="text-[#313131] hover:text-rouge-500 flex relative font-medium text-xl w-max"
-                  href="#"
+                  href="/"
                 >
                   <span
                     x-show="shown && menu"
@@ -279,7 +281,7 @@
                     <img
                       onload="ImgToSvg(this)"
                       class="md:size-7 size-6 fill-current"
-                      src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='23.954px'%20height='24.074px'%20viewBox='0%200%2023.954%2024.074'%20enable-background='new%200%200%2023.954%2024.074'%20xml:space='preserve'%3e%3cpath%20d='M18.591,14.104l-3.631-1.815c-0.096-0.095-0.189-0.095-0.382-0.095c-0.096,0-0.19,0-0.286,0.095l-1.72,1.146%20c-0.859-0.478-1.624-1.146-2.102-2.102l1.146-1.72c0.096-0.096,0.096-0.191,0.096-0.287s0-0.191-0.096-0.382L9.897,5.41%20c0-0.095-0.095-0.191-0.191-0.287C9.515,5.028,9.419,5.028,9.324,5.028c-1.146,0-2.198,0.478-3.057,1.242%20c-0.764,0.86-1.242,1.911-1.242,3.057c0,2.58,1.051,5.063,2.866,6.878c1.815,1.815,4.299,2.867,6.879,2.867%20c1.146,0,2.196-0.479,3.056-1.243c0.765-0.765,1.242-1.911,1.242-3.057c0-0.097,0-0.287-0.096-0.383%20C18.781,14.199,18.687,14.199,18.591,14.104z%20M14.674,17.639c-2.197,0-4.299-0.86-5.923-2.484c-1.624-1.624-2.483-3.63-2.483-5.923%20c0-0.669,0.286-1.433,0.764-1.911c0.478-0.477,1.146-0.859,1.815-0.955l1.433,2.866l-1.146,1.815%20c-0.095,0.096-0.095,0.191-0.095,0.287c0,0.095,0,0.191,0.095,0.287c0.573,1.433,1.815,2.674,3.248,3.249%20c0.096,0,0.191,0.095,0.287,0.095c0.095,0,0.191,0,0.286-0.095l1.72-1.147l2.865,1.434c-0.095,0.668-0.477,1.338-0.954,1.815%20C16.106,17.351,15.438,17.639,14.674,17.639z%20M11.999,0.537c-2.006,0-3.917,0.478-5.637,1.529c-1.72,1.051-3.153,2.389-4.203,4.108%20c-1.051,1.72-1.625,3.631-1.625,5.637c0,2.007,0.478,3.918,1.434,5.732L0.63,21.46c-0.096,0.19-0.096,0.478-0.096,0.764%20s0.191,0.573,0.382,0.765c0.287,0.191,0.573,0.382,0.86,0.478s0.573,0.096,0.86,0l3.917-1.338c1.529,0.86,3.249,1.338,4.968,1.338%20c1.72,0.096,3.438-0.286,5.063-0.956c1.623-0.669,3.058-1.719,4.107-3.057c1.146-1.337,1.911-2.866,2.388-4.585%20c0.383-1.72,0.478-3.44,0.097-5.16c-0.383-1.719-1.146-3.343-2.197-4.681s-2.389-2.58-3.917-3.344%20C15.438,0.919,13.718,0.537,11.999,0.537z%20M11.999,21.795c-1.755,0-3.418-0.462-4.896-1.293c-0.092-0.094-0.185-0.094-0.37-0.094%20c-0.091,0-0.185,0-0.185,0l-4.064,1.387H2.391c0,0-0.092,0-0.092-0.092L2.207,21.61v-0.094l1.386-4.063c0-0.093,0-0.186,0-0.278%20c0-0.091,0-0.184-0.093-0.276c-1.108-1.848-1.478-4.064-1.201-6.19C2.576,8.583,3.592,6.551,5.07,5.073%20c1.478-1.478,3.51-2.494,5.636-2.771c2.126-0.277,4.342,0.186,6.19,1.201c1.847,1.109,3.325,2.772,4.156,4.712%20c0.832,2.033,1.017,4.157,0.371,6.284c-0.556,2.123-1.756,3.879-3.511,5.265C16.248,21.056,14.124,21.795,11.999,21.795z'/%3e%3c/svg%3e"
+                      src="https://seyamms.github.io/almonasib/icons/whatsapp.svg"
                       alt="whatsapp"
                     />
                   </a>
@@ -297,7 +299,7 @@
                     <img
                       onload="ImgToSvg(this)"
                       class="md:size-7 size-6 fill-current"
-                      src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='24px'%20height='19.3px'%20viewBox='0%202.3%2024%2019.3'%20enable-background='new%200%202.3%2024%2019.3'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M23.8,5.1c-0.1-0.2-0.3-0.3-0.6-0.4c-0.2,0-0.5,0-0.7,0.1l-2.8,2c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.1,0.3-0.1,0.4%20c0,0.2,0,0.4,0,0.5c0,1.5-0.3,3.1-0.9,4.5c-0.6,1.4-1.4,2.7-2.5,3.8c-1.1,1.1-2.4,1.9-3.8,2.5c-1.4,0.6-3,0.9-4.5,0.9%20s-3-0.3-4.3-0.8l4.3-1.2c0.2-0.1,0.4-0.2,0.5-0.4s0.1-0.5,0.1-0.7c-0.1-0.2-0.2-0.4-0.4-0.5c-0.1-0.1-0.3-0.1-0.6,0l-6.6,1.8%20c-0.2,0-0.3,0.1-0.4,0.3C0.1,18.3,0,18.5,0,18.6c0,0.2,0,0.3,0.1,0.5c0.1,0.2,0.2,0.3,0.3,0.4c2.2,1.4,4.7,2.1,7.3,2.1%20c1.9,0,3.8-0.3,5.5-1.1s3.3-1.9,4.5-3.3c2.2-2.5,3.4-5.7,3.5-9.1V8l2.4-1.7c0.2,0,0.3-0.3,0.4-0.5C24,5.6,24,5.3,23.8,5.1z'/%3e%3cpath%20d='M2,4.8l9.1,4.6c0.2,0.1,0.3,0.1,0.5,0.1c0.2,0,0.3-0.1,0.5-0.2c0.1-0.1,0.2-0.2,0.3-0.4c0.1-0.2,0.1-0.3,0-0.5%20c-0.2-0.8-0.1-1.5,0.2-2.3c0.3-0.7,0.9-1.3,1.5-1.7C14.8,4,15.6,3.9,16.3,4s1.5,0.5,2,1.1c0.1,0.1,0.3,0.2,0.5,0.3%20c0.2,0,0.4,0,0.5,0l2.8-1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.2-0.2,0.2-0.3s0.1-0.2,0.1-0.3s0-0.2-0.1-0.3c0-0.1-0.1-0.2-0.2-0.3%20c-0.1-0.1-0.2-0.2-0.3-0.2c-0.1-0.1-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.3,0.1l-2.3,0.8c-0.7-0.6-1.6-1-2.6-1.2c-1-0.2-1.9,0-2.9,0.3%20c-0.9,0.4-1.7,1-2.3,1.8s-0.9,1.7-1,2.7l-7.6-4c-0.1,0-0.2-0.1-0.3-0.1s-0.2,0-0.4,0C2,3.2,1.9,3.3,1.8,3.4c-0.1,0-0.1,0.1-0.2,0.2%20S1.5,3.9,1.5,4s0,0.2,0,0.4c0,0.1,0.1,0.2,0.2,0.3C1.8,4.7,1.9,4.8,2,4.8L2,4.8z'/%3e%3cpath%20d='M1.5,10.3l2,0.6c0.1,0,0.2,0,0.4,0c0.1,0,0.2-0.1,0.3-0.1c0.1-0.1,0.2-0.1,0.3-0.2s0.1-0.2,0.2-0.3c0-0.1,0-0.2,0-0.4%20c0-0.1-0.1-0.2-0.1-0.3C4.5,9.4,4.4,9.3,4.3,9.2C4.2,9.2,4.1,9.1,4,9.1L2,8.5c-0.1,0-0.2,0-0.4,0c-0.1,0-0.2,0.1-0.3,0.1%20c-0.1,0-0.2,0.1-0.2,0.2c0,0.1-0.2,0.2-0.2,0.4c0,0.1,0,0.2,0,0.4C0.9,9.7,1,9.8,1,9.9c0,0,0.1,0.1,0.2,0.2%20C1.3,10.2,1.4,10.2,1.5,10.3z'/%3e%3cpath%20d='M3.3,13c-0.2,0-0.5,0.1-0.6,0.3c-0.2,0.2-0.3,0.4-0.3,0.6c0,0.2,0.1,0.5,0.3,0.6c0.2,0.2,0.4,0.3,0.6,0.3l0,0l2-0.1%20c0.1,0,0.2,0,0.3-0.1c0.1,0,0.2-0.1,0.3-0.2C6,14.3,6,14.2,6.1,14.1c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3%20c0-0.1-0.1-0.2-0.2-0.3c-0.1-0.1-0.2-0.1-0.3-0.2c-0.1,0-0.2-0.1-0.3-0.1L3.3,13z'/%3e%3c/g%3e%3c/svg%3e"
+                      src="https://seyamms.github.io/almonasib/icons/twitter.svg"
                       alt="twitter"
                     />
                   </a>
@@ -315,7 +317,7 @@
                     <img
                       onload="ImgToSvg(this)"
                       class="md:size-7 size-6 fill-current"
-                      src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='24px'%20height='16.8px'%20viewBox='0%203.6%2024%2016.8'%20enable-background='new%200%203.6%2024%2016.8'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M19.8,3.6H4.2C3.1,3.6,2,4,1.3,4.7C0.5,5.5,0,6.6,0,7.7v8.7c0,1.1,0.5,2.1,1.3,2.9C2,20,3.1,20.4,4.2,20.4h15.6%20c1.1,0,2.2-0.4,2.9-1.2c0.8-0.8,1.2-1.8,1.3-2.9V7.7c0-1.1-0.5-2.1-1.3-2.9C22,4,20.9,3.6,19.8,3.6z%20M22.3,16.4%20c0,0.6-0.3,1.3-0.7,1.7c-0.5,0.5-1.1,0.7-1.7,0.7H4.2c-0.6,0-1.3-0.2-1.7-0.7C2,17.6,1.7,17,1.7,16.4V7.7C1.7,7,2,6.4,2.5,5.9%20s1.1-0.7,1.7-0.7h15.6c0.6,0,1.3,0.2,1.7,0.7s0.7,1.1,0.7,1.7L22.3,16.4L22.3,16.4z'/%3e%3cpath%20d='M16.6,11.3l-6.4-4.1C10.1,7.1,10,7.1,9.8,7.1c-0.2,0-0.3,0-0.4,0.1C9.2,7.3,9.1,7.4,9,7.5c0,0.1-0.1,0.3-0.1,0.4v8.2%20c0,0.2,0,0.3,0.1,0.4s0.2,0.2,0.3,0.3c0.1,0.1,0.3,0.1,0.4,0.1c0.2,0,0.3-0.1,0.4-0.1l6.4-4.1c0.1-0.1,0.2-0.2,0.3-0.3%20C17,12.3,17,12.1,17,12s0-0.3-0.1-0.4C16.8,11.5,16.7,11.4,16.6,11.3L16.6,11.3z%20M10.6,14.5v-5l3.9,2.5L10.6,14.5z'/%3e%3c/g%3e%3c/svg%3e"
+                      src="https://seyamms.github.io/almonasib/icons/youtube.svg"
                       alt="youtube"
                     />
                   </a>
@@ -343,7 +345,7 @@
                   <img
                     onload="ImgToSvg(this)"
                     class="md:size-7 size-6 fill-current"
-                    src="data:image/svg+xml,%3csvg%20version='1.0'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3e%3cpath%20d='M20,11.2c0-1.2-0.2-2.3-0.7-3.4c-0.5-1.1-1.1-2.1-2-2.9c-1.8-1.7-4.1-2.6-6.5-2.6C8.3,2.3,6,3.2,4.2,4.9%20c-0.9,0.8-1.5,1.8-2,2.9C1.8,8.8,1.5,10,1.6,11.2c0,1.2,0.2,2.3,0.7,3.4c0.5,1.1,1.1,2.1,2,2.9c1.7,1.7,4.1,2.6,6.5,2.6%20c2.4,0,4.8-0.9,6.5-2.6c0.9-0.8,1.6-1.8,2-2.9S20,12.4,20,11.2L20,11.2z%20M23.1,23.3c-0.1,0-0.2,0-0.3-0.1c-0.1,0-0.2-0.1-0.3-0.2%20l-4.4-4.2c-2.1,1.9-4.8,2.9-7.6,2.9c-2.8,0-5.5-1.1-7.5-3.1c-1-1-1.8-2.1-2.3-3.4c-0.5-1.3-0.8-2.7-0.8-4c0-1.4,0.3-2.7,0.8-4%20c0.5-1.3,1.3-2.4,2.3-3.4c2-2,4.8-3.1,7.6-3.1c2.8,0,5.6,1.1,7.6,3.1c1.9,1.8,3,4.2,3.1,6.7c0.2,2.6-0.6,5.1-2.3,7.1l4.4,4.2%20c0.1,0.1,0.2,0.3,0.3,0.4c0,0.2,0,0.3,0,0.5c-0.1,0.2-0.2,0.3-0.3,0.4C23.5,23.2,23.3,23.3,23.1,23.3L23.1,23.3z%20M7.6,14.3%20c0.1,0.1,0.1,0.2,0.2,0.2c0,0.1,0.1,0.2,0.1,0.3c0,0.1,0,0.2-0.1,0.3c0,0.1-0.1,0.2-0.2,0.2c-0.1,0.1-0.2,0.1-0.3,0.2%20c-0.1,0-0.2,0.1-0.3,0.1s-0.2,0-0.3-0.1c-0.1,0-0.2-0.1-0.3-0.2C5.8,14.7,5.3,13.9,5,13c-0.3-0.9-0.4-1.9-0.2-2.8%20c0-0.1,0.1-0.2,0.1-0.3C5,9.8,5.1,9.7,5.2,9.6c0.1-0.1,0.2-0.1,0.3-0.1c0.1,0,0.2,0,0.3,0c0.1,0,0.2,0.1,0.3,0.1%20c0.1,0.1,0.2,0.1,0.2,0.2c0.1,0.1,0.1,0.2,0.1,0.3c0,0.1,0,0.2,0,0.3c-0.1,0.7-0.1,1.4,0.1,2.1C6.7,13.2,7.1,13.8,7.6,14.3L7.6,14.3%20z'%20/%3e%3c/svg%3e"
+                    src="https://seyamms.github.io/almonasib/icons/search.svg"
                     alt="search"
                   />
                 </button>
@@ -363,7 +365,7 @@
                     <img
                       onload="ImgToSvg(this)"
                       class="md:size-7 size-6 fill-current"
-                      src="data:image/svg+xml,%3csvg%20version='1.0'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3e%3crect%20y='20'%20width='24'%20height='2'%20/%3e%3crect%20y='12'%20width='24'%20height='2'%20/%3e%3crect%20y='4'%20width='24'%20height='2'%20/%3e%3c/svg%3e"
+                      src="https://seyamms.github.io/almonasib/icons/menu.svg"
                       alt="menu"
                     />
                   </button>
@@ -422,7 +424,7 @@
             <div
               x-data="{ embla: null }"
               x-init="() => {
-              embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+              embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl' });
             }"
               class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
             >
@@ -437,7 +439,7 @@
               >
                 <img
                   class="lg:size-7 size-5"
-                  src="data:image/svg+xml,%3csvg%20width='23'%20height='38'%20viewBox='0%200%2023%2038'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%204L19%2019L4%2034'%20stroke='%239F4289'%20stroke-width='8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                  src="https://seyamms.github.io/almonasib/icons/chevron-right.svg"
                   alt="chevron-right"
                 />
               </button>
@@ -453,7 +455,7 @@
               >
                 <img
                   class="lg:size-7 size-5"
-                  src="data:image/svg+xml,%3csvg%20width='23'%20height='38'%20viewBox='0%200%2023%2038'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19%204L4%2019L19%2034'%20stroke='%239F4289'%20stroke-width='8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                  src="https://seyamms.github.io/almonasib/icons/chevron-left.svg"
                   alt="chevron-left"
                 />
               </button>
@@ -499,7 +501,7 @@
                             x-transition:enter-start="opacity-0 scale-50"
                             x-transition:enter="transform ease-out duration-300 delay-[850ms]"
                             class="object-scale-down w-full h-full"
-                            src="https://seyamms.github.io/almonasib/assets/slide-1-kXESwPli.png"
+                            src="https://seyamms.github.io/almonasib/images/slide-1.png"
                             alt="slide-1"
                           />
                         </div>
@@ -535,7 +537,7 @@
                         <div class="md:w-full md:max-w-none max-w-sm mx-auto">
                           <img
                             class="object-scale-down w-full h-full"
-                            src="https://seyamms.github.io/almonasib/assets/slide-1-kXESwPli.png"
+                            src="https://seyamms.github.io/almonasib/images/slide-1.png"
                             alt="slide-1"
                           />
                         </div>
@@ -579,7 +581,7 @@
                         x-transition:enter-start="opacity-0 scale-50"
                         x-transition:enter="transform ease-out duration-300 delay-[700ms]"
                         class="object-scale-down w-full h-full"
-                        src="data:image/svg+xml,%3csvg%20width='312'%20height='192'%20viewBox='0%200%20312%20192'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M155.867%2058.0957L191.292%2095.9998L155.867%20133.904L120.443%2095.9998L155.867%2058.0957Z'%20fill='%23E3BE54'/%3e%3cpath%20d='M89.6236%200L144.531%2058.0959L108.753%2096L143.114%20135.321L89.6236%20192L0%2096L89.6236%200Z'%20fill='%239F4289'/%3e%3cpath%20d='M222.111%200L167.203%2058.0959L202.982%2096L168.62%20135.321L222.111%20192L311.734%2096L222.111%200Z'%20fill='%2356AA48'/%3e%3c/svg%3e"
+                        src="https://seyamms.github.io/almonasib/images/logo.svg"
                         alt="logo"
                       />
                     </div>
@@ -631,7 +633,7 @@
                               </span>
                               <img
                                 class="xl:size-6 lg:size-5 size-4"
-                                src="data:image/svg+xml,%3csvg%20width='17'%20height='28'%20viewBox='0%200%2017%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M14%203L3%2014L14%2025'%20stroke='%232F2F2F'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                                src="https://seyamms.github.io/almonasib/icons/chevron-left-2.svg"
                                 alt="chevron-left-2"
                               />
                             </div>
@@ -654,7 +656,7 @@
                               </span>
                               <img
                                 class="xl:size-6 lg:size-5 size-4"
-                                src="data:image/svg+xml,%3csvg%20width='17'%20height='28'%20viewBox='0%200%2017%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M14%203L3%2014L14%2025'%20stroke='%232F2F2F'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                                src="https://seyamms.github.io/almonasib/icons/chevron-left-2.svg"
                                 alt="chevron-left-2"
                               />
                             </div>
@@ -677,7 +679,7 @@
                               </span>
                               <img
                                 class="xl:size-6 lg:size-5 size-4"
-                                src="data:image/svg+xml,%3csvg%20width='17'%20height='28'%20viewBox='0%200%2017%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M14%203L3%2014L14%2025'%20stroke='%232F2F2F'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                                src="https://seyamms.github.io/almonasib/icons/chevron-left-2.svg"
                                 alt="chevron-left-2"
                               />
                             </div>
@@ -704,7 +706,7 @@
                       >
                         <img
                           class="xl:size-24 lg:size-20 size-16"
-                          src="data:image/svg+xml,%3csvg%20width='96'%20height='90'%20viewBox='0%200%2096%2090'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M29.9575%2052.3687L31.998%2049.2225L29.9575%2052.3687C31.0393%2053.0704%2032.2383%2053.8552%2033.5549%2054.7235L35.5636%2051.6779L33.5549%2054.7235C35.2636%2055.8505%2037.3816%2056.7675%2039.7866%2057.5357C42.3586%2058.3574%2044.9756%2058.7754%2047.625%2058.7754C50.2744%2058.7754%2052.8914%2058.3574%2055.4634%2057.5357C57.8684%2056.7675%2059.9864%2055.8505%2061.6951%2054.7235C63.0117%2053.8552%2064.2107%2053.0704%2065.2925%2052.3687C65.5306%2052.2143%2065.7331%2052.0889%2065.9025%2051.989C65.9423%2051.9656%2065.9793%2051.9441%2066.0138%2051.9244C67.3513%2051.9838%2068.5172%2052.2334%2069.5412%2052.6371C70.8165%2053.1399%2071.8044%2053.7747%2072.5714%2054.5055C73.4345%2055.3279%2074.2426%2056.3633%2074.9775%2057.6503C75.7468%2058.9978%2076.3507%2060.365%2076.7971%2061.7536C77.2694%2063.2229%2077.6697%2064.8461%2077.9913%2066.6298C78.3185%2068.4443%2078.5306%2070.102%2078.6354%2071.608C78.7449%2073.18%2078.8%2074.7969%2078.8%2076.459C78.8%2079.5897%2077.8766%2081.648%2076.3489%2083.0959C74.768%2084.5942%2072.5531%2085.5%2069.3043%2085.5H25.9457C22.6969%2085.5%2020.482%2084.5942%2018.9011%2083.0959C17.3734%2081.648%2016.45%2079.5897%2016.45%2076.459C16.45%2074.7969%2016.5051%2073.18%2016.6146%2071.608C16.7194%2070.102%2016.9315%2068.4443%2017.2587%2066.6298C17.5803%2064.8461%2017.9806%2063.2229%2018.4529%2061.7536C18.8993%2060.365%2019.5032%2058.9978%2020.2725%2057.6503C21.0074%2056.3633%2021.8155%2055.3279%2022.6786%2054.5055L20.5439%2052.2651L22.6787%2054.5055C23.4456%2053.7747%2024.4335%2053.1399%2025.7088%2052.6371C26.7328%2052.2334%2027.8987%2051.9838%2029.2362%2051.9244C29.2707%2051.9441%2029.3077%2051.9656%2029.3475%2051.989C29.5169%2052.0889%2029.7194%2052.2143%2029.9575%2052.3687ZM4.96919%2046.278L2.77813%2049.3213L4.96918%2046.278C4.22948%2045.7454%203.75%2045.0056%203.75%2043.469C3.75%2037.7758%204.2654%2033.934%205.07419%2031.6419C5.38297%2030.7668%205.68054%2030.2764%205.88411%2030.0195C6.05878%2030.1134%206.2581%2030.2225%206.48359%2030.3482C7.96914%2031.1764%209.79069%2031.9561%2011.8865%2032.7037C14.243%2033.5443%2016.6363%2033.9835%2019.05%2033.9835C19.9346%2033.9835%2020.8149%2033.933%2021.6905%2033.8326C21.8507%2036.7298%2022.4852%2039.5031%2023.583%2042.1377C20.1901%2043.1324%2017.1821%2044.9496%2014.6141%2047.5714H9.62422C7.54657%2047.5714%206.06986%2047.0704%204.96919%2046.278ZM6.15156%2029.7857C6.13882%2029.7857%206.12621%2029.7856%206.11375%2029.7855C6.1231%2029.7809%206.1282%2029.782%206.13512%2029.7836C6.13941%2029.7846%206.14441%2029.7857%206.15156%2029.7857ZM71.667%2042.1377C72.7648%2039.5031%2073.3993%2036.7298%2073.5595%2033.8326C74.4351%2033.933%2075.3154%2033.9835%2076.2%2033.9835C78.6137%2033.9835%2081.007%2033.5443%2083.3635%2032.7037C85.4593%2031.9561%2087.2809%2031.1764%2088.7664%2030.3482C88.9919%2030.2225%2089.1912%2030.1134%2089.3659%2030.0195C89.5695%2030.2764%2089.867%2030.7668%2090.1758%2031.6419C90.9846%2033.934%2091.5%2037.7758%2091.5%2043.469C91.5%2045.0056%2091.0205%2045.7454%2090.2808%2046.278C89.1801%2047.0704%2087.7034%2047.5714%2085.6258%2047.5714H80.6359C78.0679%2044.9496%2075.0599%2043.1324%2071.667%2042.1377ZM89.1149%2029.7836C89.1218%2029.782%2089.1269%2029.7809%2089.1362%2029.7855C89.1238%2029.7856%2089.1112%2029.7857%2089.0984%2029.7857C89.1056%2029.7857%2089.1106%2029.7846%2089.1149%2029.7836ZM28%2013.3929C28%2015.8821%2027.1595%2017.9063%2025.3836%2019.6741C23.6072%2021.4426%2021.5659%2022.2857%2019.05%2022.2857C16.5341%2022.2857%2014.4928%2021.4426%2012.7164%2019.6741C10.9405%2017.9063%2010.1%2015.8821%2010.1%2013.3929C10.1%2010.9036%2010.9405%208.87944%2012.7164%207.11158C14.4928%205.34316%2016.5341%204.5%2019.05%204.5C21.5659%204.5%2023.6072%205.34317%2025.3836%207.11158C27.1595%208.87944%2028%2010.9036%2028%2013.3929ZM62.925%2032.3571C62.925%2036.5913%2061.4644%2040.1054%2058.4483%2043.1079C55.4316%2046.1109%2051.8938%2047.5714%2047.625%2047.5714C43.3562%2047.5714%2039.8184%2046.1109%2036.8017%2043.1079C33.7856%2040.1054%2032.325%2036.5913%2032.325%2032.3571C32.325%2028.1229%2033.7856%2024.6089%2036.8017%2021.6064C39.8184%2018.6033%2043.3562%2017.1429%2047.625%2017.1429C51.8938%2017.1429%2055.4316%2018.6033%2058.4483%2021.6064C61.4644%2024.6089%2062.925%2028.1229%2062.925%2032.3571ZM85.15%2013.3929C85.15%2015.8821%2084.3095%2017.9063%2082.5336%2019.6741C80.7572%2021.4425%2078.7159%2022.2857%2076.2%2022.2857C73.6841%2022.2857%2071.6428%2021.4426%2069.8664%2019.6741C68.0905%2017.9063%2067.25%2015.8821%2067.25%2013.3929C67.25%2010.9036%2068.0905%208.87944%2069.8664%207.11158C71.6428%205.34316%2073.6841%204.5%2076.2%204.5C78.7159%204.5%2080.7572%205.34317%2082.5336%207.11158C84.3095%208.87944%2085.15%2010.9036%2085.15%2013.3929Z'%20stroke='%239F4289'%20stroke-width='7.5'/%3e%3c/svg%3e"
+                          src="https://seyamms.github.io/almonasib/icons/clients.svg"
                           alt="clients"
                         />
                       </div>
@@ -743,7 +745,7 @@
                       >
                         <img
                           class="xl:size-24 lg:size-20 size-16"
-                          src="data:image/svg+xml,%3csvg%20width='107'%20height='107'%20viewBox='0%200%20107%20107'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M53.25%2031.5625C55.7008%2031.5625%2057.6875%2029.5758%2057.6875%2027.125C57.6875%2024.6742%2055.7008%2022.6875%2053.25%2022.6875C50.7992%2022.6875%2048.8125%2024.6742%2048.8125%2027.125C48.8125%2029.5758%2050.7992%2031.5625%2053.25%2031.5625Z'%20fill='%239F4289'/%3e%3cpath%20d='M26.625%2075.9375H79.875V84.8125H26.625V75.9375ZM44.375%2052.9956L56.7645%2065.394L74.2128%2047.9324L79.875%2053.75V36H62.125L67.9381%2041.6578L56.7601%2052.8359L44.375%2040.4375L26.625%2058.1875L32.8996%2064.4621L44.375%2052.9956Z'%20fill='%239F4289'/%3e%3cpath%20d='M84.3125%2013.8128H69.6776C69.2381%2013.1594%2068.7641%2012.5299%2068.2576%2011.9269L68.2132%2011.8736C64.9518%208.07766%2060.3653%205.66856%2055.3889%205.13749C53.9754%204.87084%2052.5246%204.87084%2051.1111%205.13749C46.1347%205.66856%2041.5482%208.07766%2038.2868%2011.8736L38.2424%2011.9269C37.736%2012.5284%2037.262%2013.1565%2036.8224%2013.8084V13.8128H22.1875C18.6579%2013.8163%2015.2738%2015.22%2012.778%2017.7158C10.2822%2020.2117%208.87852%2023.5957%208.875%2027.1253V89.2503C8.87852%2092.7799%2010.2822%2096.164%2012.778%2098.6598C15.2738%20101.156%2018.6579%20102.559%2022.1875%20102.563H84.3125C87.8421%20102.559%2091.2262%20101.156%2093.722%2098.6598C96.2178%2096.164%2097.6215%2092.7799%2097.625%2089.2503V27.1253C97.6215%2023.5957%2096.2178%2020.2117%2093.722%2017.7158C91.2262%2015.22%2087.8421%2013.8163%2084.3125%2013.8128ZM88.75%2089.2503C88.75%2090.4272%2088.2825%2091.5559%2087.4503%2092.3881C86.6181%2093.2203%2085.4894%2093.6878%2084.3125%2093.6878H22.1875C21.0106%2093.6878%2019.8819%2093.2203%2019.0497%2092.3881C18.2175%2091.5559%2017.75%2090.4272%2017.75%2089.2503V27.1253C17.75%2025.9484%2018.2175%2024.8197%2019.0497%2023.9875C19.8819%2023.1553%2021.0106%2022.6878%2022.1875%2022.6878H42.3781C42.8874%2020.18%2044.2479%2017.9253%2046.2293%2016.3058C48.2107%2014.6864%2050.691%2013.8017%2053.25%2013.8017C55.809%2013.8017%2058.2893%2014.6864%2060.2707%2016.3058C62.2521%2017.9253%2063.6126%2020.18%2064.1219%2022.6878H84.3125C85.4894%2022.6878%2086.6181%2023.1553%2087.4503%2023.9875C88.2825%2024.8197%2088.75%2025.9484%2088.75%2027.1253V89.2503Z'%20fill='%239F4289'/%3e%3c/svg%3e"
+                          src="https://seyamms.github.io/almonasib/icons/projects.svg"
                           alt="projects"
                         />
                       </div>
@@ -782,7 +784,7 @@
                       >
                         <img
                           class="xl:size-24 lg:size-20 size-16"
-                          src="https://seyamms.github.io/almonasib/assets/experience-4LQ2etSU.svg"
+                          src="https://seyamms.github.io/almonasib/icons/experience.svg"
                           alt="experience"
                         />
                       </div>
@@ -845,7 +847,7 @@
                         x-transition:enter-start="opacity-0 scale-50"
                         x-transition:enter="transform ease-out duration-300 delay-[700ms]"
                         class="object-scale-down w-full h-full"
-                        src="https://seyamms.github.io/almonasib/assets/service-1-BQ-IRoGC.jpg"
+                        src="https://seyamms.github.io/almonasib/images/service-1.jpg"
                         alt="service-1"
                       />
                     </div>
@@ -862,7 +864,7 @@
                             x-transition:enter-start="opacity-0 translate-x-10"
                             x-transition:enter="transform ease-out duration-150 delay-[500ms]"
                             class="object-scale-down w-full h-full"
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGsAAABrCAYAAABwv3wMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjkwQTQ1NjM3RENEMTFFRkFFREZFMDI0QUUxODc4OEIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjkwQTQ1NjQ3RENEMTFFRkFFREZFMDI0QUUxODc4OEIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGOTBBNDU2MTdEQ0QxMUVGQUVERkUwMjRBRTE4Nzg4QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGOTBBNDU2MjdEQ0QxMUVGQUVERkUwMjRBRTE4Nzg4QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgwYoz0AAAp+SURBVHja7F1pjFRF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"
+                            src="https://seyamms.github.io/almonasib/images/planning.png"
                             alt="planning"
                           />
                         </div>
@@ -899,7 +901,7 @@
                             x-transition:enter-start="opacity-0 -translate-y-10"
                             x-transition:enter="transform ease-out duration-300 delay-[800ms]"
                             class="text-apple-500 border-apple-500 md:rounded-2xl md:px-7 hover:bg-apple-500 hover:text-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold transition-all duration-150 ease-in-out border-2 shadow-md"
-                            href="#"
+                            href="/service/"
                           >
                             قراءة المزيد
                           </a>
@@ -924,7 +926,7 @@
                         >
                           <img
                             class="object-scale-down w-full h-full"
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGsAAABrCAYAAABwv3wMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUUyM0JBOTM3RENFMTFFRkE3NThFNjk4N0FDODUwOEMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUUyM0JBOTQ3RENFMTFFRkE3NThFNjk4N0FDODUwOEMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxRTIzQkE5MTdEQ0UxMUVGQTc1OEU2OTg3QUM4NTA4QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxRTIzQkE5MjdEQ0UxMUVGQTc1OEU2OTg3QUM4NTA4QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pjn0YDcAAAnFSURBVHja7F0JjBRF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"
+                            src="https://seyamms.github.io/almonasib/images/marketing.png"
                             alt="marketing"
                           />
                         </div>
@@ -960,7 +962,7 @@
                             x-transition:enter-start="opacity-0 -translate-y-10"
                             x-transition:enter="transform ease-out duration-300 delay-[1500ms]"
                             class="text-apple-500 border-apple-500 md:rounded-2xl md:px-7 hover:bg-apple-500 hover:text-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold transition-all duration-150 ease-in-out border-2 shadow-md"
-                            href="#"
+                            href="/service/"
                           >
                             قراءة المزيد
                           </a>
@@ -976,7 +978,7 @@
                         x-transition:enter-start="opacity-0 scale-50"
                         x-transition:enter="transform ease-out duration-300 delay-[1400ms]"
                         class="object-scale-down w-full h-full"
-                        src="https://seyamms.github.io/almonasib/assets/service-1-BQ-IRoGC.jpg"
+                        src="https://seyamms.github.io/almonasib/images/service-1.jpg"
                         alt="service-1"
                       />
                     </div>
@@ -992,7 +994,7 @@
                         x-transition:enter-start="opacity-0 scale-50"
                         x-transition:enter="transform ease-out duration-300 delay-[2100ms]"
                         class="object-scale-down w-full h-full"
-                        src="https://seyamms.github.io/almonasib/assets/service-1-BQ-IRoGC.jpg"
+                        src="https://seyamms.github.io/almonasib/images/service-1.jpg"
                         alt="service-1"
                       />
                     </div>
@@ -1011,7 +1013,7 @@
                         >
                           <img
                             class="object-scale-down w-full h-full"
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAABuCAYAAADGWyb7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjY4N0RBRjc3RENFMTFFRkEwRjc4NkE4Qzc2QUZDNjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjY4N0RBRjg3RENFMTFFRkEwRjc4NkE4Qzc2QUZDNjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyNjg3REFGNTdEQ0UxMUVGQTBGNzg2QThDNzZBRkM2NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyNjg3REFGNjdEQ0UxMUVGQTBGNzg2QThDNzZBRkM2NyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqKMVQYAAAnlSURBVHja7F0LsFZV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"
+                            src="https://seyamms.github.io/almonasib/images/designing.png"
                             alt="designing"
                           />
                         </div>
@@ -1048,7 +1050,7 @@
                             x-transition:enter-start="opacity-0 -translate-y-10"
                             x-transition:enter="transform ease-out duration-300 delay-[2200ms]"
                             class="text-apple-500 border-apple-500 md:rounded-2xl md:px-7 hover:bg-apple-500 hover:text-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold transition-all duration-150 ease-in-out border-2 shadow-md"
-                            href="#"
+                            href="/service/"
                           >
                             قراءة المزيد
                           </a>
@@ -1071,7 +1073,7 @@
                             x-transition:enter-start="opacity-0 translate-x-10"
                             x-transition:enter="transform ease-out duration-150 delay-[2600ms]"
                             class="object-scale-down w-full h-full"
-                            src="https://seyamms.github.io/almonasib/assets/digital-marketing-B3Njmf2u.png"
+                            src="https://seyamms.github.io/almonasib/images/digital-marketing.png"
                             alt="digital-marketing"
                           />
                         </div>
@@ -1106,7 +1108,7 @@
                             x-transition:enter-start="opacity-0 -translate-y-10"
                             x-transition:enter="transform ease-out duration-300 delay-[2900ms]"
                             class="text-apple-500 border-apple-500 md:rounded-2xl md:px-7 hover:bg-apple-500 hover:text-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold transition-all duration-150 ease-in-out border-2 shadow-md"
-                            href="#"
+                            href="/service/"
                           >
                             قراءة المزيد
                           </a>
@@ -1122,7 +1124,7 @@
                         x-transition:enter-start="opacity-0 scale-50"
                         x-transition:enter="transform ease-out duration-300 delay-[2800ms]"
                         class="object-scale-down w-full h-full"
-                        src="https://seyamms.github.io/almonasib/assets/service-1-BQ-IRoGC.jpg"
+                        src="https://seyamms.github.io/almonasib/images/service-1.jpg"
                         alt="service-1"
                       />
                     </div>
@@ -1166,7 +1168,7 @@
                       <div class="group relative w-full h-full">
                         <img
                           class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                          src="https://seyamms.github.io/almonasib/assets/work-1-CLsIHTeO.jpg"
+                          src="https://seyamms.github.io/almonasib/images/work-1.jpg"
                           alt="work-1"
                         />
                         <div
@@ -1199,7 +1201,7 @@
                       <div class="group relative w-full h-full">
                         <img
                           class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                          src="https://seyamms.github.io/almonasib/assets/work-4-BOc6gzcV.jpg"
+                          src="https://seyamms.github.io/almonasib/images/work-4.jpg"
                           alt="work-4"
                         />
                         <div
@@ -1233,7 +1235,7 @@
                       <div class="group relative w-full h-full">
                         <img
                           class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                          src="https://seyamms.github.io/almonasib/assets/work-2-DETzCvxz.jpg"
+                          src="https://seyamms.github.io/almonasib/images/work-2.jpg"
                           alt="work-2"
                         />
                         <div
@@ -1265,7 +1267,7 @@
                       <div class="group relative w-full h-full">
                         <img
                           class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                          src="https://seyamms.github.io/almonasib/assets/work-5-WsPgZWkb.jpg"
+                          src="https://seyamms.github.io/almonasib/images/work-5.jpg"
                           alt="work-5"
                         />
                         <div
@@ -1301,7 +1303,7 @@
                       <div class="group relative w-full h-full">
                         <img
                           class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                          src="https://seyamms.github.io/almonasib/assets/work-3-CU1hZRh0.jpg"
+                          src="https://seyamms.github.io/almonasib/images/work-3.jpg"
                           alt="work-3"
                         />
                         <div
@@ -1333,7 +1335,7 @@
                       <div class="group relative w-full h-full">
                         <img
                           class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                          src="https://seyamms.github.io/almonasib/assets/work-6-CcIp8P7t.jpg"
+                          src="https://seyamms.github.io/almonasib/images/work-6.jpg"
                           alt="work-6"
                         />
                         <div
@@ -1386,7 +1388,7 @@
             <div
               x-data="{ embla: null }"
               x-init="() => {
-                embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+                embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl' });
               }"
               class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
             >
@@ -1623,7 +1625,7 @@
               <div
                 x-data="{ embla: null }"
                 x-init="() => {
-                  embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+                  embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl' });
                 }"
                 class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
               >
@@ -1638,7 +1640,7 @@
                 >
                   <img
                     class="lg:size-7 size-5"
-                    src="data:image/svg+xml,%3csvg%20width='23'%20height='38'%20viewBox='0%200%2023%2038'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%204L19%2019L4%2034'%20stroke='%239F4289'%20stroke-width='8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                    src="https://seyamms.github.io/almonasib/icons/chevron-right.svg"
                     alt="chevron-right"
                   />
                 </button>
@@ -1654,7 +1656,7 @@
                 >
                   <img
                     class="lg:size-7 size-5"
-                    src="data:image/svg+xml,%3csvg%20width='23'%20height='38'%20viewBox='0%200%2023%2038'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19%204L4%2019L19%2034'%20stroke='%239F4289'%20stroke-width='8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                    src="https://seyamms.github.io/almonasib/icons/chevron-left.svg"
                     alt="chevron-left"
                   />
                 </button>
@@ -1672,7 +1674,7 @@
                         <div class="group relative w-full h-full">
                           <img
                             class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                            src="https://seyamms.github.io/almonasib/assets/post-1-DLx312mM.jpg"
+                            src="https://seyamms.github.io/almonasib/images/post-1.jpg"
                             alt="post-1"
                           />
                           <div
@@ -1708,7 +1710,7 @@
                         <div class="group relative w-full h-full">
                           <img
                             class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                            src="https://seyamms.github.io/almonasib/assets/post-2-CWFdMpWO.jpg"
+                            src="https://seyamms.github.io/almonasib/images/post-2.jpg"
                             alt="post-2"
                           />
                           <div
@@ -1744,7 +1746,7 @@
                         <div class="group relative w-full h-full">
                           <img
                             class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                            src="https://seyamms.github.io/almonasib/assets/post-3-C83f58FE.jpg"
+                            src="https://seyamms.github.io/almonasib/images/post-3.jpg"
                             alt="post-3"
                           />
                           <div
@@ -1796,7 +1798,7 @@
               <div
                 x-data="{ embla: null }"
                 x-init="() => {
-                  embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+                  embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl' });
                 }"
                 class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
               >
@@ -1811,7 +1813,7 @@
                 >
                   <img
                     class="lg:size-7 size-5"
-                    src="data:image/svg+xml,%3csvg%20width='23'%20height='38'%20viewBox='0%200%2023%2038'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%204L19%2019L4%2034'%20stroke='%239F4289'%20stroke-width='8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                    src="https://seyamms.github.io/almonasib/icons/chevron-right.svg"
                     alt="chevron-right"
                   />
                 </button>
@@ -1827,7 +1829,7 @@
                 >
                   <img
                     class="lg:size-7 size-5"
-                    src="data:image/svg+xml,%3csvg%20width='23'%20height='38'%20viewBox='0%200%2023%2038'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19%204L4%2019L19%2034'%20stroke='%239F4289'%20stroke-width='8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                    src="https://seyamms.github.io/almonasib/icons/chevron-left.svg"
                     alt="chevron-left"
                   />
                 </button>
@@ -1845,7 +1847,7 @@
                         <div class="group relative w-full h-full">
                           <img
                             class="group-hover:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                            src="https://seyamms.github.io/almonasib/assets/member-1-CjyYrlFy.jpg"
+                            src="https://seyamms.github.io/almonasib/images/member-1.jpg"
                             alt="member-1"
                           />
                           <div
@@ -1868,7 +1870,7 @@
                                   <img
                                     onload="ImgToSvg(this)"
                                     class="lg:size-6 size-5 mt-2 fill-current"
-                                    src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='24px'%20height='19.3px'%20viewBox='0%202.3%2024%2019.3'%20enable-background='new%200%202.3%2024%2019.3'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M23.8,5.1c-0.1-0.2-0.3-0.3-0.6-0.4c-0.2,0-0.5,0-0.7,0.1l-2.8,2c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.1,0.3-0.1,0.4%20c0,0.2,0,0.4,0,0.5c0,1.5-0.3,3.1-0.9,4.5c-0.6,1.4-1.4,2.7-2.5,3.8c-1.1,1.1-2.4,1.9-3.8,2.5c-1.4,0.6-3,0.9-4.5,0.9%20s-3-0.3-4.3-0.8l4.3-1.2c0.2-0.1,0.4-0.2,0.5-0.4s0.1-0.5,0.1-0.7c-0.1-0.2-0.2-0.4-0.4-0.5c-0.1-0.1-0.3-0.1-0.6,0l-6.6,1.8%20c-0.2,0-0.3,0.1-0.4,0.3C0.1,18.3,0,18.5,0,18.6c0,0.2,0,0.3,0.1,0.5c0.1,0.2,0.2,0.3,0.3,0.4c2.2,1.4,4.7,2.1,7.3,2.1%20c1.9,0,3.8-0.3,5.5-1.1s3.3-1.9,4.5-3.3c2.2-2.5,3.4-5.7,3.5-9.1V8l2.4-1.7c0.2,0,0.3-0.3,0.4-0.5C24,5.6,24,5.3,23.8,5.1z'/%3e%3cpath%20d='M2,4.8l9.1,4.6c0.2,0.1,0.3,0.1,0.5,0.1c0.2,0,0.3-0.1,0.5-0.2c0.1-0.1,0.2-0.2,0.3-0.4c0.1-0.2,0.1-0.3,0-0.5%20c-0.2-0.8-0.1-1.5,0.2-2.3c0.3-0.7,0.9-1.3,1.5-1.7C14.8,4,15.6,3.9,16.3,4s1.5,0.5,2,1.1c0.1,0.1,0.3,0.2,0.5,0.3%20c0.2,0,0.4,0,0.5,0l2.8-1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.2-0.2,0.2-0.3s0.1-0.2,0.1-0.3s0-0.2-0.1-0.3c0-0.1-0.1-0.2-0.2-0.3%20c-0.1-0.1-0.2-0.2-0.3-0.2c-0.1-0.1-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.3,0.1l-2.3,0.8c-0.7-0.6-1.6-1-2.6-1.2c-1-0.2-1.9,0-2.9,0.3%20c-0.9,0.4-1.7,1-2.3,1.8s-0.9,1.7-1,2.7l-7.6-4c-0.1,0-0.2-0.1-0.3-0.1s-0.2,0-0.4,0C2,3.2,1.9,3.3,1.8,3.4c-0.1,0-0.1,0.1-0.2,0.2%20S1.5,3.9,1.5,4s0,0.2,0,0.4c0,0.1,0.1,0.2,0.2,0.3C1.8,4.7,1.9,4.8,2,4.8L2,4.8z'/%3e%3cpath%20d='M1.5,10.3l2,0.6c0.1,0,0.2,0,0.4,0c0.1,0,0.2-0.1,0.3-0.1c0.1-0.1,0.2-0.1,0.3-0.2s0.1-0.2,0.2-0.3c0-0.1,0-0.2,0-0.4%20c0-0.1-0.1-0.2-0.1-0.3C4.5,9.4,4.4,9.3,4.3,9.2C4.2,9.2,4.1,9.1,4,9.1L2,8.5c-0.1,0-0.2,0-0.4,0c-0.1,0-0.2,0.1-0.3,0.1%20c-0.1,0-0.2,0.1-0.2,0.2c0,0.1-0.2,0.2-0.2,0.4c0,0.1,0,0.2,0,0.4C0.9,9.7,1,9.8,1,9.9c0,0,0.1,0.1,0.2,0.2%20C1.3,10.2,1.4,10.2,1.5,10.3z'/%3e%3cpath%20d='M3.3,13c-0.2,0-0.5,0.1-0.6,0.3c-0.2,0.2-0.3,0.4-0.3,0.6c0,0.2,0.1,0.5,0.3,0.6c0.2,0.2,0.4,0.3,0.6,0.3l0,0l2-0.1%20c0.1,0,0.2,0,0.3-0.1c0.1,0,0.2-0.1,0.3-0.2C6,14.3,6,14.2,6.1,14.1c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3%20c0-0.1-0.1-0.2-0.2-0.3c-0.1-0.1-0.2-0.1-0.3-0.2c-0.1,0-0.2-0.1-0.3-0.1L3.3,13z'/%3e%3c/g%3e%3c/svg%3e"
+                                    src="https://seyamms.github.io/almonasib/icons/twitter.svg"
                                     alt="twitter"
                                   />
                                 </a>
@@ -1880,7 +1882,7 @@
                                   <img
                                     onload="ImgToSvg(this)"
                                     class="lg:size-6 size-5 fill-transparent stroke-current"
-                                    src="data:image/svg+xml,%3csvg%20width='74'%20height='74'%20viewBox='0%200%2074%2074'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17.8066%2025.0188H3.17969V71.6631H17.8066V25.0188Z'%20stroke-width='4'%20/%3e%3cpath%20d='M57.3732%2024.0077C56.834%2023.9403%2056.2611%2023.9066%2055.6881%2023.8729C47.4984%2023.5358%2042.8812%2028.389%2041.2635%2030.4786C40.8254%2031.0515%2040.6231%2031.3885%2040.6231%2031.3885V25.1536H26.6366V71.7978H40.6231H41.2635C41.2635%2067.0457%2041.2635%2062.3274%2041.2635%2057.5753C41.2635%2055.014%2041.2635%2052.4526%2041.2635%2049.8912C41.2635%2046.7231%2041.0276%2043.3529%2042.6116%2040.4545C43.9597%2038.0279%2046.3862%2036.8146%2049.1161%2036.8146C57.2047%2036.8146%2057.3732%2044.1281%2057.3732%2044.8021C57.3732%2044.8358%2057.3732%2044.8695%2057.3732%2044.8695V72H72.0001V41.5667C72.0001%2031.1526%2066.7088%2025.0188%2057.3732%2024.0077Z'%20stroke-width='4'%20/%3e%3cpath%20d='M10.493%2018.986C15.1836%2018.986%2018.9861%2015.1836%2018.9861%2010.493C18.9861%205.80246%2015.1836%202%2010.493%202C5.80244%202%202%205.80246%202%2010.493C2%2015.1836%205.80244%2018.986%2010.493%2018.986Z'%20stroke-width='4'%20/%3e%3c/svg%3e"
+                                    src="https://seyamms.github.io/almonasib/icons/linkedin.svg"
                                     alt="linkedin"
                                   />
                                 </a>
@@ -1902,7 +1904,7 @@
                         <div class="group relative w-full h-full">
                           <img
                             class="group-hover:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                            src="https://seyamms.github.io/almonasib/assets/member-1-CjyYrlFy.jpg"
+                            src="https://seyamms.github.io/almonasib/images/member-1.jpg"
                             alt="member-1"
                           />
                           <div
@@ -1925,7 +1927,7 @@
                                   <img
                                     onload="ImgToSvg(this)"
                                     class="lg:size-6 size-5 mt-2 fill-current"
-                                    src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='24px'%20height='19.3px'%20viewBox='0%202.3%2024%2019.3'%20enable-background='new%200%202.3%2024%2019.3'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M23.8,5.1c-0.1-0.2-0.3-0.3-0.6-0.4c-0.2,0-0.5,0-0.7,0.1l-2.8,2c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.1,0.3-0.1,0.4%20c0,0.2,0,0.4,0,0.5c0,1.5-0.3,3.1-0.9,4.5c-0.6,1.4-1.4,2.7-2.5,3.8c-1.1,1.1-2.4,1.9-3.8,2.5c-1.4,0.6-3,0.9-4.5,0.9%20s-3-0.3-4.3-0.8l4.3-1.2c0.2-0.1,0.4-0.2,0.5-0.4s0.1-0.5,0.1-0.7c-0.1-0.2-0.2-0.4-0.4-0.5c-0.1-0.1-0.3-0.1-0.6,0l-6.6,1.8%20c-0.2,0-0.3,0.1-0.4,0.3C0.1,18.3,0,18.5,0,18.6c0,0.2,0,0.3,0.1,0.5c0.1,0.2,0.2,0.3,0.3,0.4c2.2,1.4,4.7,2.1,7.3,2.1%20c1.9,0,3.8-0.3,5.5-1.1s3.3-1.9,4.5-3.3c2.2-2.5,3.4-5.7,3.5-9.1V8l2.4-1.7c0.2,0,0.3-0.3,0.4-0.5C24,5.6,24,5.3,23.8,5.1z'/%3e%3cpath%20d='M2,4.8l9.1,4.6c0.2,0.1,0.3,0.1,0.5,0.1c0.2,0,0.3-0.1,0.5-0.2c0.1-0.1,0.2-0.2,0.3-0.4c0.1-0.2,0.1-0.3,0-0.5%20c-0.2-0.8-0.1-1.5,0.2-2.3c0.3-0.7,0.9-1.3,1.5-1.7C14.8,4,15.6,3.9,16.3,4s1.5,0.5,2,1.1c0.1,0.1,0.3,0.2,0.5,0.3%20c0.2,0,0.4,0,0.5,0l2.8-1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.2-0.2,0.2-0.3s0.1-0.2,0.1-0.3s0-0.2-0.1-0.3c0-0.1-0.1-0.2-0.2-0.3%20c-0.1-0.1-0.2-0.2-0.3-0.2c-0.1-0.1-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.3,0.1l-2.3,0.8c-0.7-0.6-1.6-1-2.6-1.2c-1-0.2-1.9,0-2.9,0.3%20c-0.9,0.4-1.7,1-2.3,1.8s-0.9,1.7-1,2.7l-7.6-4c-0.1,0-0.2-0.1-0.3-0.1s-0.2,0-0.4,0C2,3.2,1.9,3.3,1.8,3.4c-0.1,0-0.1,0.1-0.2,0.2%20S1.5,3.9,1.5,4s0,0.2,0,0.4c0,0.1,0.1,0.2,0.2,0.3C1.8,4.7,1.9,4.8,2,4.8L2,4.8z'/%3e%3cpath%20d='M1.5,10.3l2,0.6c0.1,0,0.2,0,0.4,0c0.1,0,0.2-0.1,0.3-0.1c0.1-0.1,0.2-0.1,0.3-0.2s0.1-0.2,0.2-0.3c0-0.1,0-0.2,0-0.4%20c0-0.1-0.1-0.2-0.1-0.3C4.5,9.4,4.4,9.3,4.3,9.2C4.2,9.2,4.1,9.1,4,9.1L2,8.5c-0.1,0-0.2,0-0.4,0c-0.1,0-0.2,0.1-0.3,0.1%20c-0.1,0-0.2,0.1-0.2,0.2c0,0.1-0.2,0.2-0.2,0.4c0,0.1,0,0.2,0,0.4C0.9,9.7,1,9.8,1,9.9c0,0,0.1,0.1,0.2,0.2%20C1.3,10.2,1.4,10.2,1.5,10.3z'/%3e%3cpath%20d='M3.3,13c-0.2,0-0.5,0.1-0.6,0.3c-0.2,0.2-0.3,0.4-0.3,0.6c0,0.2,0.1,0.5,0.3,0.6c0.2,0.2,0.4,0.3,0.6,0.3l0,0l2-0.1%20c0.1,0,0.2,0,0.3-0.1c0.1,0,0.2-0.1,0.3-0.2C6,14.3,6,14.2,6.1,14.1c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3%20c0-0.1-0.1-0.2-0.2-0.3c-0.1-0.1-0.2-0.1-0.3-0.2c-0.1,0-0.2-0.1-0.3-0.1L3.3,13z'/%3e%3c/g%3e%3c/svg%3e"
+                                    src="https://seyamms.github.io/almonasib/icons/twitter.svg"
                                     alt="twitter"
                                   />
                                 </a>
@@ -1937,7 +1939,7 @@
                                   <img
                                     onload="ImgToSvg(this)"
                                     class="lg:size-6 size-5 fill-transparent stroke-current"
-                                    src="data:image/svg+xml,%3csvg%20width='74'%20height='74'%20viewBox='0%200%2074%2074'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17.8066%2025.0188H3.17969V71.6631H17.8066V25.0188Z'%20stroke-width='4'%20/%3e%3cpath%20d='M57.3732%2024.0077C56.834%2023.9403%2056.2611%2023.9066%2055.6881%2023.8729C47.4984%2023.5358%2042.8812%2028.389%2041.2635%2030.4786C40.8254%2031.0515%2040.6231%2031.3885%2040.6231%2031.3885V25.1536H26.6366V71.7978H40.6231H41.2635C41.2635%2067.0457%2041.2635%2062.3274%2041.2635%2057.5753C41.2635%2055.014%2041.2635%2052.4526%2041.2635%2049.8912C41.2635%2046.7231%2041.0276%2043.3529%2042.6116%2040.4545C43.9597%2038.0279%2046.3862%2036.8146%2049.1161%2036.8146C57.2047%2036.8146%2057.3732%2044.1281%2057.3732%2044.8021C57.3732%2044.8358%2057.3732%2044.8695%2057.3732%2044.8695V72H72.0001V41.5667C72.0001%2031.1526%2066.7088%2025.0188%2057.3732%2024.0077Z'%20stroke-width='4'%20/%3e%3cpath%20d='M10.493%2018.986C15.1836%2018.986%2018.9861%2015.1836%2018.9861%2010.493C18.9861%205.80246%2015.1836%202%2010.493%202C5.80244%202%202%205.80246%202%2010.493C2%2015.1836%205.80244%2018.986%2010.493%2018.986Z'%20stroke-width='4'%20/%3e%3c/svg%3e"
+                                    src="https://seyamms.github.io/almonasib/icons/linkedin.svg"
                                     alt="linkedin"
                                   />
                                 </a>
@@ -1959,7 +1961,7 @@
                         <div class="group relative w-full h-full">
                           <img
                             class="group-hover:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                            src="https://seyamms.github.io/almonasib/assets/member-1-CjyYrlFy.jpg"
+                            src="https://seyamms.github.io/almonasib/images/member-1.jpg"
                             alt="member-1"
                           />
                           <div
@@ -1982,7 +1984,7 @@
                                   <img
                                     onload="ImgToSvg(this)"
                                     class="lg:size-6 size-5 mt-2 fill-current"
-                                    src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='24px'%20height='19.3px'%20viewBox='0%202.3%2024%2019.3'%20enable-background='new%200%202.3%2024%2019.3'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M23.8,5.1c-0.1-0.2-0.3-0.3-0.6-0.4c-0.2,0-0.5,0-0.7,0.1l-2.8,2c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.1,0.3-0.1,0.4%20c0,0.2,0,0.4,0,0.5c0,1.5-0.3,3.1-0.9,4.5c-0.6,1.4-1.4,2.7-2.5,3.8c-1.1,1.1-2.4,1.9-3.8,2.5c-1.4,0.6-3,0.9-4.5,0.9%20s-3-0.3-4.3-0.8l4.3-1.2c0.2-0.1,0.4-0.2,0.5-0.4s0.1-0.5,0.1-0.7c-0.1-0.2-0.2-0.4-0.4-0.5c-0.1-0.1-0.3-0.1-0.6,0l-6.6,1.8%20c-0.2,0-0.3,0.1-0.4,0.3C0.1,18.3,0,18.5,0,18.6c0,0.2,0,0.3,0.1,0.5c0.1,0.2,0.2,0.3,0.3,0.4c2.2,1.4,4.7,2.1,7.3,2.1%20c1.9,0,3.8-0.3,5.5-1.1s3.3-1.9,4.5-3.3c2.2-2.5,3.4-5.7,3.5-9.1V8l2.4-1.7c0.2,0,0.3-0.3,0.4-0.5C24,5.6,24,5.3,23.8,5.1z'/%3e%3cpath%20d='M2,4.8l9.1,4.6c0.2,0.1,0.3,0.1,0.5,0.1c0.2,0,0.3-0.1,0.5-0.2c0.1-0.1,0.2-0.2,0.3-0.4c0.1-0.2,0.1-0.3,0-0.5%20c-0.2-0.8-0.1-1.5,0.2-2.3c0.3-0.7,0.9-1.3,1.5-1.7C14.8,4,15.6,3.9,16.3,4s1.5,0.5,2,1.1c0.1,0.1,0.3,0.2,0.5,0.3%20c0.2,0,0.4,0,0.5,0l2.8-1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.2-0.2,0.2-0.3s0.1-0.2,0.1-0.3s0-0.2-0.1-0.3c0-0.1-0.1-0.2-0.2-0.3%20c-0.1-0.1-0.2-0.2-0.3-0.2c-0.1-0.1-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.3,0.1l-2.3,0.8c-0.7-0.6-1.6-1-2.6-1.2c-1-0.2-1.9,0-2.9,0.3%20c-0.9,0.4-1.7,1-2.3,1.8s-0.9,1.7-1,2.7l-7.6-4c-0.1,0-0.2-0.1-0.3-0.1s-0.2,0-0.4,0C2,3.2,1.9,3.3,1.8,3.4c-0.1,0-0.1,0.1-0.2,0.2%20S1.5,3.9,1.5,4s0,0.2,0,0.4c0,0.1,0.1,0.2,0.2,0.3C1.8,4.7,1.9,4.8,2,4.8L2,4.8z'/%3e%3cpath%20d='M1.5,10.3l2,0.6c0.1,0,0.2,0,0.4,0c0.1,0,0.2-0.1,0.3-0.1c0.1-0.1,0.2-0.1,0.3-0.2s0.1-0.2,0.2-0.3c0-0.1,0-0.2,0-0.4%20c0-0.1-0.1-0.2-0.1-0.3C4.5,9.4,4.4,9.3,4.3,9.2C4.2,9.2,4.1,9.1,4,9.1L2,8.5c-0.1,0-0.2,0-0.4,0c-0.1,0-0.2,0.1-0.3,0.1%20c-0.1,0-0.2,0.1-0.2,0.2c0,0.1-0.2,0.2-0.2,0.4c0,0.1,0,0.2,0,0.4C0.9,9.7,1,9.8,1,9.9c0,0,0.1,0.1,0.2,0.2%20C1.3,10.2,1.4,10.2,1.5,10.3z'/%3e%3cpath%20d='M3.3,13c-0.2,0-0.5,0.1-0.6,0.3c-0.2,0.2-0.3,0.4-0.3,0.6c0,0.2,0.1,0.5,0.3,0.6c0.2,0.2,0.4,0.3,0.6,0.3l0,0l2-0.1%20c0.1,0,0.2,0,0.3-0.1c0.1,0,0.2-0.1,0.3-0.2C6,14.3,6,14.2,6.1,14.1c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3%20c0-0.1-0.1-0.2-0.2-0.3c-0.1-0.1-0.2-0.1-0.3-0.2c-0.1,0-0.2-0.1-0.3-0.1L3.3,13z'/%3e%3c/g%3e%3c/svg%3e"
+                                    src="https://seyamms.github.io/almonasib/icons/twitter.svg"
                                     alt="twitter"
                                   />
                                 </a>
@@ -1994,7 +1996,7 @@
                                   <img
                                     onload="ImgToSvg(this)"
                                     class="lg:size-6 size-5 fill-transparent stroke-current"
-                                    src="data:image/svg+xml,%3csvg%20width='74'%20height='74'%20viewBox='0%200%2074%2074'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17.8066%2025.0188H3.17969V71.6631H17.8066V25.0188Z'%20stroke-width='4'%20/%3e%3cpath%20d='M57.3732%2024.0077C56.834%2023.9403%2056.2611%2023.9066%2055.6881%2023.8729C47.4984%2023.5358%2042.8812%2028.389%2041.2635%2030.4786C40.8254%2031.0515%2040.6231%2031.3885%2040.6231%2031.3885V25.1536H26.6366V71.7978H40.6231H41.2635C41.2635%2067.0457%2041.2635%2062.3274%2041.2635%2057.5753C41.2635%2055.014%2041.2635%2052.4526%2041.2635%2049.8912C41.2635%2046.7231%2041.0276%2043.3529%2042.6116%2040.4545C43.9597%2038.0279%2046.3862%2036.8146%2049.1161%2036.8146C57.2047%2036.8146%2057.3732%2044.1281%2057.3732%2044.8021C57.3732%2044.8358%2057.3732%2044.8695%2057.3732%2044.8695V72H72.0001V41.5667C72.0001%2031.1526%2066.7088%2025.0188%2057.3732%2024.0077Z'%20stroke-width='4'%20/%3e%3cpath%20d='M10.493%2018.986C15.1836%2018.986%2018.9861%2015.1836%2018.9861%2010.493C18.9861%205.80246%2015.1836%202%2010.493%202C5.80244%202%202%205.80246%202%2010.493C2%2015.1836%205.80244%2018.986%2010.493%2018.986Z'%20stroke-width='4'%20/%3e%3c/svg%3e"
+                                    src="https://seyamms.github.io/almonasib/icons/linkedin.svg"
                                     alt="linkedin"
                                   />
                                 </a>
@@ -2016,7 +2018,7 @@
                         <div class="group relative w-full h-full">
                           <img
                             class="group-hover:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
-                            src="https://seyamms.github.io/almonasib/assets/member-1-CjyYrlFy.jpg"
+                            src="https://seyamms.github.io/almonasib/images/member-1.jpg"
                             alt="member-1"
                           />
                           <div
@@ -2039,7 +2041,7 @@
                                   <img
                                     onload="ImgToSvg(this)"
                                     class="lg:size-6 size-5 mt-2 fill-current"
-                                    src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='24px'%20height='19.3px'%20viewBox='0%202.3%2024%2019.3'%20enable-background='new%200%202.3%2024%2019.3'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M23.8,5.1c-0.1-0.2-0.3-0.3-0.6-0.4c-0.2,0-0.5,0-0.7,0.1l-2.8,2c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.1,0.3-0.1,0.4%20c0,0.2,0,0.4,0,0.5c0,1.5-0.3,3.1-0.9,4.5c-0.6,1.4-1.4,2.7-2.5,3.8c-1.1,1.1-2.4,1.9-3.8,2.5c-1.4,0.6-3,0.9-4.5,0.9%20s-3-0.3-4.3-0.8l4.3-1.2c0.2-0.1,0.4-0.2,0.5-0.4s0.1-0.5,0.1-0.7c-0.1-0.2-0.2-0.4-0.4-0.5c-0.1-0.1-0.3-0.1-0.6,0l-6.6,1.8%20c-0.2,0-0.3,0.1-0.4,0.3C0.1,18.3,0,18.5,0,18.6c0,0.2,0,0.3,0.1,0.5c0.1,0.2,0.2,0.3,0.3,0.4c2.2,1.4,4.7,2.1,7.3,2.1%20c1.9,0,3.8-0.3,5.5-1.1s3.3-1.9,4.5-3.3c2.2-2.5,3.4-5.7,3.5-9.1V8l2.4-1.7c0.2,0,0.3-0.3,0.4-0.5C24,5.6,24,5.3,23.8,5.1z'/%3e%3cpath%20d='M2,4.8l9.1,4.6c0.2,0.1,0.3,0.1,0.5,0.1c0.2,0,0.3-0.1,0.5-0.2c0.1-0.1,0.2-0.2,0.3-0.4c0.1-0.2,0.1-0.3,0-0.5%20c-0.2-0.8-0.1-1.5,0.2-2.3c0.3-0.7,0.9-1.3,1.5-1.7C14.8,4,15.6,3.9,16.3,4s1.5,0.5,2,1.1c0.1,0.1,0.3,0.2,0.5,0.3%20c0.2,0,0.4,0,0.5,0l2.8-1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.2-0.2,0.2-0.3s0.1-0.2,0.1-0.3s0-0.2-0.1-0.3c0-0.1-0.1-0.2-0.2-0.3%20c-0.1-0.1-0.2-0.2-0.3-0.2c-0.1-0.1-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.3,0.1l-2.3,0.8c-0.7-0.6-1.6-1-2.6-1.2c-1-0.2-1.9,0-2.9,0.3%20c-0.9,0.4-1.7,1-2.3,1.8s-0.9,1.7-1,2.7l-7.6-4c-0.1,0-0.2-0.1-0.3-0.1s-0.2,0-0.4,0C2,3.2,1.9,3.3,1.8,3.4c-0.1,0-0.1,0.1-0.2,0.2%20S1.5,3.9,1.5,4s0,0.2,0,0.4c0,0.1,0.1,0.2,0.2,0.3C1.8,4.7,1.9,4.8,2,4.8L2,4.8z'/%3e%3cpath%20d='M1.5,10.3l2,0.6c0.1,0,0.2,0,0.4,0c0.1,0,0.2-0.1,0.3-0.1c0.1-0.1,0.2-0.1,0.3-0.2s0.1-0.2,0.2-0.3c0-0.1,0-0.2,0-0.4%20c0-0.1-0.1-0.2-0.1-0.3C4.5,9.4,4.4,9.3,4.3,9.2C4.2,9.2,4.1,9.1,4,9.1L2,8.5c-0.1,0-0.2,0-0.4,0c-0.1,0-0.2,0.1-0.3,0.1%20c-0.1,0-0.2,0.1-0.2,0.2c0,0.1-0.2,0.2-0.2,0.4c0,0.1,0,0.2,0,0.4C0.9,9.7,1,9.8,1,9.9c0,0,0.1,0.1,0.2,0.2%20C1.3,10.2,1.4,10.2,1.5,10.3z'/%3e%3cpath%20d='M3.3,13c-0.2,0-0.5,0.1-0.6,0.3c-0.2,0.2-0.3,0.4-0.3,0.6c0,0.2,0.1,0.5,0.3,0.6c0.2,0.2,0.4,0.3,0.6,0.3l0,0l2-0.1%20c0.1,0,0.2,0,0.3-0.1c0.1,0,0.2-0.1,0.3-0.2C6,14.3,6,14.2,6.1,14.1c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3%20c0-0.1-0.1-0.2-0.2-0.3c-0.1-0.1-0.2-0.1-0.3-0.2c-0.1,0-0.2-0.1-0.3-0.1L3.3,13z'/%3e%3c/g%3e%3c/svg%3e"
+                                    src="https://seyamms.github.io/almonasib/icons/twitter.svg"
                                     alt="twitter"
                                   />
                                 </a>
@@ -2051,7 +2053,7 @@
                                   <img
                                     onload="ImgToSvg(this)"
                                     class="lg:size-6 size-5 fill-transparent stroke-current"
-                                    src="data:image/svg+xml,%3csvg%20width='74'%20height='74'%20viewBox='0%200%2074%2074'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17.8066%2025.0188H3.17969V71.6631H17.8066V25.0188Z'%20stroke-width='4'%20/%3e%3cpath%20d='M57.3732%2024.0077C56.834%2023.9403%2056.2611%2023.9066%2055.6881%2023.8729C47.4984%2023.5358%2042.8812%2028.389%2041.2635%2030.4786C40.8254%2031.0515%2040.6231%2031.3885%2040.6231%2031.3885V25.1536H26.6366V71.7978H40.6231H41.2635C41.2635%2067.0457%2041.2635%2062.3274%2041.2635%2057.5753C41.2635%2055.014%2041.2635%2052.4526%2041.2635%2049.8912C41.2635%2046.7231%2041.0276%2043.3529%2042.6116%2040.4545C43.9597%2038.0279%2046.3862%2036.8146%2049.1161%2036.8146C57.2047%2036.8146%2057.3732%2044.1281%2057.3732%2044.8021C57.3732%2044.8358%2057.3732%2044.8695%2057.3732%2044.8695V72H72.0001V41.5667C72.0001%2031.1526%2066.7088%2025.0188%2057.3732%2024.0077Z'%20stroke-width='4'%20/%3e%3cpath%20d='M10.493%2018.986C15.1836%2018.986%2018.9861%2015.1836%2018.9861%2010.493C18.9861%205.80246%2015.1836%202%2010.493%202C5.80244%202%202%205.80246%202%2010.493C2%2015.1836%205.80244%2018.986%2010.493%2018.986Z'%20stroke-width='4'%20/%3e%3c/svg%3e"
+                                    src="https://seyamms.github.io/almonasib/icons/linkedin.svg"
                                     alt="linkedin"
                                   />
                                 </a>
@@ -2089,7 +2091,7 @@
               <div
                 x-data="{ embla: null }"
                 x-init="() => {
-                  embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl', });
+                  embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl' });
                 }"
                 class="embla 2xl:gap-12 xl:gap-8 lg:gap-6 flex items-center gap-4"
               >
@@ -2104,7 +2106,7 @@
                 >
                   <img
                     class="lg:size-7 size-5"
-                    src="data:image/svg+xml,%3csvg%20width='23'%20height='38'%20viewBox='0%200%2023%2038'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%204L19%2019L4%2034'%20stroke='%239F4289'%20stroke-width='8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                    src="https://seyamms.github.io/almonasib/icons/chevron-right.svg"
                     alt="chevron-right"
                   />
                 </button>
@@ -2120,7 +2122,7 @@
                 >
                   <img
                     class="lg:size-7 size-5"
-                    src="data:image/svg+xml,%3csvg%20width='23'%20height='38'%20viewBox='0%200%2023%2038'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19%204L4%2019L19%2034'%20stroke='%239F4289'%20stroke-width='8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+                    src="https://seyamms.github.io/almonasib/icons/chevron-left.svg"
                     alt="chevron-left"
                   />
                 </button>
@@ -2148,7 +2150,7 @@
                                 <img
                                   class="object-scale-down w-full h-full"
                                   loading="lazy"
-                                  src="https://seyamms.github.io/almonasib/assets/member-1-CjyYrlFy.jpg"
+                                  src="https://seyamms.github.io/almonasib/images/member-1.jpg"
                                   alt="member-1"
                                 />
                               </div>
@@ -2176,7 +2178,7 @@
                               <div class="flex justify-end">
                                 <a
                                   class="text-apple-500 xl:text-2xl lg:text-xl md:text-lg text-xs font-bold underline"
-                                  href="images/member-1.jpg"
+                                  href="https://seyamms.github.io/almonasib/images/member-1.jpg"
                                   data-fslightbox="1"
                                 >
                                   عرض الاصلية
@@ -2209,7 +2211,7 @@
                                 <img
                                   class="object-scale-down w-full h-full"
                                   loading="lazy"
-                                  src="https://seyamms.github.io/almonasib/assets/member-1-CjyYrlFy.jpg"
+                                  src="https://seyamms.github.io/almonasib/images/member-1.jpg"
                                   alt="member-1"
                                 />
                               </div>
@@ -2237,7 +2239,7 @@
                               <div class="flex justify-end">
                                 <a
                                   class="text-apple-500 xl:text-2xl lg:text-xl md:text-lg text-xs font-bold underline"
-                                  href="images/member-1.jpg"
+                                  href="https://seyamms.github.io/almonasib/images/member-1.jpg"
                                   data-fslightbox="2"
                                 >
                                   عرض الاصلية
@@ -2450,7 +2452,7 @@
 
         <!-- background pattern -->
         <div
-          class="bg-[url('images/pattern.png')] xl:bg-[0_-50px] lg:bg-[0_-40px] md:bg-[0_-30px] bg-[0_-20px] bg-[length:100%] absolute inset-0 -z-10 bg-repeat"
+          class="bg-[url('/images/pattern.png')] xl:bg-[0_-50px] lg:bg-[0_-40px] md:bg-[0_-30px] bg-[0_-20px] bg-[length:100%] absolute inset-0 -z-10 bg-repeat"
         ></div>
         <!-- end background pattern -->
       </div>
@@ -2488,7 +2490,7 @@
                         <img
                           onload="ImgToSvg(this)"
                           class="size-4 group-hover:text-rouge-700 text-white transition-all duration-150 ease-in-out fill-current"
-                          src="data:image/svg+xml,%3csvg%20viewBox='0%200%2016%2016'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M14.5%202C14.9163%202.02074%2015.2704%202.16667%2015.5622%202.43778C15.8333%202.72963%2015.9793%203.0837%2016%203.5C15.9793%204.00074%2015.7815%204.3963%2015.4067%204.68667L8.59333%209.81333C8.19778%2010.0622%207.80222%2010.0622%207.40667%209.81333L0.593333%204.68667C0.218519%204.3963%200.0207407%204.00074%200%203.5C0.0207407%203.0837%200.166667%202.72963%200.437778%202.43778C0.72963%202.16667%201.0837%202.02074%201.5%202H14.5ZM6.81333%2010.5933C7.16741%2010.8644%207.56296%2011%208%2011C8.43704%2011%208.83259%2010.8644%209.18667%2010.5933L16%205.5V12C15.9793%2012.563%2015.7815%2013.0319%2015.4067%2013.4067C15.0319%2013.7815%2014.563%2013.9793%2014%2014H2C1.43704%2013.9793%200.968148%2013.7815%200.593333%2013.4067C0.218519%2013.0319%200.0207407%2012.563%200%2012V5.5L6.81333%2010.5933Z'%20/%3e%3c/svg%3e"
+                          src="https://seyamms.github.io/almonasib/icons/email.svg"
                           alt="email"
                         />
                         <a
@@ -2508,7 +2510,7 @@
                         <img
                           onload="ImgToSvg(this)"
                           class="size-4 group-hover:text-rouge-700 text-white transition-all duration-150 ease-in-out fill-current"
-                          src="data:image/svg+xml,%3csvg%20viewBox='0%200%2016%2016'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0.593278%2010.9691L3.96883%209.5313C4.42661%209.36537%204.8118%209.45945%205.12439%209.81352L6.49994%2011.4691C7.58291%2010.9476%208.5518%2010.2602%209.40661%209.40686C10.2599%208.55204%2010.9474%207.58315%2011.4688%206.50019L9.81328%205.12463C9.4592%204.81204%209.36513%204.42686%209.53106%203.96908L10.9688%200.593522C11.2192%200.135744%2011.594%20-0.0516631%2012.0933%200.0312999L15.2511%200.7513C15.7296%200.896485%2015.9792%201.21871%2015.9999%201.71797C15.9792%204.36389%2015.3229%206.76019%2014.0311%208.90686C12.7599%2011.052%2011.0518%2012.7706%208.90661%2014.0624C6.75995%2015.3335%204.35328%2015.9794%201.68661%2016.0002C1.20809%2015.9794%200.896241%2015.7298%200.751056%2015.2513L0.0310557%2012.0935C-0.0519072%2011.5943%200.1355%2011.2194%200.593278%2010.9691Z'%20/%3e%3c/svg%3e"
+                          src="https://seyamms.github.io/almonasib/icons/phone.svg"
                           alt="phone"
                         />
                         <a
@@ -2651,7 +2653,7 @@
                       x-transition:enter-start="opacity-0 scale-50"
                       x-transition:enter="transform ease-out duration-150 delay-[1100ms]"
                       class="object-scale-down w-full h-full"
-                      src="data:image/svg+xml,%3csvg%20width='199'%20height='122'%20viewBox='0%200%20199%20122'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M99.04%2036.9146L121.549%2060.9994L99.04%2085.0843L76.5308%2060.9994L99.04%2036.9146Z'%20fill='white'/%3e%3cpath%20d='M56.9483%200L91.8376%2036.9151L69.1033%2061L90.9373%2085.9852L56.9483%20122L0%2061L56.9483%200Z'%20fill='white'/%3e%3cpath%20d='M141.131%200L106.242%2036.9151L128.976%2061L107.142%2085.9852L141.131%20122L198.08%2061L141.131%200Z'%20fill='white'/%3e%3c/svg%3e"
+                      src="https://seyamms.github.io/almonasib/images/logo-white.svg"
                       alt="logo-white"
                     />
                   </div>
@@ -2679,7 +2681,7 @@
                         <img
                           onload="ImgToSvg(this)"
                           class="size-9 fill-current"
-                          src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='23.954px'%20height='24.074px'%20viewBox='0%200%2023.954%2024.074'%20enable-background='new%200%200%2023.954%2024.074'%20xml:space='preserve'%3e%3cpath%20d='M18.591,14.104l-3.631-1.815c-0.096-0.095-0.189-0.095-0.382-0.095c-0.096,0-0.19,0-0.286,0.095l-1.72,1.146%20c-0.859-0.478-1.624-1.146-2.102-2.102l1.146-1.72c0.096-0.096,0.096-0.191,0.096-0.287s0-0.191-0.096-0.382L9.897,5.41%20c0-0.095-0.095-0.191-0.191-0.287C9.515,5.028,9.419,5.028,9.324,5.028c-1.146,0-2.198,0.478-3.057,1.242%20c-0.764,0.86-1.242,1.911-1.242,3.057c0,2.58,1.051,5.063,2.866,6.878c1.815,1.815,4.299,2.867,6.879,2.867%20c1.146,0,2.196-0.479,3.056-1.243c0.765-0.765,1.242-1.911,1.242-3.057c0-0.097,0-0.287-0.096-0.383%20C18.781,14.199,18.687,14.199,18.591,14.104z%20M14.674,17.639c-2.197,0-4.299-0.86-5.923-2.484c-1.624-1.624-2.483-3.63-2.483-5.923%20c0-0.669,0.286-1.433,0.764-1.911c0.478-0.477,1.146-0.859,1.815-0.955l1.433,2.866l-1.146,1.815%20c-0.095,0.096-0.095,0.191-0.095,0.287c0,0.095,0,0.191,0.095,0.287c0.573,1.433,1.815,2.674,3.248,3.249%20c0.096,0,0.191,0.095,0.287,0.095c0.095,0,0.191,0,0.286-0.095l1.72-1.147l2.865,1.434c-0.095,0.668-0.477,1.338-0.954,1.815%20C16.106,17.351,15.438,17.639,14.674,17.639z%20M11.999,0.537c-2.006,0-3.917,0.478-5.637,1.529c-1.72,1.051-3.153,2.389-4.203,4.108%20c-1.051,1.72-1.625,3.631-1.625,5.637c0,2.007,0.478,3.918,1.434,5.732L0.63,21.46c-0.096,0.19-0.096,0.478-0.096,0.764%20s0.191,0.573,0.382,0.765c0.287,0.191,0.573,0.382,0.86,0.478s0.573,0.096,0.86,0l3.917-1.338c1.529,0.86,3.249,1.338,4.968,1.338%20c1.72,0.096,3.438-0.286,5.063-0.956c1.623-0.669,3.058-1.719,4.107-3.057c1.146-1.337,1.911-2.866,2.388-4.585%20c0.383-1.72,0.478-3.44,0.097-5.16c-0.383-1.719-1.146-3.343-2.197-4.681s-2.389-2.58-3.917-3.344%20C15.438,0.919,13.718,0.537,11.999,0.537z%20M11.999,21.795c-1.755,0-3.418-0.462-4.896-1.293c-0.092-0.094-0.185-0.094-0.37-0.094%20c-0.091,0-0.185,0-0.185,0l-4.064,1.387H2.391c0,0-0.092,0-0.092-0.092L2.207,21.61v-0.094l1.386-4.063c0-0.093,0-0.186,0-0.278%20c0-0.091,0-0.184-0.093-0.276c-1.108-1.848-1.478-4.064-1.201-6.19C2.576,8.583,3.592,6.551,5.07,5.073%20c1.478-1.478,3.51-2.494,5.636-2.771c2.126-0.277,4.342,0.186,6.19,1.201c1.847,1.109,3.325,2.772,4.156,4.712%20c0.832,2.033,1.017,4.157,0.371,6.284c-0.556,2.123-1.756,3.879-3.511,5.265C16.248,21.056,14.124,21.795,11.999,21.795z'/%3e%3c/svg%3e"
+                          src="https://seyamms.github.io/almonasib/icons/whatsapp.svg"
                           alt="whatsapp"
                         />
                       </a>
@@ -2694,7 +2696,7 @@
                         <img
                           onload="ImgToSvg(this)"
                           class="size-9 fill-current"
-                          src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='24px'%20height='19.3px'%20viewBox='0%202.3%2024%2019.3'%20enable-background='new%200%202.3%2024%2019.3'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M23.8,5.1c-0.1-0.2-0.3-0.3-0.6-0.4c-0.2,0-0.5,0-0.7,0.1l-2.8,2c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.1,0.3-0.1,0.4%20c0,0.2,0,0.4,0,0.5c0,1.5-0.3,3.1-0.9,4.5c-0.6,1.4-1.4,2.7-2.5,3.8c-1.1,1.1-2.4,1.9-3.8,2.5c-1.4,0.6-3,0.9-4.5,0.9%20s-3-0.3-4.3-0.8l4.3-1.2c0.2-0.1,0.4-0.2,0.5-0.4s0.1-0.5,0.1-0.7c-0.1-0.2-0.2-0.4-0.4-0.5c-0.1-0.1-0.3-0.1-0.6,0l-6.6,1.8%20c-0.2,0-0.3,0.1-0.4,0.3C0.1,18.3,0,18.5,0,18.6c0,0.2,0,0.3,0.1,0.5c0.1,0.2,0.2,0.3,0.3,0.4c2.2,1.4,4.7,2.1,7.3,2.1%20c1.9,0,3.8-0.3,5.5-1.1s3.3-1.9,4.5-3.3c2.2-2.5,3.4-5.7,3.5-9.1V8l2.4-1.7c0.2,0,0.3-0.3,0.4-0.5C24,5.6,24,5.3,23.8,5.1z'/%3e%3cpath%20d='M2,4.8l9.1,4.6c0.2,0.1,0.3,0.1,0.5,0.1c0.2,0,0.3-0.1,0.5-0.2c0.1-0.1,0.2-0.2,0.3-0.4c0.1-0.2,0.1-0.3,0-0.5%20c-0.2-0.8-0.1-1.5,0.2-2.3c0.3-0.7,0.9-1.3,1.5-1.7C14.8,4,15.6,3.9,16.3,4s1.5,0.5,2,1.1c0.1,0.1,0.3,0.2,0.5,0.3%20c0.2,0,0.4,0,0.5,0l2.8-1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.2-0.2,0.2-0.3s0.1-0.2,0.1-0.3s0-0.2-0.1-0.3c0-0.1-0.1-0.2-0.2-0.3%20c-0.1-0.1-0.2-0.2-0.3-0.2c-0.1-0.1-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.3,0.1l-2.3,0.8c-0.7-0.6-1.6-1-2.6-1.2c-1-0.2-1.9,0-2.9,0.3%20c-0.9,0.4-1.7,1-2.3,1.8s-0.9,1.7-1,2.7l-7.6-4c-0.1,0-0.2-0.1-0.3-0.1s-0.2,0-0.4,0C2,3.2,1.9,3.3,1.8,3.4c-0.1,0-0.1,0.1-0.2,0.2%20S1.5,3.9,1.5,4s0,0.2,0,0.4c0,0.1,0.1,0.2,0.2,0.3C1.8,4.7,1.9,4.8,2,4.8L2,4.8z'/%3e%3cpath%20d='M1.5,10.3l2,0.6c0.1,0,0.2,0,0.4,0c0.1,0,0.2-0.1,0.3-0.1c0.1-0.1,0.2-0.1,0.3-0.2s0.1-0.2,0.2-0.3c0-0.1,0-0.2,0-0.4%20c0-0.1-0.1-0.2-0.1-0.3C4.5,9.4,4.4,9.3,4.3,9.2C4.2,9.2,4.1,9.1,4,9.1L2,8.5c-0.1,0-0.2,0-0.4,0c-0.1,0-0.2,0.1-0.3,0.1%20c-0.1,0-0.2,0.1-0.2,0.2c0,0.1-0.2,0.2-0.2,0.4c0,0.1,0,0.2,0,0.4C0.9,9.7,1,9.8,1,9.9c0,0,0.1,0.1,0.2,0.2%20C1.3,10.2,1.4,10.2,1.5,10.3z'/%3e%3cpath%20d='M3.3,13c-0.2,0-0.5,0.1-0.6,0.3c-0.2,0.2-0.3,0.4-0.3,0.6c0,0.2,0.1,0.5,0.3,0.6c0.2,0.2,0.4,0.3,0.6,0.3l0,0l2-0.1%20c0.1,0,0.2,0,0.3-0.1c0.1,0,0.2-0.1,0.3-0.2C6,14.3,6,14.2,6.1,14.1c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3%20c0-0.1-0.1-0.2-0.2-0.3c-0.1-0.1-0.2-0.1-0.3-0.2c-0.1,0-0.2-0.1-0.3-0.1L3.3,13z'/%3e%3c/g%3e%3c/svg%3e"
+                          src="https://seyamms.github.io/almonasib/icons/twitter.svg"
                           alt="twitter"
                         />
                       </a>
@@ -2709,7 +2711,7 @@
                         <img
                           onload="ImgToSvg(this)"
                           class="size-9 fill-current"
-                          src="data:image/svg+xml,%3csvg%20version='1.0'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='24px'%20height='16.8px'%20viewBox='0%203.6%2024%2016.8'%20enable-background='new%200%203.6%2024%2016.8'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M19.8,3.6H4.2C3.1,3.6,2,4,1.3,4.7C0.5,5.5,0,6.6,0,7.7v8.7c0,1.1,0.5,2.1,1.3,2.9C2,20,3.1,20.4,4.2,20.4h15.6%20c1.1,0,2.2-0.4,2.9-1.2c0.8-0.8,1.2-1.8,1.3-2.9V7.7c0-1.1-0.5-2.1-1.3-2.9C22,4,20.9,3.6,19.8,3.6z%20M22.3,16.4%20c0,0.6-0.3,1.3-0.7,1.7c-0.5,0.5-1.1,0.7-1.7,0.7H4.2c-0.6,0-1.3-0.2-1.7-0.7C2,17.6,1.7,17,1.7,16.4V7.7C1.7,7,2,6.4,2.5,5.9%20s1.1-0.7,1.7-0.7h15.6c0.6,0,1.3,0.2,1.7,0.7s0.7,1.1,0.7,1.7L22.3,16.4L22.3,16.4z'/%3e%3cpath%20d='M16.6,11.3l-6.4-4.1C10.1,7.1,10,7.1,9.8,7.1c-0.2,0-0.3,0-0.4,0.1C9.2,7.3,9.1,7.4,9,7.5c0,0.1-0.1,0.3-0.1,0.4v8.2%20c0,0.2,0,0.3,0.1,0.4s0.2,0.2,0.3,0.3c0.1,0.1,0.3,0.1,0.4,0.1c0.2,0,0.3-0.1,0.4-0.1l6.4-4.1c0.1-0.1,0.2-0.2,0.3-0.3%20C17,12.3,17,12.1,17,12s0-0.3-0.1-0.4C16.8,11.5,16.7,11.4,16.6,11.3L16.6,11.3z%20M10.6,14.5v-5l3.9,2.5L10.6,14.5z'/%3e%3c/g%3e%3c/svg%3e"
+                          src="https://seyamms.github.io/almonasib/icons/youtube.svg"
                           alt="youtube"
                         />
                       </a>
@@ -2732,7 +2734,7 @@
                         <img
                           onload="ImgToSvg(this)"
                           class="size-9 fill-current"
-                          src="data:image/svg+xml,%3csvg%20version='1.0'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3e%3cpath%20d='M20,11.2c0-1.2-0.2-2.3-0.7-3.4c-0.5-1.1-1.1-2.1-2-2.9c-1.8-1.7-4.1-2.6-6.5-2.6C8.3,2.3,6,3.2,4.2,4.9%20c-0.9,0.8-1.5,1.8-2,2.9C1.8,8.8,1.5,10,1.6,11.2c0,1.2,0.2,2.3,0.7,3.4c0.5,1.1,1.1,2.1,2,2.9c1.7,1.7,4.1,2.6,6.5,2.6%20c2.4,0,4.8-0.9,6.5-2.6c0.9-0.8,1.6-1.8,2-2.9S20,12.4,20,11.2L20,11.2z%20M23.1,23.3c-0.1,0-0.2,0-0.3-0.1c-0.1,0-0.2-0.1-0.3-0.2%20l-4.4-4.2c-2.1,1.9-4.8,2.9-7.6,2.9c-2.8,0-5.5-1.1-7.5-3.1c-1-1-1.8-2.1-2.3-3.4c-0.5-1.3-0.8-2.7-0.8-4c0-1.4,0.3-2.7,0.8-4%20c0.5-1.3,1.3-2.4,2.3-3.4c2-2,4.8-3.1,7.6-3.1c2.8,0,5.6,1.1,7.6,3.1c1.9,1.8,3,4.2,3.1,6.7c0.2,2.6-0.6,5.1-2.3,7.1l4.4,4.2%20c0.1,0.1,0.2,0.3,0.3,0.4c0,0.2,0,0.3,0,0.5c-0.1,0.2-0.2,0.3-0.3,0.4C23.5,23.2,23.3,23.3,23.1,23.3L23.1,23.3z%20M7.6,14.3%20c0.1,0.1,0.1,0.2,0.2,0.2c0,0.1,0.1,0.2,0.1,0.3c0,0.1,0,0.2-0.1,0.3c0,0.1-0.1,0.2-0.2,0.2c-0.1,0.1-0.2,0.1-0.3,0.2%20c-0.1,0-0.2,0.1-0.3,0.1s-0.2,0-0.3-0.1c-0.1,0-0.2-0.1-0.3-0.2C5.8,14.7,5.3,13.9,5,13c-0.3-0.9-0.4-1.9-0.2-2.8%20c0-0.1,0.1-0.2,0.1-0.3C5,9.8,5.1,9.7,5.2,9.6c0.1-0.1,0.2-0.1,0.3-0.1c0.1,0,0.2,0,0.3,0c0.1,0,0.2,0.1,0.3,0.1%20c0.1,0.1,0.2,0.1,0.2,0.2c0.1,0.1,0.1,0.2,0.1,0.3c0,0.1,0,0.2,0,0.3c-0.1,0.7-0.1,1.4,0.1,2.1C6.7,13.2,7.1,13.8,7.6,14.3L7.6,14.3%20z'%20/%3e%3c/svg%3e"
+                          src="https://seyamms.github.io/almonasib/icons/search.svg"
                           alt="search"
                         />
                       </button>

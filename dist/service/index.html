@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://seyamms.github.io/almonasib/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://seyamms.github.io/almonasib/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://seyamms.github.io/almonasib/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="https://seyamms.github.io/almonasib/images/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script>
+      const ImgToSvg = async (img) => {
+        const s = document.createElement("div");
+        s.innerHTML = await (await fetch(img.src)).text();
+        s.firstChild.classList = img.classList;
+        img.replaceWith(s.firstChild);
+      };
+    </script>
+
+    <!-- seo tags -->
+    <title>مؤسسة المناسب</title>
+    <link href="#" rel="canonical" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <meta name="robots" content="all" />
+    <meta property="og:title" content="مؤسسة المناسب" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_SA" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="مؤسسة المناسب" />
+    <meta property="og:image" content="/images/sharing-poster.jpg" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content="1200" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="مؤسسة المناسب" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:creator" content="@SeyamMs" />
+    <meta name="twitter:url" content="#" />
+    <meta name="twitter:image" content="/images/sharing-poster.jpg" />
+    <script type="module" crossorigin src="https://seyamms.github.io/almonasib/assets/main-CDLAVIZF.js"></script>
+    <link rel="stylesheet" crossorigin href="https://seyamms.github.io/almonasib/assets/main-CHxMueGW.css">
+  </head>
+
+  <body
+    x-data="{ loaded: false, menu: true, search: false, openSearch() { this.menu = false; setTimeout(() => this.search = true, 1000) }, closeSearch() { this.search = false; setTimeout(() => this.menu = true, 200) } }"
+    class="lg:pt-32 selection:bg-rouge-100 selection:text-rouge-600 h-screen pt-16 font-sans bg-white"
+    x-init="setTimeout(function() { loaded = true }, 300)"
+    :class="{ 'overflow-hidden': !loaded }"
+  >
+    <!-- loader -->
+    <div
+      class="bg-anzac-50 fixed inset-0 z-50 flex items-center justify-center"
+      :class="{ 'hidden': loaded }"
+    >
+      <svg
+        class="size-32 fill-slate-700 motion-safe:animate-spin dark:fill-slate-300"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+          opacity=".25"
+        />
+        <path
+          d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z"
+        />
+      </svg>
+    </div>
+    <!-- end loader -->
+
+    <!-- wrapper -->
+    <div x-cloak x-show="loaded">
+      <!-- header -->
+      <header
+        class="fixed top-0 z-50 w-full"
+        x-data="{ shown: false, open: false, small: window.scrollY > 99 }"
+        x-on:scroll.window="small = window.scrollY > 99"
+        x-intersect="shown = true"
+      >
+        <nav
+          class="lg:h-32 relative flex items-center h-16 transition-all duration-150 ease-in-out bg-white"
+          :class="{'lg:h-32':!small, 'lg:h-16 shadow': small, 'border-b': search}"
+        >
+          <div
+            x-show="search"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:enter-start="opacity-0 -translate-y-10"
+            x-transition:enter="transform ease-out duration-150"
+            x-transition:leave-end="opacity-0 -translate-y-10"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave="transform ease-in duration-150"
+            x-on:keyup.escape.window="closeSearch"
+            x-trap="search"
+            x-cloak
+            class="container px-4 mx-auto"
+          >
+            <div class="flex h-full">
+              <form
+                class="flex items-center justify-between w-full h-full gap-2"
+                action=""
+              >
+                <input
+                  tabindex="0"
+                  id="search"
+                  name="search"
+                  x-ref="input"
+                  class="focus:outline-none focus:ring-0 w-full h-full border-0"
+                  type="text"
+                  placeholder="أدخل كلمة البحث"
+                />
+
+                <button
+                  type="submit"
+                  class="bg-rouge-500 hover:bg-rouge-600 px-4 py-2 text-sm font-bold text-white transition-all duration-150 ease-out rounded-md"
+                >
+                  بحث
+                </button>
+
+                <button class="-order-1" type="button" x-on:click="closeSearch">
+                  <!-- <template x-ref="template">
+                    <span
+                      x-tooltip="{ content: () => $refs.template.innerHTML, allowHTML: true, appendTo: $root }"
+                      dir="ltr"
+                      >Escape</span
+                    >
+                  </template> -->
+                  <img
+                    class="lg:size-7 size-6"
+                    src="https://seyamms.github.io/almonasib/icons/back.svg"
+                    alt="back"
+                  />
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div
+            x-show="menu"
+            x-on:keyup.window="function({ ctrlKey, code }) { if(!search) if (ctrlKey) if (code == 'Slash') openSearch() }"
+            class="container px-4 mx-auto"
+          >
+            <div class="flex items-center justify-between gap-2">
+              <div
+                class="lg:w-28 scale w-16 transition-all duration-150 ease-in-out"
+                :class="{'lg:w-28': !small, 'lg:w-16': small}"
+              >
+                <a href="/">
+                  <img
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[100ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150"
+                    class="object-scale-down w-full h-full"
+                    src="https://seyamms.github.io/almonasib/images/logo.svg"
+                    alt="logo"
+                  />
+                </a>
+              </div>
+
+              <div class="lg:flex hidden items-center gap-[34px]">
+                <a
+                  class="text-[#313131] hover:text-rouge-500 flex relative font-medium text-xl w-max"
+                  href="/"
+                >
+                  <span
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[250ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transform ease-in duration-150 delay-[150ms]"
+                    class="start-0 absolute top-0"
+                  >
+                    الرئيسية
+                  </span>
+                  <span class="text-transparent"> الرئيسية </span>
+                </a>
+
+                <a
+                  class="text-[#313131] hover:text-rouge-500 flex relative font-medium text-xl"
+                  href="#"
+                >
+                  <span
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[450ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transform ease-in duration-150 delay-[400ms]"
+                    class="start-0 absolute top-0"
+                  >
+                    المؤسسات المانحة
+                  </span>
+                  <span class="text-transparent"> المؤسسات المانحة </span>
+                </a>
+
+                <a
+                  class="text-[#313131] hover:text-rouge-500 flex relative font-medium text-xl"
+                  href="#"
+                >
+                  <span
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[350ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transform ease-in duration-150 delay-[250ms]"
+                    class="start-0 absolute top-0"
+                  >
+                    معلومات عنا
+                  </span>
+                  <span class="text-transparent"> معلومات عنا </span>
+                </a>
+
+                <a
+                  class="text-[#313131] hover:text-rouge-500 flex relative font-medium text-xl"
+                  href="#"
+                >
+                  <span
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[550ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transform ease-in duration-150 delay-[450ms]"
+                    class="start-0 absolute top-0"
+                  >
+                    اتصل بنا
+                  </span>
+                  <span class="text-transparent"> اتصل بنا </span>
+                </a>
+              </div>
+
+              <div
+                class="lg:gap-6 sm:gap-4 flex items-center gap-4 transition-all duration-150 ease-in-out"
+                :class="{'lg:gap-6':!small, 'lg:gap-2': small}"
+              >
+                <div
+                  class="lg:gap-6 sm:gap-4 sm:flex items-center hidden gap-4 transition-all duration-150 ease-in-out"
+                  :class="{'lg:gap-6':!small, 'lg:gap-2': small}"
+                >
+                  <a
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[700ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150 delay-[500ms]"
+                    class="text-[#313131] hover:text-[#075E54] transition-all duration-150 ease-in-out"
+                    href="#"
+                  >
+                    <img
+                      onload="ImgToSvg(this)"
+                      class="md:size-7 size-6 fill-current"
+                      src="https://seyamms.github.io/almonasib/icons/whatsapp.svg"
+                      alt="whatsapp"
+                    />
+                  </a>
+                  <a
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[750ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150 delay-[550ms]"
+                    class="text-[#313131] hover:text-[#1DA1F2] transition-all duration-150 ease-in-out"
+                    href="#"
+                  >
+                    <img
+                      onload="ImgToSvg(this)"
+                      class="md:size-7 size-6 fill-current"
+                      src="https://seyamms.github.io/almonasib/icons/twitter.svg"
+                      alt="twitter"
+                    />
+                  </a>
+                  <a
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[800ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150 delay-[600ms]"
+                    class="text-[#313131] hover:text-[#CD201F] transition-all duration-150 ease-in-out"
+                    href="#"
+                  >
+                    <img
+                      onload="ImgToSvg(this)"
+                      class="md:size-7 size-6 fill-current"
+                      src="https://seyamms.github.io/almonasib/icons/youtube.svg"
+                      alt="youtube"
+                    />
+                  </a>
+                </div>
+
+                <button
+                  x-show="shown && menu"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  x-transition:enter-start="opacity-0 scale-50"
+                  x-transition:enter="transform ease-out duration-150 delay-[850ms]"
+                  x-transition:leave-end="opacity-0 scale-50"
+                  x-transition:leave-start="opacity-100 scale-100"
+                  x-transition:leave="transform ease-in duration-150 delay-[650ms]"
+                  x-on:click="openSearch"
+                  class="text-[#313131] hover:text-rouge-500 transition-all duration-150 ease-in-out"
+                  type="button"
+                >
+                  <!-- <template x-ref="template">
+                    <span
+                      x-tooltip="{ content: () => $refs.template.innerHTML, allowHTML: true, appendTo: $root }"
+                      dir="ltr"
+                      >Ctrl + /</span
+                    >
+                  </template> -->
+                  <img
+                    onload="ImgToSvg(this)"
+                    class="md:size-7 size-6 fill-current"
+                    src="https://seyamms.github.io/almonasib/icons/search.svg"
+                    alt="search"
+                  />
+                </button>
+                <div class="lg:hidden flex">
+                  <button
+                    x-show="shown && menu"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:enter-start="opacity-0 scale-50"
+                    x-transition:enter="transform ease-out duration-150 delay-[900ms]"
+                    x-transition:leave-end="opacity-0 scale-50"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave="transform ease-in duration-150 delay-[700ms]"
+                    x-on:click="open = ! open"
+                    class="text-[#313131] transition-all duration-150 ease-in-out"
+                    type="button"
+                  >
+                    <img
+                      onload="ImgToSvg(this)"
+                      class="md:size-7 size-6 fill-current"
+                      src="https://seyamms.github.io/almonasib/icons/menu.svg"
+                      alt="menu"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:hidden start-0 top-16 absolute z-10 flex w-full">
+            <div
+              :class="{ 'block': open, 'hidden': !open }"
+              class="block w-full bg-white"
+            >
+              <div class="border-gray-50 border-t">
+                <div class="gap-1">
+                  <a
+                    class="hover:text-gray-800 hover:bg-gray-50 hover:border-primary-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-r-4 border-transparent"
+                    href="#"
+                  >
+                    الرئيسية
+                  </a>
+                  <a
+                    class="hover:text-gray-800 hover:bg-gray-50 hover:border-primary-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-r-4 border-transparent"
+                    href="#"
+                  >
+                    المؤسسات المانحة
+                  </a>
+                  <a
+                    class="hover:text-gray-800 hover:bg-gray-50 hover:border-primary-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-r-4 border-transparent"
+                    href="#"
+                  >
+                    معلومات عنا
+                  </a>
+                  <a
+                    class="hover:text-gray-800 hover:bg-gray-50 hover:border-primary-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-r-4 border-transparent"
+                    href="#"
+                  >
+                    اتصل بنا
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- end header -->
+
+      <!-- content -->
+      <div class="relative">
+        <!-- title -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[220px] lg:min-h-[176px] md:min-h-[136px] sm:min-h-[116px] min-h-[116px]"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div class="xl:gap-16 lg:gap-12 md:gap-10 flex flex-col gap-6">
+              <h2
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter="transform ease-out duration-300 delay-[100ms]"
+                class="text-rouge-500 xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold text-center"
+              >
+                تخطـيـط وتصميم
+                <br />
+                المبادرات التنموية
+              </h2>
+            </div>
+          </div>
+        </div>
+        <!-- end title -->
+
+        <!-- details -->
+        <div
+          x-data="{ shown: false }"
+          x-intersect="shown = true"
+          class="xl:py-20 lg:py-16 md:py-12 py-10"
+        >
+          <div class="md:px-4 container px-2 mx-auto">
+            <div class="grid grid-cols-8 gap-6">
+              <div class="md:col-span-5 lg:col-span-6 col-span-8">
+                <div class="xl:gap-16 lg:gap-12 md:gap-10 flex flex-col gap-6">
+                  <div class="xl:gap-11 lg:gap-9 md:gap-7 flex flex-col gap-5">
+                    <div class="md:col-span-4 col-span-9">
+                      <div class="aspect-[3]">
+                        <img
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 scale-100"
+                          x-transition:enter-start="opacity-0 scale-50"
+                          x-transition:enter="transform ease-out duration-300 delay-[500ms]"
+                          class="object-scale-down w-full h-full"
+                          src="https://seyamms.github.io/almonasib/images/service-1.jpg"
+                          alt="service-1"
+                        />
+                      </div>
+                    </div>
+                    <div class="md:col-span-5 col-span-9">
+                      <div class="xl:gap-8 md:gap-5 flex flex-col gap-4">
+                        <div
+                          class="md:justify-start flex items-center justify-center gap-6"
+                        >
+                          <div class="xl:size-24 lg:size-20 md:size-16 size-12">
+                            <img
+                              x-show="shown"
+                              x-transition:enter-end="opacity-100 translate-x-0"
+                              x-transition:enter-start="opacity-0 translate-x-10"
+                              x-transition:enter="transform ease-out duration-150 delay-[700ms]"
+                              class="object-scale-down w-full h-full"
+                              src="https://seyamms.github.io/almonasib/images/planning.png"
+                              alt="planning"
+                            />
+                          </div>
+                          <h3
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-x-0"
+                            x-transition:enter-start="opacity-0 translate-x-10"
+                            x-transition:enter="transform ease-out duration-150 delay-[800ms]"
+                            class="xl:text-5xl lg:text-4xl md:text-3xl md:text-start text-2xl font-bold text-center text-black"
+                          >
+                            تخطـيـط وتصميم
+                            <br />
+                            المبادرات التنموية
+                          </h3>
+                        </div>
+                        <div class="lg:pe-12 md:gap-2 flex flex-col gap-5">
+                          <p
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:enter-start="opacity-0 -translate-y-10"
+                            x-transition:enter="transform ease-out duration-300 delay-[900ms]"
+                            class="!leading-normal font-extralight xl:text-3xl lg:text-2xl md:text-xl md:text-justify text-lg text-center text-black"
+                          >
+                            نسعى مع شركائنا التنمويين في المساهمة بإنضاج
+                            المبادرات والمشاريع التنموية وتخطيطها وتصميمها وفق
+                            منهجيات عالمية مع تكييفها على واقع المنظمة والبيئة
+                            التي تعمل فيها.
+                          </p>
+
+                          <div class="md:justify-end flex justify-center">
+                            <a
+                              x-show="shown"
+                              x-transition:enter-end="opacity-100 translate-y-0"
+                              x-transition:enter-start="opacity-0 -translate-y-10"
+                              x-transition:enter="transform ease-out duration-300 delay-[1000ms]"
+                              class="text-apple-500 border-apple-500 md:rounded-2xl md:px-7 hover:bg-apple-500 hover:text-white xl:text-3xl lg:text-2xl md:text-xl md:py-3 rounded-xl inline-flex px-4 py-2 text-lg font-bold transition-all duration-150 ease-in-out border-2 shadow-md"
+                              href="/service"
+                            >
+                              اطلب الان
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- other services -->
+                  <div
+                    x-data="{ shown: false }"
+                    x-intersect="shown = true"
+                    class="xl:py-20 lg:py-16 md:py-12 py-10 xl:min-h-[679px] lg:min-h-[539px] md:min-h-[520px] sm:min-h-[484px] min-h-[468px]"
+                  >
+                    <div class="md:px-4 container px-2 mx-auto">
+                      <div class="flex flex-col gap-12">
+                        <h2
+                          x-show="shown"
+                          x-transition:enter-end="opacity-100 translate-y-0"
+                          x-transition:enter-start="opacity-0 -translate-y-10"
+                          x-transition:enter="transform ease-out duration-300 delay-[100ms]"
+                          class="text-rouge-500 xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold text-center"
+                        >
+                          خدمات اخرى
+                        </h2>
+                        <div
+                          x-data="{ embla: null }"
+                          x-init="() => {
+                            embla = EmblaCarousel($refs.viewport, { loop: true, direction: 'rtl' });
+                          }"
+                          class="embla flex items-center gap-2"
+                        >
+                          <button
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-x-0"
+                            x-transition:enter-start="opacity-0 translate-x-10"
+                            x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                            x-ref="prev"
+                            x-on:click="embla.scrollPrev()"
+                            class="hover:bg-gray-50 h-44 md:flex lg:w-12 hover:shadow-md items-center justify-center flex-shrink-0 hidden w-8 transition-all duration-150 ease-in-out bg-white border border-gray-200 rounded-md"
+                          >
+                            <img
+                              class="lg:size-7 size-5"
+                              src="https://seyamms.github.io/almonasib/icons/chevron-right.svg"
+                              alt="chevron-right"
+                            />
+                          </button>
+
+                          <button
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-x-0"
+                            x-transition:enter-start="opacity-0 -translate-x-10"
+                            x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                            x-ref="next"
+                            x-on:click="embla.scrollNext()"
+                            class="hover:bg-gray-50 h-44 md:flex lg:w-12 hover:shadow-md items-center justify-center flex-shrink-0 order-3 hidden w-8 transition-all duration-150 ease-in-out bg-white border border-gray-200 rounded-md"
+                          >
+                            <img
+                              class="lg:size-7 size-5"
+                              src="https://seyamms.github.io/almonasib/icons/chevron-left.svg"
+                              alt="chevron-left"
+                            />
+                          </button>
+
+                          <div x-ref="viewport" class="w-full overflow-hidden">
+                            <div class="flex justify-between py-2">
+                              <div
+                                x-show="shown"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:enter-start="opacity-0 scale-50"
+                                x-transition:enter="transform ease-out duration-300 delay-[500ms]"
+                                class="lg:basis-1/2 md:basis-full sm:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                              >
+                                <div
+                                  class="rounded-2xl overflow-hidden shadow-md"
+                                >
+                                  <div class="group relative w-full h-full">
+                                    <img
+                                      class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                                      src="https://seyamms.github.io/almonasib/images/post-1.jpg"
+                                      alt="post-1"
+                                    />
+                                    <div
+                                      class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                                    >
+                                      <div
+                                        class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                                      >
+                                        <h3
+                                          class="text-2xl font-bold text-white"
+                                        >
+                                          هذا النص هو مثال لنص يمكن أن يستبدل في
+                                          نفس المساحة
+                                        </h3>
+                                        <a
+                                          href="#"
+                                          class="hover:underline self-end text-lg font-bold text-white"
+                                        >
+                                          اقرأ أكثر
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div
+                                x-show="shown"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:enter-start="opacity-0 scale-50"
+                                x-transition:enter="transform ease-out duration-300 delay-[600ms]"
+                                class="lg:basis-1/2 md:basis-full sm:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                              >
+                                <div
+                                  class="rounded-2xl overflow-hidden shadow-md"
+                                >
+                                  <div class="group relative w-full h-full">
+                                    <img
+                                      class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                                      src="https://seyamms.github.io/almonasib/images/post-2.jpg"
+                                      alt="post-2"
+                                    />
+                                    <div
+                                      class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                                    >
+                                      <div
+                                        class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                                      >
+                                        <h3
+                                          class="text-2xl font-bold text-white"
+                                        >
+                                          هذا النص هو مثال لنص يمكن أن يستبدل في
+                                          نفس المساحة
+                                        </h3>
+                                        <a
+                                          href="#"
+                                          class="hover:underline self-end text-lg font-bold text-white"
+                                        >
+                                          اقرأ أكثر
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div
+                                x-show="shown"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:enter-start="opacity-0 scale-50"
+                                x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                                class="lg:basis-1/2 md:basis-full sm:basis-1/2 basis-full md:max-w-none flex-shrink-0 max-w-xs px-2"
+                              >
+                                <div
+                                  class="rounded-2xl overflow-hidden shadow-md"
+                                >
+                                  <div class="group relative w-full h-full">
+                                    <img
+                                      class="group-hover:scale-100 group-focus-within:scale-100 object-cover w-full h-full transition-all duration-150 ease-in-out transform scale-105"
+                                      src="https://seyamms.github.io/almonasib/images/post-3.jpg"
+                                      alt="post-3"
+                                    />
+                                    <div
+                                      class="bg-apple-500 bg-opacity-90 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:scale-100 group-focus-within:scale-100 absolute inset-0 transition-all duration-150 ease-in-out transform scale-125 opacity-0"
+                                    >
+                                      <div
+                                        class="flex flex-col justify-between h-full gap-6 px-4 py-6"
+                                      >
+                                        <h3
+                                          class="text-2xl font-bold text-white"
+                                        >
+                                          هذا النص هو مثال لنص يمكن أن يستبدل في
+                                          نفس المساحة
+                                        </h3>
+                                        <a
+                                          href="#"
+                                          class="hover:underline self-end text-lg font-bold text-white"
+                                        >
+                                          اقرأ أكثر
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end other services -->
+                </div>
+              </div>
+
+              <div class="md:col-span-3 lg:col-span-2 col-span-8">
+                <div class="top-24 sticky flex flex-col gap-6">
+                  <h3
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-300 delay-[600ms]"
+                    class="lg:text-4xl md:text-3xl md:text-start text-2xl font-bold text-center text-black"
+                  >
+                    التصنيفات
+                  </h3>
+                  <div class="flex flex-wrap gap-2">
+                    <a
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-300 delay-[700ms]"
+                      href="#"
+                      class="bg-rouge-500 hover:bg-rouge-600 md:px-6 lg:px-8 md:text-lg xl:text-xl flex items-center justify-center flex-grow flex-shrink-0 px-4 py-2 font-bold text-white transition-all duration-150 ease-in-out rounded-md"
+                      >تصنيف</a
+                    >
+                    <a
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-300 delay-[750ms]"
+                      href="#"
+                      class="bg-rouge-500 hover:bg-rouge-600 md:px-6 lg:px-8 md:text-lg xl:text-xl flex items-center justify-center flex-grow flex-shrink-0 px-4 py-2 font-bold text-white transition-all duration-150 ease-in-out rounded-md"
+                      >تصنيف</a
+                    >
+                    <a
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-300 delay-[800ms]"
+                      href="#"
+                      class="bg-rouge-500 hover:bg-rouge-600 md:px-6 lg:px-8 md:text-lg xl:text-xl flex items-center justify-center flex-grow flex-shrink-0 px-4 py-2 font-bold text-white transition-all duration-150 ease-in-out rounded-md"
+                      >تصنيف</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end details -->
+
+        <!-- background pattern -->
+        <div
+          class="bg-[url('images/pattern.png')] xl:bg-[0_-50px] lg:bg-[0_-40px] md:bg-[0_-30px] bg-[0_-20px] bg-[length:100%] absolute inset-0 -z-10 bg-repeat"
+        ></div>
+        <!-- end background pattern -->
+      </div>
+      <!-- end content -->
+
+      <!-- footer -->
+      <div
+        class="bg-rouge-500 w-full xl:min-h-[390px] lg:min-h-[394px] md:min-h-[628px] sm:min-h-[823px] min-h-[851px]"
+        x-data="{ shown: false }"
+        x-intersect="shown = true"
+      >
+        <div class="md:px-4 container px-2 mx-auto">
+          <div class="md:py-16 flex justify-center py-12">
+            <div class="md:gap-x-4 gap-y-10 gap-x-10 grid grid-cols-6">
+              <div class="lg:col-span-2 md:col-span-4 col-span-6">
+                <div class="lg:gap-16 flex flex-col gap-6">
+                  <div class="flex flex-col gap-4">
+                    <h2
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:enter-start="opacity-0 -translate-y-10"
+                      x-transition:enter="transform ease-out duration-150"
+                      class="text-2xl font-bold text-white"
+                    >
+                      تواصل معنا
+                    </h2>
+                    <div class="flex flex-col gap-2">
+                      <div
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 translate-x-0"
+                        x-transition:enter-start="opacity-0 translate-x-10"
+                        x-transition:enter="transform ease-out duration-150 delay-[100ms]"
+                        class="group flex items-center gap-3"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-4 group-hover:text-rouge-700 text-white transition-all duration-150 ease-in-out fill-current"
+                          src="https://seyamms.github.io/almonasib/icons/email.svg"
+                          alt="email"
+                        />
+                        <a
+                          class="group-hover:text-rouge-700 text-base font-medium text-white transition-all duration-150 ease-in-out"
+                          href="mailto:mail@almonasib.org"
+                        >
+                          mail@almonasib.org
+                        </a>
+                      </div>
+                      <div
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 translate-x-0"
+                        x-transition:enter-start="opacity-0 translate-x-10"
+                        x-transition:enter="transform ease-out duration-150 delay-[150ms]"
+                        class="group flex items-center gap-3"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-4 group-hover:text-rouge-700 text-white transition-all duration-150 ease-in-out fill-current"
+                          src="https://seyamms.github.io/almonasib/icons/phone.svg"
+                          alt="phone"
+                        />
+                        <a
+                          class="group-hover:text-rouge-700 text-base font-medium text-white transition-all duration-150 ease-in-out"
+                          href="tel:0598103750"
+                        >
+                          0598103750
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <form class="flex flex-col gap-4">
+                    <h3
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:enter-start="opacity-0 -translate-y-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[300ms]"
+                      class="text-xl font-medium text-white"
+                    >
+                      اشترك ليصلك كل جديد
+                    </h3>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[400ms]"
+                      class="group focus-within:ring-white focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-rouge-500 relative flex p-2 border border-white rounded-lg"
+                    >
+                      <input
+                        id="newsletter-email"
+                        name="newsletter-email"
+                        class="focus:outline-none border-0 p-1 focus:ring-0 flex-grow placeholder:text-[#ffffff80] text-white bg-transparent"
+                        type="text"
+                        placeholder="البريد الالكتروني"
+                      />
+                      <button
+                        type="submit"
+                        class="text-rouge-500 end-2 hover:bg-rouge-100 hover:text-white xl:px-8 lg:px-6 absolute px-4 py-1 font-medium transition-all duration-150 ease-in-out bg-white rounded-md"
+                      >
+                        اشترك
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="lg:col-span-2 md:col-span-2 col-span-6">
+                <div class="flex flex-col gap-5">
+                  <h2
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transform ease-out duration-150 delay-[550ms]"
+                    class="text-2xl font-bold text-white"
+                  >
+                    اللينكات السريعة
+                  </h2>
+                  <div class="flex flex-col gap-2">
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[650ms]"
+                      class="group flex items-center gap-4"
+                    >
+                      <div
+                        class="size-4 group-hover:bg-rouge-700 transition-all duration-150 ease-in-out bg-white rounded-md"
+                      ></div>
+                      <a
+                        class="group-hover:text-rouge-700 text-xl font-medium text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        الرئيسية
+                      </a>
+                    </div>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[750ms]"
+                      class="group flex items-center gap-4"
+                    >
+                      <div
+                        class="size-4 group-hover:bg-rouge-700 transition-all duration-150 ease-in-out bg-white rounded-md"
+                      ></div>
+                      <a
+                        class="group-hover:text-rouge-700 text-xl font-medium text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        المؤسسات المانحة
+                      </a>
+                    </div>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[850ms]"
+                      class="group flex items-center gap-4"
+                    >
+                      <div
+                        class="size-4 group-hover:bg-rouge-700 transition-all duration-150 ease-in-out bg-white rounded-md"
+                      ></div>
+                      <a
+                        class="group-hover:text-rouge-700 text-xl font-medium text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        معلومات عنا
+                      </a>
+                    </div>
+                    <div
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-x-0"
+                      x-transition:enter-start="opacity-0 translate-x-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[950ms]"
+                      class="group flex items-center gap-4"
+                    >
+                      <div
+                        class="size-4 group-hover:bg-rouge-700 transition-all duration-150 ease-in-out bg-white rounded-md"
+                      ></div>
+                      <a
+                        class="group-hover:text-rouge-700 text-xl font-medium text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        اتصل بنا
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="lg:col-span-2 flex items-center justify-center col-span-6"
+              >
+                <div class="flex flex-col items-center gap-4">
+                  <div class="w-48">
+                    <img
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 scale-100"
+                      x-transition:enter-start="opacity-0 scale-50"
+                      x-transition:enter="transform ease-out duration-150 delay-[1100ms]"
+                      class="object-scale-down w-full h-full"
+                      src="https://seyamms.github.io/almonasib/images/logo-white.svg"
+                      alt="logo-white"
+                    />
+                  </div>
+
+                  <div class="flex flex-col gap-10">
+                    <p
+                      x-show="shown"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:enter-start="opacity-0 -translate-y-10"
+                      x-transition:enter="transform ease-out duration-150 delay-[1200ms]"
+                      class="text-xl font-bold text-center text-white"
+                    >
+                      مؤسسة تسعى لتنمية وتمكين القطاع غير الربحي
+                    </p>
+
+                    <div class="flex items-center justify-center gap-6">
+                      <a
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-150 delay-[1300ms]"
+                        class="hover:text-[#075E54] text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-9 fill-current"
+                          src="https://seyamms.github.io/almonasib/icons/whatsapp.svg"
+                          alt="whatsapp"
+                        />
+                      </a>
+                      <a
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-150 delay-[1350ms]"
+                        class="hover:text-[#1DA1F2] text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-9 fill-current"
+                          src="https://seyamms.github.io/almonasib/icons/twitter.svg"
+                          alt="twitter"
+                        />
+                      </a>
+                      <a
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-150 delay-[1400ms]"
+                        class="hover:text-[#CD201F] text-white transition-all duration-150 ease-in-out"
+                        href="#"
+                      >
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-9 fill-current"
+                          src="https://seyamms.github.io/almonasib/icons/youtube.svg"
+                          alt="youtube"
+                        />
+                      </a>
+                      <button
+                        x-show="shown"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:enter-start="opacity-0 scale-50"
+                        x-transition:enter="transform ease-out duration-150 delay-[1450ms]"
+                        x-on:click="openSearch"
+                        class="hover:text-rouge-700 text-white transition-all duration-150 ease-in-out"
+                        type="button"
+                      >
+                        <!-- <template x-ref="template">
+                          <span
+                            x-tooltip="{ content: () => $refs.template.innerHTML, allowHTML: true, appendTo: $root }"
+                            dir="ltr"
+                            >Ctrl + /</span
+                          >
+                        </template> -->
+                        <img
+                          onload="ImgToSvg(this)"
+                          class="size-9 fill-current"
+                          src="https://seyamms.github.io/almonasib/icons/search.svg"
+                          alt="search"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end footer -->
+    </div>
+    <!-- end wrapper -->
+
+  </body>
+</html>
